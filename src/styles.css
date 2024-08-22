@@ -1,0 +1,70 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+body {
+    background-color: #eeeeee;
+}
+
+.main-wrapper {
+    margin-top: 95px;
+    transition: all 0.5s ease;
+    /* background-color: #ffffff; */
+}
+
+.toggled-nav .main-wrapper {
+    padding-left: 55px;
+}
+
+/* pagination */
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #20CC90;
+    border-color: #20CC90;
+}
+
+
+/* side-bar hmbergericon */
+.hamburger-icon {
+    width: 20px;
+    height: 14px;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.hamburger-icon span {
+    background-color: black;
+    position: absolute;
+    border-radius: 2px;
+    -webkit-transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    transition: .3s cubic-bezier(.8, .5, .2, 1.4);
+    width: 100%;
+    height: 2px;
+    display: block;
+    left: 0;
+}
+
+.hamburger-icon span:nth-child(1) {
+    top: 0;
+    width: 80%;
+}
+
+.hamburger-icon span:nth-child(2) {
+    top: 6px;
+}
+
+.hamburger-icon span:nth-child(3) {
+    bottom: 0;
+    width: 60%;
+}
+
+.vertical-menu-btn:hover .hamburger-icon:not(.open) span:nth-child(1) {
+    top: -1px;
+}
+
+@media(min-width: 768px) {
+    .main-wrapper {
+        padding-left: 285px;
+    }
+}

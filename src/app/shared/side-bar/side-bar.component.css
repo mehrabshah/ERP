@@ -1,0 +1,156 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 285px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    color: #BCC2D6;
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.scroll-sidebar {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+
+.sidebar.toggleSidebar {
+    width: 60px;
+}
+
+.sidebar .sidebar-header {
+    padding: 23px 0px;
+    border-bottom: 1px solid;
+}
+
+.sidebar .sidebar-header img {
+    cursor: pointer;
+}
+
+.sidebar .sidebar-header h3 {
+    font-size: 20px;
+}
+
+.nav {
+    list-style: none;
+    padding-top: 25px;
+
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    border-radius: 40px;
+    padding: 2px 20px 2px 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.nav-item a {
+    color: #363636;
+    text-decoration: none;
+    user-select: none;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.arrow-icon {
+    margin-left: auto;
+}
+
+.nav-item i {
+    color: #363636;
+}
+
+.nav-item.active,
+.nav-item.active a {
+    color: #ffffff;
+    background-color: #20CC90;
+}
+
+.nav-item.active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-item.active i {
+    color: #ffffff;
+}
+
+.active-svg {
+    filter: brightness(0) invert(1); /* Converts the image to white */
+}
+
+
+.nav>li>a:hover,
+.nav>li>a:focus .nav-item:hover,
+.nav-item a:hover {
+    background-color: transparent !important;
+}
+
+.nav-item i {
+    font-size: 15px;
+}
+
+.nav-list-open {
+    display: block;
+}
+
+.footer {
+    cursor: pointer;
+}
+
+.active {
+    color: white;
+}
+
+.user-profile .Profile-image {
+    height: auto;
+    width: 100px;
+    border-radius: 56px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.user-profile .header-title {
+    font-size: 30px;
+    color: #363636;
+}
+
+.user-profile .profile-name {
+    font-size: 12px;
+    color: #363636;
+}
+
+.Profile-arrow {
+    width: 13px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .nav-list-open {
+        z-index: 9999;
+    }
+    .user-profile .header-title {
+        font-size: 18px;
+    }
+    .nav-item {
+        display: flex;
+        align-items: center;
+        margin: 4px;
+        border-radius: 20px;
+        padding: 9px 17px 9px 10px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+}

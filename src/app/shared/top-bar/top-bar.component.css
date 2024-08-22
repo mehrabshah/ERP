@@ -1,0 +1,106 @@
+
+.topbar-wrapper {
+    position: fixed;
+    top: 0;
+    left: 285px;
+    right: 0;
+    z-index: 998;
+    transition: all 0.5s ease;
+}
+
+.topbar-wrapper.full-wrap {
+    left: 60px;
+}
+
+.header {
+    background-color: white;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.topBar-title {
+    color: #363636;
+    font-size: 36px;
+}
+
+.Profile .Profile-text {
+    font-size: 16px;
+    color: #374557;
+    cursor: pointer;
+}
+.notification-image{
+    width: 25px;
+}
+.Profile .Profile-image {
+    width: 30px;
+}
+
+.Profile .Profile-arrow {
+    width: 13px;
+    cursor: pointer;
+}
+
+.drop-item {
+    width: 16px;
+}
+
+.dropdown-item {
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: -165px;
+    top: 35px;
+    width: 200px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-right: 60px;
+}
+
+input[type="text"] {
+    padding: 8px 33px;
+    border-radius: 8px;
+    border: none;
+}
+
+.search-bar {
+    width: 100%;
+    padding-left: 35px; /* Add padding to make space for the icon */
+    height: auto;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #ECF1F5;
+    margin-bottom:  0px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+    color: #20CC90;
+}
+@media (min-width: 992px) {
+    .search-bar {
+        width: 25rem;
+    }
+}
+@media (max-width: 992px) {
+    .topBar-title {
+        font-size: 20px;
+    }
+    .search-bar {
+        width: 10rem;
+    }
+}

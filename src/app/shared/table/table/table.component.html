@@ -1,0 +1,171 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-center justify-content-between">
+                <div class="d-flex justify-content-center align-items-center">
+                    <h5 class="mb-0 me-5">Sales Order</h5>
+                    <div class="col-xs-3 col-sm-auto">
+                        <input id="table-complete-search" type="text" class="form-control h-auto" name="searchTerm"
+                            [(ngModel)]="service.searchTerm" placeholder="search..." />
+                    </div>
+                    <div *ngIf="service.loading$ | async" class="col col-form-label ms-3">
+                        Loading...
+                    </div>
+                </div>
+
+                <div>
+                    <button class="btn btn-success">New</button>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center justify-content-between mt-3 mb-3">
+                <div>
+                    <button class="header-btn" [ngClass]="{'active': activeButton === 'All'}"
+                        (click)="setActive('All')">
+                        All
+                    </button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeButton === 'New'}"
+                        (click)="setActive('New')">
+                        New
+                    </button>
+                    <button class="header-btn" [ngClass]="{'active': activeButton === 'Confirmed'}"
+                        (click)="setActive('Confirmed')">
+                        Confirmed
+                    </button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeButton === 'Wait for Loading'}"
+                        (click)="setActive('Wait for Loading')">
+                        Wait for Loading
+                    </button>
+                    <button class="header-btn" [ngClass]="{'active': activeButton === 'Partially Dispatched'}"
+                        (click)="setActive('Partially Dispatched')">
+                        Partially Dispatched
+                    </button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeButton === 'Dispatched'}"
+                        (click)="setActive('Dispatched')">
+                        Dispatched
+                    </button>
+                    <button class=" header-btn" [ngClass]="{'active': activeButton === 'Void'}"
+                        (click)="setActive('Void')">
+                        Void
+                    </button>
+                </div>
+
+                <div>
+                    <button class="header-btn mx-2" [ngClass]="{'active': activeFileButton === 'AllFile'}"
+                        (click)="setActiveFile('AllFile')">All</button>
+                    <button class="header-btn mx-2" [ngClass]="{'active': activeFileButton === 'Excel'}"
+                        (click)="setActiveFile('Excel')">Excel</button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeFileButton === 'Csv'}"
+                        (click)="setActiveFile('Csv')">Csv</button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeFileButton === 'Print'}"
+                        (click)="setActiveFile('Print')">Print</button>
+                    <button class=" header-btn mx-2" [ngClass]="{'active': activeFileButton === 'coloumnVisible'}"
+                        (click)="setActiveFile('coloumnVisible')">Coloumn Visibility</button>
+                </div>
+            </div>
+            <form>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">SNo.</th>
+                                <th scope="col" sortable="customers" (sort)="onSort($event)" class="table-header">
+                                    Customers
+                                    <span *ngIf="sortColumn === 'customers'">
+                                        <i *ngIf="sortDirection === 'asc'" class="fa fa-arrow-up"></i>
+                                        <i *ngIf="sortDirection === 'desc'" class="fa fa-arrow-down"></i>
+                                    </span>
+                                </th>
+                                <th scope="col" sortable="region" (sort)="onSort($event)" class="table-header">
+                                    Region
+                                    <span *ngIf="sortColumn === 'region'">
+                                        <i *ngIf="sortDirection === 'asc'" class="fa fa-arrow-up"></i>
+                                        <i *ngIf="sortDirection === 'desc'" class="fa fa-arrow-down"></i>
+                                    </span>
+                                </th>
+                                <th scope="col" sortable="date" (sort)="onSort($event)" class="table-header">
+                                    Date
+                                </th>
+                                <th scope="col" sortable="confirmDate" (sort)="onSort($event)" class="table-header">
+                                    Confirm Date
+                                </th>
+                                <th scope="col" sortable="confirmation" (sort)="onSort($event)" class="table-header">
+                                    Confirmation
+                                </th>
+                                <th scope="col" sortable="quantity" (sort)="onSort($event)" class="table-header">
+                                    Quantity
+                                </th>
+                                <th scope="col" sortable="amount" (sort)="onSort($event)" class="table-header">
+                                    Amount
+                                    <span *ngIf="sortColumn === 'amount'">
+                                        <i *ngIf="sortDirection === 'asc'" class="fa fa-arrow-up"></i>
+                                        <i *ngIf="sortDirection === 'desc'" class="fa fa-arrow-down"></i>
+                                    </span>
+                                </th>
+                                <th scope="col" sortable="preparedBy" (sort)="onSort($event)" class="table-header">
+                                    Prepared By
+                                </th>
+                                <th scope="col" sortable="approvedBy" (sort)="onSort($event)" class="table-header">
+                                    Approved By
+                                </th>
+                                <th scope="col" sortable="status" (sort)="onSort($event)" class="table-header">
+                                    Status
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (sale of sales$ | async; track sale.id) {
+                            <tr>
+                                <td scope="row">{{ sale.id }}</td>
+                                <td>
+                                    <!-- <img [src]="'https://upload.wikimedia.org/wikipedia/commons/' + country.flag"
+                                        [alt]="'The flag of ' + country.name" class="me-2" style="width: 20px" /> -->
+                                    <ngb-highlight [result]="sale.customers" [term]="service.searchTerm" />
+                                </td>
+                                <td><ngb-highlight [result]="sale.region" [term]="service.searchTerm" /></td>
+                                <td>{{sale.date}}</td>
+                                <td>{{sale.confirmDate}}</td>
+                                <td>
+                                    <button class="btn confirmation-btn me-1" [ngClass]="{
+                                            'btn-outline-danger': sale.confirmation !== 'cancel',
+                                            'btn-danger': sale.confirmation === 'cancel'
+                                        }" [disabled]="sale.confirmation !== 'cancel'">
+                                        Cancel
+                                    </button>
+                                    <button class="btn confirmation-btn" [ngClass]="{
+                                            'btn-outline-success': sale.confirmation !== 'confirm',
+                                            'btn-success': sale.confirmation === 'confirm'
+                                        }" [disabled]="sale.confirmation !== 'confirm'">
+                                        Confirm
+                                    </button>
+                                </td>
+
+                                <td>{{sale.quantity }}</td>
+                                <td><ngb-highlight [result]="sale.amount | number" [term]="service.searchTerm" /></td>
+                                <td>{{sale.preparedBy}}</td>
+                                <td>{{sale.approvedBy}}</td>
+                                <td>{{sale.status}}</td>
+                            </tr>
+                            } @empty {
+                            <tr>
+                                <td colspan="12" style="text-align: center">No sales found</td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex justify-content-between p-2">
+                    <ngb-pagination [collectionSize]="(total$ | async)!" [(page)]="service.page"
+                        [pageSize]="service.pageSize">
+                    </ngb-pagination>
+
+                    <select class="form-select" style="width: auto" name="pageSize" [(ngModel)]="service.pageSize">
+                        <option [ngValue]="2">2 items per page</option>
+                        <option [ngValue]="4">4 items per page</option>
+                        <option [ngValue]="6">6 items per page</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

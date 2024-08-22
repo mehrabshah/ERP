@@ -1,0 +1,31 @@
+<div class="sidebar" [class.toggleSidebar]="toggleSidebar">
+    <div class="scroll-sidebar">
+        <div>
+            <div class="d-flex align-items-center user-profile mt-3 ms-4">
+                <ng-container *ngIf="!toggleSidebar">
+                    <img src="assets/images/dummy logo.png" class="img-fluid me-2" style="width: 56px;" routerLink="">
+                </ng-container>
+                <div class="ml-2">
+                    <h3 class="m-0" *ngIf="toggleSidebar">L.</h3>
+                    <h6 *ngIf="!toggleSidebar" class="header-title m-0">
+                        {{userName}}
+                    </h6>
+                </div>
+            </div>
+
+            <ul class="nav flex-column">
+                <li class="nav-item" [routerLinkActive]="['active']" routerLink="{{item.link}}" *ngFor="let item of list">
+                   <img src="{{item.icon}}" class="img-fluid side-bar-img" 
+                         [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
+                         [ngClass]="{'active-svg': isActive(item.link)}">
+                
+                    <ng-container *ngIf="!toggleSidebar">
+                        <a class="nav-link">{{item.name}}</a>
+                        <i class="fa-solid fa-angle-down arrow-icon"></i>
+                    </ng-container>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
