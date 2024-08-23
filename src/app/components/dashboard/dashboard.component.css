@@ -32,11 +32,22 @@ td {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 10px;
+    padding: 0px 0px !important;
+}
+
+.table > :not(caption) > * > * {
+    padding: .4rem .5rem !important;
 }
 
 .table-row {
     background-color: #f9fafc;
     border: 1px solid #f9fafc;
+    vertical-align: middle;
+}
+
+.table-wrapper{
+   height: 55vh;
+   overflow-y: scroll;
 }
 
 .table-row td,
@@ -44,6 +55,14 @@ td {
     border: 1px solid #f9fafc;
     padding: 8px;
 }
+
+.table-head{
+   position: sticky !important;
+   top:0px !important;
+   z-index:1 !important;   
+}
+
+
 
 .checkbox {
     color: #20CC90;
@@ -121,7 +140,7 @@ input[type="text"] {
     color: #363636;
     border: 1px solid transparent; 
     border-radius: 8px; 
-    padding: 5px 15px; 
+    padding: 2px 15px; 
     font-size: 14px; 
     cursor: pointer; 
     transition: background-color 0.3s, border-color 0.3s;
