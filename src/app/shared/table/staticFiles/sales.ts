@@ -93,5 +93,5 @@ export const SALES: Sales[] = [
         approvedBy: "Anderson",
         status: "Dispatch"
 	},
-	
+   
 ];

@@ -35,9 +35,9 @@ td {
     padding: 0px 0px !important;
 }
 
-.table > :not(caption) > * > * {
+/* .table > :not(caption) > * > * {
     padding: .4rem .5rem !important;
-}
+} */
 
 .table-row {
     background-color: #f9fafc;
