@@ -118,12 +118,12 @@
                                                 <tbody  class="tbody">
                                                         
                                                         <tr *ngFor="let item of items; let i = index" class=" align-items-center ">
-                                                                <td class="table-row "><input type="checkbox"
+                                                                <td class="table-row  p-0"><input type="checkbox"
                                                                                 class="checkbox"
                                                                                 [(ngModel)]="item.selected"
                                                                                 (change)="updateSelection()" /></td>
                                                          
-                                                                <th class="table-row" scope="row">
+                                                                <th class="table-row p-0" scope="row">
                                                                         {{ item.id }}
                                                                         <img src="assets/images/Group.svg"
                                                                                 class="img-fluid ms-2 me-2"
@@ -134,11 +134,11 @@
                                                                         <img src="assets/images/Group2.svg"
                                                                                 class="img-fluid" style="width: 15px;">
                                                                 </th>
-                                                                <td class="table-row text-center">{{ item.customers }}</td>
-                                                                <td class="table-row">{{ item.region }}</td>
-                                                                <td class="table-row">{{ item.date }}</td>
-                                                                <td class="table-row">{{ item.confirmDate }}</td>
-                                                                <td class="table-row">
+                                                                <td class="table-row p-0 text-center">{{ item.customers }}</td>
+                                                                <td class="table-row p-0">{{ item.region }}</td>
+                                                                <td class="table-row p-0">{{ item.date }}</td>
+                                                                <td class="table-row p-0">{{ item.confirmDate }}</td>
+                                                                <td class="table-row p-0">
                                                                         <button class="confirmation-btn me-1"
                                                                                 [ngClass]="{
                                                                                     'btn-cancel': item.confirmation === 'cancel',
@@ -159,11 +159,11 @@
                                                                         </button>
                                                                     </td>
                                                                     
-                                                                <td class="table-row">{{ item.quantity }}</td>
-                                                                <td class="table-row">{{ item.amount }}</td>
-                                                                <td class="table-row">{{ item.preparedBy }}</td>
-                                                                <td class="table-row">{{ item.approvedBy }}</td>
-                                                                <td class="table-row">{{ item.status }}</td>
+                                                                <td class="table-row p-0">{{ item.quantity }}</td>
+                                                                <td class="table-row p-0">{{ item.amount }}</td>
+                                                                <td class="table-row p-0">{{ item.preparedBy }}</td>
+                                                                <td class="table-row p-0">{{ item.approvedBy }}</td>
+                                                                <td class="table-row p-0">{{ item.status }}</td>
                                                         </tr>
                                                         
                                                 </tbody>

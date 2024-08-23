@@ -26,6 +26,7 @@ td {
     font-size: 14px;
     color: #363636;
     font-weight: 500;
+   
 }
 
 .table {
@@ -35,9 +36,9 @@ td {
     padding: 0px 0px !important;
 }
 
-/* .table > :not(caption) > * > * {
-    padding: .4rem .5rem !important;
-} */
+.table > :not(caption) > * > * {
+    padding: .4rem .2rem !important;
+}
 
 .table-row {
     background-color: #f9fafc;
@@ -55,7 +56,7 @@ td {
 .table-row td,
 .table-row th {
     border: 1px solid #f9fafc;
-    padding: 8px;
+    padding: 8px 0px !important;
 }
 
 
