@@ -50,17 +50,21 @@ td {
    overflow-y: scroll;
 }
 
+
+
 .table-row td,
 .table-row th {
     border: 1px solid #f9fafc;
     padding: 8px;
 }
 
-.table-head{
-   position: sticky !important;
-   top:0px !important;
-   z-index:1 !important;   
-}
+
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 100 ;
+  }
+
 
 
 
