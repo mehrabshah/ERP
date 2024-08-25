@@ -1,8 +1,6 @@
-
 .topbar-wrapper {
     position: fixed;
     top: 0;
-    left: 285px;
     right: 0;
     z-index: 998;
     transition: all 0.5s ease;
@@ -28,15 +26,12 @@
     color: #374557;
     cursor: pointer;
 }
-.notification-image{
-    width: 25px;
-}
+
 .Profile .Profile-image {
     width: 30px;
 }
 
 .Profile .Profile-arrow {
-    width: 13px;
     cursor: pointer;
 }
 
@@ -76,13 +71,14 @@ input[type="text"] {
 
 .search-bar {
     width: 100%;
-    padding-left: 35px; /* Add padding to make space for the icon */
+    padding-left: 35px;
+    /* Add padding to make space for the icon */
     height: auto;
     font-size: 16px;
     outline: none;
     transition: all 0.3s ease;
     background-color: #ECF1F5;
-    margin-bottom:  0px;
+    margin-bottom: 0px;
 }
 
 .search-icon {
@@ -91,16 +87,39 @@ input[type="text"] {
     font-size: 16px;
     color: #20CC90;
 }
+
+.notification-icon {
+    color: #20CC90;
+    border: 0.5px solid #D0E0FF;
+    padding: 6px 7px;
+    border-radius: 7px;
+    font-size: 14px;
+}
+
 @media (min-width: 992px) {
     .search-bar {
         width: 25rem;
     }
+
+    .Profile .Profile-arrow {
+        width: 13px;
+    }
+
+    .topbar-wrapper {
+        left: 285px;
+    }
 }
+
 @media (max-width: 992px) {
     .topBar-title {
         font-size: 20px;
+        margin-left: 25px;
     }
-    .search-bar {
-        width: 10rem;
+
+    .Profile .Profile-arrow {
+        width: 25px;
+    }
+    .topbar-wrapper {
+        left: 250px;
     }
 }

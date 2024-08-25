@@ -6,7 +6,7 @@ body {
 }
 
 .main-wrapper {
-    margin-top: 75px;
+    margin-top: 115px;
     transition: all 0.5s ease;
     /* background-color: #ffffff; */
 }
@@ -15,16 +15,22 @@ body {
     padding-left: 55px;
 }
 
-/* pagination */
-.page-item.active .page-link {
-    z-index: 3;
-    color: #fff;
-    background-color: #20CC90;
-    border-color: #20CC90;
+
+/**----------------------------------for toggle button in top-bar-------------------------------*/
+.collapse-btn {
+    background-color: #fff;
+    border: none;
+    position: fixed;
+    top: 25px;
+    left: 285px;
+    z-index: 999;
+    transition: all 0.5s ease;
 }
 
+.collapse-btn.move-left {
+    left: 62px;
+}
 
-/* side-bar hmbergericon */
 .hamburger-icon {
     width: 20px;
     height: 14px;
@@ -34,7 +40,7 @@ body {
 }
 
 .hamburger-icon span {
-    background-color: black;
+    background-color: #878a99;
     position: absolute;
     border-radius: 2px;
     -webkit-transition: .3s cubic-bezier(.8, .5, .2, 1.4);
@@ -63,25 +69,19 @@ body {
     top: -1px;
 }
 
+/*-------------------------------------------------------------------------------------------------*/
 
-::-webkit-scrollbar {
-    width: 8px;   /* Width of the scrollbar */
-    height: 12px;  /* Height of the scrollbar (for horizontal scrollbars) */
-  }
-  
-  ::-webkit-scrollbar-track {
-    background: #f1f1f1;  /* Light grey background */
-  }
-  
-  ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Dark grey color */
-    border-radius: 14px;    /* Rounded corners */
-    border: 2px solid #f1f1f1; /* Border around thumb */
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Darker color on hover */
-  }
+@media (min-width: 992px) {
+    .collapse-btn {
+        left: 285px;
+    }
+}
+
+@media (max-width: 992px) {
+    .collapse-btn {
+        left: 250px;
+    }
+}
 
 @media(min-width: 768px) {
     .main-wrapper {

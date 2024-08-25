@@ -1,0 +1,201 @@
+.card {
+    border-radius: 12px;
+}
+.card-body {
+    padding: 25px;
+}
+.sale-order {
+    color: #363636;
+    font-size: 20px;
+    font-weight: 600;
+}
+.list-icon {
+    color: #20CC90;
+}
+th {
+    cursor: pointer;
+    font-size: 14px;
+    color: #808191;
+    font-weight: 500;
+}
+.arrow-icon {
+    color: #363636;
+    font-size: 12px;
+}
+td {
+    font-size: 14px;
+    color: #363636;
+    font-weight: 500;
+   
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding: 0px 0px !important;
+}
+
+.table > :not(caption) > * > * {
+    padding: .4rem .2rem !important;
+}
+
+.table-row {
+    background-color: #f9fafc;
+    border: 1px solid #f9fafc;
+    vertical-align: middle;
+}
+
+.table-wrapper{
+   height: 55vh;
+   overflow-y: scroll;
+}
+
+
+
+.table-row td,
+.table-row th {
+    border: 1px solid #f9fafc;
+    padding: 8px 0px !important;
+}
+
+
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 100 ;
+  }
+
+
+
+
+.checkbox {
+    color: #20CC90;
+}
+
+.confirmation-btn {
+    padding: 4px 8px 4px 8px;
+    font-size: 10px;
+}
+
+.header-btn {
+    padding: 4px 8px 4px 8px;
+    font-size: 12px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.header-btn.active {
+    background-color: #20CC90;
+    color: white;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+input[type="text"] {
+    padding: 8px 33px;
+    border-radius: 8px;
+    border: none;
+}
+.new-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 8px 40px;
+    border-radius: 8PX;
+    font-size: 14px;
+    color: white;
+}
+.new-btn:hover {
+    opacity: 0.7;
+}
+
+.search-bar {
+    width: 100%;
+    padding-left: 35px; /* Add padding to make space for the icon */
+    height: auto;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #ECF1F5;
+    margin-bottom:  0px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 10px;
+    font-size: 16px;
+    color: #20CC90;
+}
+
+.filter-icon {
+    position: absolute;
+    right: 10px;
+    font-size: 16px;
+    color: #20CC90;
+    cursor: pointer;
+}
+
+/* confirmation-btn style */
+.confirmation-btn {
+    color: #363636;
+    border: 1px solid transparent; 
+    border-radius: 8px; 
+    padding: 2px 15px; 
+    font-size: 14px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-cancel {
+    background-color: #FF3B30; 
+    border-color: #FF3B30; 
+    color: #fff; 
+}
+
+.btn-outline-cancel {
+    background-color: transparent; 
+    border-color: #FF3B30; 
+}
+
+.btn-confirm {
+    background-color: #20CC90;
+    border-color: #20CC90; 
+    color: #fff;
+}
+
+.btn-outline-confirm {
+    background-color: transparent; 
+    border-color: #20CC90; 
+}
+
+.disabled {
+    cursor: not-allowed; 
+    opacity: 0.6; 
+    border: none;
+}
+
+
+/*  */
+
+
+@media (min-width: 1350px) {
+    .search-bar {
+        width: 45rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .new-btn {
+        padding: 3px 30px;
+        border-radius: 8PX;
+        font-size: 12px;
+    }
+    .search-bar {
+        width: 10rem;
+    }
+}

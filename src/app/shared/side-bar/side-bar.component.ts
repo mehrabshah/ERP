@@ -15,7 +15,7 @@ export class SideBarComponent {
   @Input() moduleType: any = '';
 
   userName: string = 'LOGO';
-  adminList: any = [
+  sideBarList: any = [
     {
       id: '1',
       name: 'Sales',
@@ -120,7 +120,7 @@ export class SideBarComponent {
 
   constructor(private router: Router, private sharedService: SharedServiceService) { }
   ngOnInit(): void {
-    this.list = this.adminList;
+    this.list = this.sideBarList;
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
     if (this.screenWidth < 768) {

@@ -1,6 +1,5 @@
 
 import { Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MainComponentComponent } from './components/main-component/main-component.component';
 import { InventoryComponent } from './components/inventory/inventory.component';
 import { AccountsComponent } from './components/accounts/accounts.component';
@@ -14,11 +13,12 @@ import { ProductionComponent } from './components/production/production.componen
 import { CashAndBankComponent } from './components/cash-and-bank/cash-and-bank.component';
 import { StoreInventoryComponent } from './components/store-inventory/store-inventory.component';
 import { QuantityControlComponent } from './components/quantity-control/quantity-control.component';
+import { SaleComponent } from './components/sale/sale.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: DashboardComponent,
+        component: SaleComponent,
         // path: '',
         // component: MainComponentComponent,
         // // canActivate: [AdminGuard],
@@ -31,7 +31,7 @@ export const routes: Routes = [
     },
     {
         path: 'sales',
-        component: DashboardComponent,
+        component: SaleComponent,
     },
     {
         path: 'inventory',
