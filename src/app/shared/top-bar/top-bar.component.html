@@ -1,10 +1,10 @@
 <section class="topbar-wrapper" [class.full-wrap]="toggleSidebar">
     <div class="header">
         <div class="d-flex justify-content-between">
-            <div class="d-flex align-items-center justify-content-between">
+            <div *ngIf="showTitle" class="d-flex align-items-center justify-content-between">
                 <h4 class="topBar-title">Dashboard</h4>
-               
             </div>
+                        
             <div class="profile d-flex align-items-center  me-3">
                 <div class="search-container">
                     <i class="fa fa-search search-icon"></i>
@@ -66,7 +66,6 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

@@ -4,6 +4,7 @@
 .card-body {
     padding: 25px;
 }
+  
 .sale-order {
     color: #363636;
     font-size: 20px;
@@ -95,6 +96,7 @@ thead tr th {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
 }
 
 input[type="text"] {
@@ -106,9 +108,10 @@ input[type="text"] {
     border: 1px solid #20CC90;
     background-color: #20CC90;
     padding: 8px 40px;
-    border-radius: 8PX;
+    border-radius: 8px;
     font-size: 14px;
     color: white;
+    white-space: nowrap; 
 }
 .new-btn:hover {
     opacity: 0.7;
@@ -138,6 +141,7 @@ input[type="text"] {
     font-size: 16px;
     color: #20CC90;
     cursor: pointer;
+    z-index: 1;
 }
 
 /* confirmation-btn style */
@@ -190,12 +194,37 @@ input[type="text"] {
 }
 
 @media (max-width: 992px) {
-    .new-btn {
+    /* .new-btn {
         padding: 3px 30px;
         border-radius: 8PX;
         font-size: 12px;
+    } */
+    /* .search-bar {
+        width: 10rem;
+    } */
+}
+
+@media (min-width: 576px) {
+    .new-btn-section{
+        justify-content: end;
+    }
+}
+
+@media (max-width: 576px) {
+    .new-btn {
+        padding: 8px 20px;
+        font-size: 12px; 
+    }
+    .new-btn-section{
+        margin-top: 15px;
+        justify-content: center;
+    }
+    .search-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px;
     }
     .search-bar {
-        width: 10rem;
+        padding-right: 30px; 
     }
 }

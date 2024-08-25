@@ -15,25 +15,27 @@ export class TopBarComponent {
   menuStatus: boolean = false;
   toggleSidebar: any = false;
   screenWidth: number | undefined;
-
+  showTitle: boolean = false;
 
   isDropdownVisible: boolean = false;
   isDropdownLangVisible: boolean = false;
   userName: string = "Rick";
-  constructor(private sharedService: SharedServiceService, 
+  constructor(private sharedService: SharedServiceService,
     private router: Router) { }
 
   ngOnInit(): void {
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
+    this.checkScreenSize();
     if (this.screenWidth < 768) {
+      this.showTitle = false;
       this.toggleSidebar = true;
     }
   }
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
-  toggleLangDropdown(){
+  toggleLangDropdown() {
     this.isDropdownLangVisible = !this.isDropdownLangVisible;
   }
   logout() {
@@ -53,13 +55,16 @@ export class TopBarComponent {
   @HostListener('window:resize', ['$event'])
   onWindowResize(event: any) {
     this.screenWidth = window.innerWidth;
+    this.checkScreenSize();
+  }
+  private checkScreenSize() {
+    this.showTitle = window.innerWidth > 786;
+  }
+  updateProfile() {
+
   }
 
-  updateProfile(){
+  resetPassword() {
 
-  }
-
-  resetPassword(){
-    
   }
 }

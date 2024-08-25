@@ -1,12 +1,14 @@
 <div class="sidebar" [class.toggleSidebar]="toggleSidebar">
     <div class="scroll-sidebar">
         <div>
+            <ng-container *ngIf="toggleSidebar">
+                <img src="assets/images/dummy logo.png" class="img-fluid d-flex align-items-center mt-3 ml-3" style="width: 40px;" routerLink="">
+            </ng-container>
             <div class="d-flex align-items-center user-profile mt-3 ms-4">
                 <ng-container *ngIf="!toggleSidebar">
                     <img src="assets/images/dummy logo.png" class="img-fluid me-2" style="width: 56px;" routerLink="">
                 </ng-container>
                 <div class="ml-2">
-                    <h3 class="m-0" *ngIf="toggleSidebar">L.</h3>
                     <h6 *ngIf="!toggleSidebar" class="header-title m-0">
                         {{userName}}
                     </h6>
