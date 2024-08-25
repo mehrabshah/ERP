@@ -1,7 +1,7 @@
 <section class="topbar-wrapper" [class.full-wrap]="toggleSidebar">
     <div class="header">
         <div class="d-flex justify-content-between">
-            <div *ngIf="showTitle" class="d-flex align-items-center justify-content-between">
+            <div *ngIf="showTitle" class="d-xl-flex d-none align-items-center justify-content-between">
                 <h4 class="topBar-title">Dashboard</h4>
             </div>
                         
@@ -35,7 +35,7 @@
                     <i class="fa-regular fa-bell notification-icon"></i>
                 </div>
 
-                <div class="d-flex flex-row align-items-center justify-content-center Profile"
+                <div class="d-xl-flex d-none flex-row align-items-center justify-content-center Profile"
                     (click)="toggleDropdown()">
 
                     <img src="assets/images/profileImage.png" class="img-fluid Profile-image me-2">

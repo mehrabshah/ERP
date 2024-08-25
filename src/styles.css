@@ -72,19 +72,29 @@ body {
 /*-------------------------------------------------------------------------------------------------*/
 
 @media (min-width: 992px) {
-    .collapse-btn {
+    /* .collapse-btn {
         left: 285px;
+    } */
+    .main-wrapper {
+        padding-left: 285px !important;
     }
+    
 }
 
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .collapse-btn {
         left: 250px;
     }
-}
+} */
 
 @media(min-width: 768px) {
     .main-wrapper {
-        padding-left: 285px;
+        padding-left: 250px;
     }
+   
 }
+
+
+
+
+
