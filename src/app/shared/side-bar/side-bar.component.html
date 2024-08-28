@@ -20,7 +20,7 @@
                 <li *ngFor="let item of sideBarList">
                     <!-- Main link with icon -->
                     <div class="nav-item" [routerLinkActive]="['active']">
-                        <div class="d-flex align-items-center main-nav" (click)="toggleDropdown(item)">
+                        <div class="d-flex align-items-center main-nav">
                             <img src="{{item.icon}}" class="img-fluid side-bar-img"
                                 [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
                                 [ngClass]="{'active-svg': isActive(item.link)}">
@@ -29,7 +29,7 @@
                                 <a class="nav-link main-item" [routerLink]="item.link">
                                     {{item.name}}
                                 </a>
-                                <i class="fa-solid fa-angle-down main-arrow-icon ms-auto"></i>
+                                <i class="fa-solid fa-angle-down main-arrow-icon ms-auto" (click)="toggleDropdown(item)"></i>
                             </ng-container>
                         </div>
 
