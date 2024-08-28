@@ -6,6 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SALES } from '../../shared/table/staticFiles/sales';
 import { Sales } from '../../shared/table/staticFiles/sale';
+import { Router } from '@angular/router';
+import { SharedServiceService } from '../../shared/service/shared-service.service';
 
 
 @Component({
@@ -22,7 +24,7 @@ export class SaleComponent {
   activeButton: string = 'All'; 
   activeFileButton: string = 'AllFile';
 
-  constructor() {
+  constructor(private router: Router, private sharedService: SharedServiceService) {
   }
 
   toggleAll(event: any): void {
@@ -44,5 +46,11 @@ export class SaleComponent {
 
   setActiveFile(buttonName: string) {
     this.activeFileButton = buttonName;
+  }
+
+  createSaleOrder(){
+    console.log("clikc**************")
+    this.sharedService.setTopBarTitle({ success: true, title: "Sales Orders" });
+    this.router.navigate(['/sales/transaction/arReceipt']);
   }
 }

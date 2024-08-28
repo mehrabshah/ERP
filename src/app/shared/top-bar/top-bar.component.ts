@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, HostListener, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, HostListener, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { SharedServiceService } from '../service/shared-service.service';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
@@ -20,10 +21,27 @@ export class TopBarComponent {
   isDropdownVisible: boolean = false;
   isDropdownLangVisible: boolean = false;
   userName: string = "Rick";
-  constructor(private sharedService: SharedServiceService,
+  isTopBarTitle: any = "Dashboard";
+  constructor(private sharedService: SharedServiceService,private cdr: ChangeDetectorRef,
     private router: Router) { }
 
+    setTopBarTitle() {
+      this.sharedService.getTopBarTitle().subscribe((res: any) => {
+        if (res) {
+          console.log("res****",res)
+          console.log("res****",res.title)
+          this.isTopBarTitle = res.title;
+          this.cdr.detectChanges();
+          console.log("this.isTopBarTitle",this.isTopBarTitle)
+        }
+      }, (error: any) => {
+      });
+
+      return of(this.isTopBarTitle); 
+    }
+
   ngOnInit(): void {
+    this.setTopBarTitle();
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
     this.checkScreenSize();
@@ -32,6 +50,9 @@ export class TopBarComponent {
       this.toggleSidebar = true;
     }
   }
+
+
+
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }

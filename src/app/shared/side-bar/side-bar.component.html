@@ -2,7 +2,8 @@
     <div class="scroll-sidebar">
         <div>
             <ng-container *ngIf="toggleSidebar">
-                <img src="assets/images/dummy logo.png" class="img-fluid d-flex align-items-center mt-3 ml-3" style="width: 40px;" routerLink="">
+                <img src="assets/images/dummy logo.png" class="img-fluid d-flex align-items-center mt-3 ml-3"
+                    style="width: 40px;" routerLink="">
             </ng-container>
             <div class="d-flex align-items-center user-profile mt-3 ms-4">
                 <ng-container *ngIf="!toggleSidebar">
@@ -16,6 +17,62 @@
             </div>
 
             <ul class="nav flex-column">
+                <li *ngFor="let item of sideBarList">
+                    <!-- Main link with icon -->
+                    <div class="nav-item" [routerLinkActive]="['active']">
+                        <div class="d-flex align-items-center main-nav" (click)="toggleDropdown(item)">
+                            <img src="{{item.icon}}" class="img-fluid side-bar-img"
+                                [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
+                                [ngClass]="{'active-svg': isActive(item.link)}">
+
+                            <ng-container *ngIf="!toggleSidebar">
+                                <a class="nav-link main-item" [routerLink]="item.link">
+                                    {{item.name}}
+                                </a>
+                                <i class="fa-solid fa-angle-down main-arrow-icon ms-auto"></i>
+                            </ng-container>
+                        </div>
+
+                        <!-- First-level Dropdown -->
+                        <div class="dropdown-container" [ngClass]="{'show': item.isOpen}"
+                            *ngIf="item.child && item.child.length > 0">
+                            <ng-container *ngFor="let child of item.child">
+                                <div class="dropdown-item-container">
+                                    <a (click)="toggleDropdown(child)" class="nav-link dropdown-item">
+                                        <ng-container *ngIf="!child.isOpen">
+                                            <i class="fa-solid fa-angle-right arrow-icon ms-2"
+                                                *ngIf="child.children && child.children.length > 0"></i>
+                                        </ng-container>
+                                        <ng-container *ngIf="child.isOpen">
+                                            <i class="fa-solid fa-angle-down arrow-icon ms-2"
+                                                *ngIf="child.children && child.children.length > 0"></i>
+                                        </ng-container>
+
+                                        {{child.name}}
+                                    </a>
+
+                                    <!-- Second-level Dropdown (nested inside the first) -->
+                                    <div class="nested-dropdown-container" [ngClass]="{'show': child.isOpen}"
+                                        *ngIf="child.children && child.children.length > 0">
+                                        <a *ngFor="let subChild of child.children" [routerLink]="subChild.subLink"
+                                            routerLinkActive="active"
+                                            class="nav-link dropdown-item nested-dropdown-item">
+                                            {{subChild.name}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </ng-container>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+
+
+
+
+
+            <!-- <ul class="nav flex-column">
                 <li class="nav-item" [routerLinkActive]="['active']" routerLink="{{item.link}}" *ngFor="let item of list">
                    <img src="{{item.icon}}" class="img-fluid side-bar-img" 
                          [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
@@ -27,7 +84,7 @@
                     </ng-container>
                 </li>
                 
-            </ul>
+            </ul> -->
         </div>
     </div>
 </div>
