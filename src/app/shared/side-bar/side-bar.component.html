@@ -41,7 +41,7 @@
                             *ngIf="item.child && item.child.length > 0">
                             <ng-container *ngFor="let child of item.child">
                                 <div class="dropdown-item-container">
-                                    <a (click)="toggleChildDropdown(child)" class="nav-link dropdown-item">
+                                    <a (click)="toggleChildDropdown(item,child)" class="nav-link dropdown-item">
                                         <ng-container *ngIf="!child.isChildOpen">
                                             <i class="fa-solid fa-angle-right arrow-icon ms-2"
                                                 *ngIf="child.children && child.children.length > 0"></i>

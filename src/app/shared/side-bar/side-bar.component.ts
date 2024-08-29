@@ -14,6 +14,9 @@ export class SideBarComponent {
   @Input() sideNavStatus: boolean = false;
   @Input() moduleType: any = '';
 
+  mainMenu: boolean = false;
+  subMainMenu: boolean = false;
+
   userName: string = 'LOGO';
   sideBarList: any = [
     {
@@ -300,13 +303,29 @@ export class SideBarComponent {
   isActive(link: string): boolean {
     return this.router.url === link;
   }
-  
+
   toggleDropdown(item: any) {
-    item.isMainOpen = !item.isMainOpen; 
+    this.sideBarList.forEach((menuItem: any) => {
+      if (menuItem !== item) {
+        menuItem.isMainOpen = false;
+        menuItem.child.forEach((child: any) => {
+          child.isChildOpen = false;
+        });
+      }
+    });
+    item.isMainOpen = !item.isMainOpen;
   }
 
-  toggleChildDropdown(item: any) {
-    item.isChildOpen = !item.isChildOpen; 
+
+  toggleChildDropdown(parentItem: any, item: any) {
+    if (parentItem.isMainOpen) {
+      parentItem.child.forEach((child: any) => {
+        if (child !== item) {
+          child.isChildOpen = false;
+        }
+      });
+      item.isChildOpen = !item.isChildOpen;
+    }
   }
 
   toggleSidebarFun() {
