@@ -49,6 +49,10 @@
 .nav-item {
     display: flex;
     flex-direction: column; 
+   
+}
+
+.main-nav {
     margin: 3px 15px;
     border-radius: 10px;
     padding: 2px 20px;
@@ -58,7 +62,7 @@
 }
 
 /* Main item active state */
-.nav-item.active {
+.nav-item .main-nav.active {
     background-color: #20CC90; 
     color: #ffffff; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -72,7 +76,19 @@
     margin-top: 5px;
     min-width: 100%;
     display: none; 
+    left: 15px;
 }
+
+.dropdown-container a {
+    color: #363636;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.dropdown-container a.active {
+    color: #20CC90;
+}
+
 
 .dropdown-container.show {
     display: block; 
@@ -87,6 +103,7 @@
     margin-top: 5px;
     min-width: 100%;
     display: none;
+    left: 10px;
 }
 
 .nested-dropdown-container.show {
@@ -106,8 +123,17 @@
     background-color: #f1f1f1; 
 }
 
-.nav-item .main-arrow-icon {
+.main-nav .main-arrow-icon {
     color: #363636;
+}
+
+.main-nav .main-arrow-icon.active {
+    color: #ffffff;
+}
+
+.arrow-icon,
+.main-arrow-icon {
+    cursor: pointer;
 }
 
 .dropdown-item {
@@ -134,13 +160,8 @@
     background-color: #f1f1f1;
 }
 
-.nested-dropdown-item.active {
-    color: #20CC90;
-}
-
 .active-svg {
     filter: brightness(0) invert(1);
-    /* Converts the image to white */
 }
 
 
@@ -178,11 +199,6 @@
 .user-profile .profile-name {
     font-size: 12px;
     color: #363636;
-}
-
-.Profile-arrow {
-    width: 13px;
-    cursor: pointer;
 }
 
 

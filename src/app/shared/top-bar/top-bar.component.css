@@ -96,6 +96,44 @@ input[type="text"] {
     font-size: 14px;
 }
 
+.nav-item a {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+a {
+    color: #363636;
+    cursor: pointer;
+}
+a:hover {
+    color: #363636;
+}
+
+.nav-item a.active {
+    color: #20CC90 !important;
+}
+
+.activeClass {
+    color: #20CC90;
+}
+
+.larger {
+    font-size: 1.5em;
+    transform: scale(1.2);
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.nav-item .nav-link {
+    font-size: 1em;
+    transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.main-arrow-icon {
+    color: #20CC90;
+    font-size: 12px;
+}
+
 @media (min-width: 992px) {
     .search-bar {
         width: 25rem;

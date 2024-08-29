@@ -1,17 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectorRef, Component, EventEmitter, HostListener, Output } from '@angular/core';
-import { Router } from '@angular/router';
+import {  Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import {  Router, RouterLink, RouterModule } from '@angular/router';
 import { SharedServiceService } from '../service/shared-service.service';
-import { of } from 'rxjs';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink,RouterModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
 export class TopBarComponent {
+  @Input() toBarTitle: string = '';
+  @Input() showtopNav: boolean = false;
+
   @Output() toggled = new EventEmitter<boolean>();
   menuStatus: boolean = false;
   toggleSidebar: any = false;
@@ -21,27 +23,38 @@ export class TopBarComponent {
   isDropdownVisible: boolean = false;
   isDropdownLangVisible: boolean = false;
   userName: string = "Rick";
-  isTopBarTitle: any = "Dashboard";
-  constructor(private sharedService: SharedServiceService,private cdr: ChangeDetectorRef,
+
+  topBarList: any = [
+    {
+      id: '1',
+      name: 'Ar Receipt',
+      icon: 'fa fa-xmark',
+      link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '2',
+      name: 'Delivery Challan',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '3',
+      name: 'Sales Invoice',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '4',
+      name: 'Sales Return',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    }
+  ]
+  constructor(private sharedService: SharedServiceService,
     private router: Router) { }
 
-    setTopBarTitle() {
-      this.sharedService.getTopBarTitle().subscribe((res: any) => {
-        if (res) {
-          console.log("res****",res)
-          console.log("res****",res.title)
-          this.isTopBarTitle = res.title;
-          this.cdr.detectChanges();
-          console.log("this.isTopBarTitle",this.isTopBarTitle)
-        }
-      }, (error: any) => {
-      });
-
-      return of(this.isTopBarTitle); 
-    }
 
   ngOnInit(): void {
-    this.setTopBarTitle();
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
     this.checkScreenSize();

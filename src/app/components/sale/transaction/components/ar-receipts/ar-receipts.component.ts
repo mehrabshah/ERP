@@ -14,6 +14,9 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
   styleUrl: './ar-receipts.component.css'
 })
 export class ArReceiptsComponent {
+  toBarTitle:string= 'Sales Orders';
+  showtopNav:boolean= true;
+  
   generalForm!: FormGroup;
   customerId: number = 0;
   statusId: number = 0;
@@ -50,6 +53,40 @@ export class ArReceiptsComponent {
     { id: 3, name: 'Asgar Traders Chak # 111 DB,Yazman' },
     { id: 4, name: 'Mubeen Ali Traders Chak # 117 DB,Yazman' },
   ];
+  summaryData = [
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    }
+  ]
   constructor() { }
   ngOnInit(): void {
     this.generalForm = new FormGroup({

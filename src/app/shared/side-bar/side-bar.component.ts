@@ -22,11 +22,11 @@ export class SideBarComponent {
       icon: 'assets/images/sidebar/sale.svg',
       link: '/sales',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: 'Transaction',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             {
               name: 'AR Receipts',
@@ -42,11 +42,11 @@ export class SideBarComponent {
       icon: 'assets/images/sidebar/inventory.svg',
       link: '/inventory',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -62,11 +62,11 @@ export class SideBarComponent {
       icon: 'assets/images/sidebar/accounts.svg',
       link: '/accounts',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -82,11 +82,11 @@ export class SideBarComponent {
       icon: 'assets/images/sidebar/purchase.svg',
       link: '/purchases',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -102,11 +102,11 @@ export class SideBarComponent {
       icon: 'assets/images/sidebar/receivalble.svg',
       link: '/receivable',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -122,11 +122,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/payable.svg",
       link: '/payables',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -142,11 +142,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/humanResource.svg",
       link: '/humanResource',
       height: '25px',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -162,11 +162,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/assets.svg",
       link: '/assets',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -182,11 +182,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/admin.svg",
       link: '/administration',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -202,11 +202,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/production.svg",
       link: '/production',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -222,11 +222,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/cashAndBank.svg",
       link: '/cashAndBank',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -242,11 +242,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/storeInventory.svg",
       link: '/storeInventory',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -262,11 +262,11 @@ export class SideBarComponent {
       icon: "assets/images/sidebar/qualityControl.svg",
       link: '/qualityControl',
       height: '',
-      isOpen: false,
+      isMainOpen: false,
       child: [
         {
           name: '',
-          isOpen: false,
+          isChildOpen: false,
           children: [
             // {
             //   name: 'AR Receipts',
@@ -302,7 +302,11 @@ export class SideBarComponent {
   }
   
   toggleDropdown(item: any) {
-    item.isOpen = !item.isOpen; // Toggle the dropdown open state
+    item.isMainOpen = !item.isMainOpen; 
+  }
+
+  toggleChildDropdown(item: any) {
+    item.isChildOpen = !item.isChildOpen; 
   }
 
   toggleSidebarFun() {
