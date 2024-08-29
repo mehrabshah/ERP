@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "@ng-select/ng-select/themes/default.theme.css";
+
 
 
 body {
@@ -14,6 +16,18 @@ body {
 .toggled-nav .main-wrapper {
     padding-left: 55px;
 }
+
+.card {
+    border-radius: 12px;
+}
+.card-body {
+    padding: 25px;
+}
+
+.ng-select .ng-select-container {
+    background-color: #F6F6F6 !important;
+    border: none;
+  }
 
 
 /**----------------------------------for toggle button in top-bar-------------------------------*/

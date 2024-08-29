@@ -8,6 +8,7 @@ import { Observable, Subject } from 'rxjs';
 export class SharedServiceService {
 
   private sibarOpened = new Subject<any>();
+  private isTopBarTitle = new Subject<any>();
 
   constructor() { }
 
@@ -16,5 +17,12 @@ export class SharedServiceService {
   }
   getSidebarOpened(): Observable<any> {
     return this.sibarOpened.asObservable();
+  }
+
+  setTopBarTitle(msg:any){
+    this.isTopBarTitle.next(msg);
+  }
+  getTopBarTitle(){
+    return this.isTopBarTitle.asObservable();
   }
 }

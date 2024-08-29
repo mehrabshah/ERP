@@ -2,9 +2,9 @@
     <div class="header">
         <div class="d-flex justify-content-between">
             <div *ngIf="showTitle" class="d-xl-flex d-none align-items-center justify-content-between">
-                <h4 class="topBar-title">Dashboard</h4>
+                <h4 class="topBar-title">{{toBarTitle}}</h4>
             </div>
-                        
+
             <div class="profile d-flex align-items-center  me-3">
                 <div class="search-container">
                     <i class="fa fa-search search-icon"></i>
@@ -12,7 +12,7 @@
                 </div>
                 <div class="d-flex flex-row align-items-center justify-content-center Profile me-5"
                     (click)="toggleLangDropdown()">
-                    
+
                     <img src="assets/images/United.svg" class="img-fluid united-image me-2">
 
                     <h1 class="flex-item mb-0 Profile-text me-2">Eng (US)</h1>
@@ -21,7 +21,7 @@
                         <i class="fa-solid fa-angle-down arrow-icon"></i>
                         <ul *ngIf="isDropdownLangVisible" class="dropdown-menu">
                             <div class="body">
-                                <li class="dropdown-item mb-2 d-flex align-items-center" >
+                                <li class="dropdown-item mb-2 d-flex align-items-center">
                                     <span class="ms-2 text-color">Eng (Brit)</span>
                                 </li>
                                 <li class="dropdown-item d-flex align-items-center">
@@ -62,11 +62,34 @@
                                     <span class="ms-2 text-color">Reset Password</span>
                                 </li>
                             </div>
-                        
+
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
+        <ng-container *ngIf="showtopNav">
+            <div class="row">
+                <div class="col-md-6 mt-4">
+                    <ul class="nav d-flex align-items-center justify-content-between">
+                        <li *ngFor="let item of topBarList" class="nav-item" [routerLinkActive]="['active']"
+                            #rla="routerLinkActive">
+                            <div class="d-flex align-items-center main-nav">
+                                <ng-container *ngIf="!toggleSidebar">
+                                    <a class="nav-link main-item" [routerLink]="item.link"
+                                        [ngClass]="{ 'activeClass': rla.isActive, 'larger': rla.isActive }">
+                                        {{ item.name }}
+                                    </a>
+                                    <i *ngIf="rla.isActive" class="bi bi-x-circle-fill activeClass larger"></i>
+                                    <i *ngIf="rla.isActive" class="{{ item.icon }} main-arrow-icon"></i>
+                                </ng-container>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                </div>
+            </div>
+        </ng-container>
     </div>
 </section>

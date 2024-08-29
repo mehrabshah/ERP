@@ -14,24 +14,27 @@ import { CashAndBankComponent } from './components/cash-and-bank/cash-and-bank.c
 import { StoreInventoryComponent } from './components/store-inventory/store-inventory.component';
 import { QuantityControlComponent } from './components/quantity-control/quantity-control.component';
 import { SaleComponent } from './components/sale/sale.component';
+import { ArReceiptsComponent } from './components/sale/transaction/components/ar-receipts/ar-receipts.component';
 
 export const routes: Routes = [
     {
         path: '',
-        component: SaleComponent,
-        // path: '',
-        // component: MainComponentComponent,
-        // // canActivate: [AdminGuard],
-        // children: [
-        //     {
-        //         path: 'dashboard',
-        //         component: DashboardComponent,
-        //     }
-        // ]
+        redirectTo: 'sales',
+        pathMatch: 'full',
     },
     {
         path: 'sales',
         component: SaleComponent,
+        // children: [
+        //     {
+        //         path: 'transaction/arReceipt',
+        //         component: ArReceiptsComponent,
+        //     }
+        // ]
+    },
+    {
+        path: 'sales/transaction/arReceipt',
+        component: ArReceiptsComponent,
     },
     {
         path: 'inventory',

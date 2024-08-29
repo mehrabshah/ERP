@@ -21,91 +21,260 @@ export class SideBarComponent {
       name: 'Sales',
       icon: 'assets/images/sidebar/sale.svg',
       link: '/sales',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: 'Transaction',
+          isChildOpen: false,
+          children: [
+            {
+              name: 'AR Receipts',
+              subLink: '/sales/transaction/arReceipt'
+            }
+          ]
+        }
+      ]
     },
     {
       id: '2',
       name: 'Inventory',
       icon: 'assets/images/sidebar/inventory.svg',
       link: '/inventory',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '3',
       name: 'Accounts',
       icon: 'assets/images/sidebar/accounts.svg',
       link: '/accounts',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '4',
       name: 'Purchases',
       icon: 'assets/images/sidebar/purchase.svg',
       link: '/purchases',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '5',
       name: 'Receivables',
       icon: 'assets/images/sidebar/receivalble.svg',
       link: '/receivable',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '6',
       name: "Payables",
       icon: "assets/images/sidebar/payable.svg",
       link: '/payables',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '7',
       name: "Human Resources",
       icon: "assets/images/sidebar/humanResource.svg",
       link: '/humanResource',
-      height: '25px'
+      height: '25px',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '8',
       name: "Assets",
       icon: "assets/images/sidebar/assets.svg",
       link: '/assets',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '9',
       name: "Administration",
       icon: "assets/images/sidebar/admin.svg",
       link: '/administration',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '10',
       name: "Production",
       icon: "assets/images/sidebar/production.svg",
       link: '/production',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '11',
       name: "Cash & Bank",
       icon: "assets/images/sidebar/cashAndBank.svg",
       link: '/cashAndBank',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '12',
       name: "Store Inventory",
       icon: "assets/images/sidebar/storeInventory.svg",
       link: '/storeInventory',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     },
     {
       id: '13',
       name: "Quality Control",
       icon: "assets/images/sidebar/qualityControl.svg",
       link: '/qualityControl',
-      height: ''
+      height: '',
+      isMainOpen: false,
+      child: [
+        {
+          name: '',
+          isChildOpen: false,
+          children: [
+            // {
+            //   name: 'AR Receipts',
+            //   subLink: '/sales/transaction/arReceipt'
+            // }
+          ]
+        }
+      ]
     }
 
   ];
@@ -132,6 +301,14 @@ export class SideBarComponent {
     return this.router.url === link;
   }
   
+  toggleDropdown(item: any) {
+    item.isMainOpen = !item.isMainOpen; 
+  }
+
+  toggleChildDropdown(item: any) {
+    item.isChildOpen = !item.isChildOpen; 
+  }
+
   toggleSidebarFun() {
     this.sharedService.getSidebarOpened().subscribe((res: any) => {
       this.toggleSidebar = res;

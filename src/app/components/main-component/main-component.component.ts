@@ -2,13 +2,12 @@ import { Component, HostListener } from '@angular/core';
 import { SharedServiceService } from '../../shared/service/shared-service.service';
 import { SideBarComponent } from '../../shared/side-bar/side-bar.component';
 import { RouterOutlet } from '@angular/router';
-import { TopBarComponent } from '../../shared/top-bar/top-bar.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-main-component',
   standalone: true,
-  imports: [CommonModule,RouterOutlet,SideBarComponent,TopBarComponent],
+  imports: [CommonModule,RouterOutlet,SideBarComponent],
   templateUrl: './main-component.component.html',
   styleUrl: './main-component.component.css'
 })

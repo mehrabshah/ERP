@@ -4,7 +4,7 @@ import { Sales } from "./sale";
 export const SALES: Sales[] = [
 	{
 		id: 1,
-		customers: 'Russia',
+		customers: '1770-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
@@ -17,7 +17,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 2,
-        customers: 'Samberson',
+        customers: '1771-Al Karam',
         region: "Lahore,Punjab",
 		date: "23/08/22",
 		confirmDate: "07/10/24",
@@ -30,7 +30,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 3,
-        customers: 'Grew',
+        customers: '1772-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
@@ -43,7 +43,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 4,
-        customers: 'Russia',
+        customers: '1774-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
@@ -56,7 +56,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 5,
-        customers: 'Russia',
+        customers: '1777-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
@@ -69,7 +69,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 6,
-        customers: 'Russia',
+        customers: '17722-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
@@ -82,7 +82,7 @@ export const SALES: Sales[] = [
 	},
 	{
 		id: 7,
-        customers: 'Russia',
+        customers: '1701-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
