@@ -3,12 +3,13 @@ import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-ar-receipts',
   standalone: true,
   imports: [CommonModule, TopBarComponent, NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    FormsModule, ReactiveFormsModule, NgSelectModule
+    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule
   ],
   templateUrl: './ar-receipts.component.html',
   styleUrl: './ar-receipts.component.css'
@@ -23,6 +24,8 @@ export class ArReceiptsComponent {
   shipAdressId: number = 0;
   billAddressId: number = 0;
   descriptionId: number = 0;
+  active = 1;
+
   customersData = [
     { id: 1, name: 'Abbas Ali Traders Chak # 117 DB,Yazman' },
     { id: 2, name: 'Ahmed Ali Traders Chak # 119 BD,Yazmad' },
@@ -104,6 +107,10 @@ export class ArReceiptsComponent {
       orderQty: new FormControl(null),
       price: new FormControl(null),
       extPrice: new FormControl(null),
+      customerInstruction: new FormControl('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nihil, quam perspiciatis nostrum, aliquid dolorum culpa eligendi ratione ducimus possimus in deserunt debitis earum, vitae soluta at accusamus sequi odio.'),
+      item: new FormControl('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nihil, quam perspiciatis nostrum, aliquid dolorum culpa eligendi ratione ducimus possimus in deserunt debitis earum, vitae soluta at accusamus sequi odio.'),
+      officeInstruction: new FormControl('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nihil, quam perspiciatis nostrum, aliquid dolorum culpa eligendi ratione ducimus possimus in deserunt debitis earum, vitae soluta at accusamus sequi odio.'),
+   
     });
   }
 

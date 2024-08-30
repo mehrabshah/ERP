@@ -2,10 +2,6 @@
     margin-top: 160px;
 }
 
-.arrow-icon {
-    color: #20CC90;
-}
-
 .general-title {
     font-size: 20px;
     font-weight: 600;
@@ -17,6 +13,22 @@ label {
     font-size: 14px;
     font-weight: 500;
 }
+
+.ng-select-placeholder {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .search-icon {
+    margin-right: 8px; 
+    color: #20CC90; 
+  }
+  
+  .placeholder-text {
+    font-size: 14px;
+  }
+  
 
 input[type="date"],
 input[type="text"] {
@@ -94,3 +106,29 @@ input[type="text"] {
     font-size: 20px;
     font-weight: 600;
 }
+
+.textarea-field {
+    background-color: #F6F6F6;
+    padding: 5px;
+    border: none;
+}
+
+.nav-tabs {
+    border-bottom: none; 
+  }
+  
+  .nav-tabs .nav-item .nav-link {
+    border: none;
+    border-bottom: 2px solid transparent; 
+    color: #363636; 
+    font-size: 16px;
+    font-weight: 600;
+    padding: 10px 0px 10px 0px; 
+    margin-right: 40px;
+  }
+  
+  .nav-tabs .nav-item .nav-link.active {
+    border-color: #20CC90; 
+    color: #20CC90; 
+  }
+  

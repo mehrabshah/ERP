@@ -8,12 +8,11 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
-        confirmation: "cancel",
+        status: "Close",
         quantity: 25,
         amount: 345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
 	{
 		id: 2,
@@ -21,12 +20,11 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "23/08/22",
 		confirmDate: "07/10/24",
-        confirmation: "cancel",
+        status: "New",
         quantity: 67,
         amount: 12345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
 	{
 		id: 3,
@@ -34,12 +32,11 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
-        confirmation: "confirm",
+        status: "Close",
         quantity: 25,
         amount: 345,
         preparedBy: "Dany",
         approvedBy: "Blew",
-        status: "Confirm"
 	},
 	{
 		id: 4,
@@ -47,25 +44,23 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
-        confirmation: "cancel",
+        status: "Void",
         quantity: 25,
         amount: 345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
 	{
 		id: 5,
         customers: '1777-Al Karam',
         region: "Lahore,Punjab",
 		date: "06/08/24",
-		confirmDate: "07/08/24",
-        confirmation: "cancel",
+		confirmDate: "07/08/24", 
+        status: "Dispatch",
         quantity: 25,
         amount: 345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
 	{
 		id: 6,
@@ -73,12 +68,11 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
-        confirmation: "cancel",
+        status: "Open",
         quantity: 25,
         amount: 345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
 	{
 		id: 7,
@@ -86,12 +80,11 @@ export const SALES: Sales[] = [
         region: "Lahore,Punjab",
 		date: "06/08/24",
 		confirmDate: "07/08/24",
-        confirmation: "cancel",
+        status: "Dispatch",
         quantity: 25,
         amount: 345,
         preparedBy: "Rich",
         approvedBy: "Anderson",
-        status: "Dispatch"
 	},
    
 ];

@@ -19,15 +19,19 @@ export class SaleComponent {
   toBarTitle:string= 'Dashboard';
 
   items: any[] = SALES;
+  filteredItems: any[] = [];
 
   activeButton: string = 'All'; 
   activeFileButton: string = 'AllFile';
+  activeOtherButton: string = '';
 
   constructor(private router: Router) {
   }
+
   ngOnInit(): void {
- 
+    this.filteredItems = [...this.items];
   }
+
   toggleAll(event: any): void {
     const isChecked = event.target.checked;
     this.items.forEach(item => item.selected = isChecked);
@@ -43,10 +47,38 @@ export class SaleComponent {
 
   setActive(buttonName: string) {
     this.activeButton = buttonName;
+    this.filterItems();
   }
+
+  // filterItems() {
+  //   if (this.activeButton === '') {
+  //     // If no button is active, show all items
+  //     this.filteredItems = [...this.items];
+  //   } else {
+  //     // Filter items based on the active button value
+  //     this.filteredItems = this.items.filter(item => item.status === this.activeButton);
+  //   }
+  // }
+  filterItems() {
+    if (this.activeButton === '') {
+      this.filteredItems = [...this.items];
+    } else if (this.activeButton === 'Returned') {
+      this.filteredItems = this.items.filter(item => item.status === 'Dispatch');
+    } else if (this.activeButton === 'All') {
+      this.filteredItems = [...this.items];
+    }
+    else {
+      this.filteredItems = this.items.filter(item => item.status === this.activeButton);
+    }
+  }
+  
 
   setActiveFile(buttonName: string) {
     this.activeFileButton = buttonName;
+  }
+
+  setOtherActive(buttonName: string) {
+    this.activeOtherButton = buttonName;
   }
 
   createSaleOrder(){
