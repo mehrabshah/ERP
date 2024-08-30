@@ -22,7 +22,7 @@ export class TableComponent {
   total$: Observable<number>;
   sortColumn: SortColumn = '';
   sortDirection: SortDirection = '';
-
+  
   activeButton: string = 'All'; 
   activeFileButton: string = '';
  

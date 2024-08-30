@@ -1,258 +1,294 @@
 <app-top-bar [toBarTitle]="toBarTitle"></app-top-bar>
 <section class="main-wrapper">
-        <div class="container-fluid">
-                <div class="row">
-                        <div class="col-md-12 col-lg-12">
-                                <div class="card">
-                                        <div class="card-body pb-0">
-                                                <div class="mb-0 d-flex">
-                                                        <img src="assets/images/leftCircle.svg" class="img-fluid"
-                                                                style="cursor: pointer;" />
-                                                        <h5 class="mb-0 ms-4 sale-order">Sales Orders
-                                                        </h5>
-                                                </div>
-                                                <div class="mt-4">
-                                                        <div class="row">
-                                                                <div class="col-lg-6 col-md-8 col-sm-12">
-                                                                        <div class="search-container d-flex">
-                                                                                <select name="filters" id="filters"
-                                                                                        class="filter-field me-3">
-                                                                                        <option value="filter1">Filter
-                                                                                        </option>
-                                                                                        <option value="filter2">Filter2
-                                                                                        </option>
-                                                                                        <option value="filter3">
-                                                                                                Filter3</option>
-                                                                                </select>
-                                                                                <select name="operators" id="operators"
-                                                                                        class="filter-field me-3">
-                                                                                        <option value="operator1">
-                                                                                                Operators
-                                                                                        </option>
-                                                                                        <option value="operator2">
-                                                                                                Operator2
-                                                                                        </option>
-                                                                                        <option value="operator3">
-                                                                                                Operator3</option>
-                                                                                </select>
-                                                                                <input type="text"
-                                                                                        placeholder="Value" />
-                                                                                <button type="button"
-                                                                                        class="filter-btn ms-3">
-                                                                                        <i class="fa fa-plus"></i>
-                                                                                </button>
-                                                                        </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-4 col-sm-12">
-                                                                        <div
-                                                                                class="d-flex align-items-center new-btn-section">
-                                                                                <i class="fa-solid fa-list list-icon me-4"
-                                                                                        style="cursor: pointer;"></i>
-                                                                                <img src="assets/images/file.svg"
-                                                                                        class="img-fluid me-4"
-                                                                                        style="width: 16px; cursor: pointer;" />
-                                                                                <button class="new-btn"
-                                                                                        (click)="createSaleOrder()">+
-                                                                                        New</button>
-                                                                        </div>
-                                                                </div>
-                                                                <div class="col-lg-6 col-md-6 col-sm-12">
-                                                                        <div class="mt-3">
-                                                                                <button type="button"
-                                                                                        class="outline-btn me-3">
-                                                                                        Confirmation
-                                                                                        <i
-                                                                                                class="fa fa-xmark cross-outline ms-2"></i>
-                                                                                </button>
-                                                                                <button type="button"
-                                                                                        class="outline-btn me-3">
-                                                                                        Out Date = 1000
-                                                                                        <i
-                                                                                                class="fa fa-xmark cross-outline ms-2"></i>
-                                                                                </button>
-                                                                                <button type="button"
-                                                                                        class="outline-btn">
-                                                                                        Vehicle No
-                                                                                        <i
-                                                                                                class="fa fa-xmark cross-outline ms-2"></i>
-                                                                                </button>
-                                                                        </div>
-                                                                </div>
-                                                        </div>
-                                                </div>
-
-                                                <div
-                                                        class="d-flex flex-xl-row  flex-column     justify-content-center justify-content-xl-between mt-4 mb-3">
-                                                        <div>
-                                                                <button class="header-btn mx-1"
-                                                                        [ngClass]="{'active': activeButton === 'All'}"
-                                                                        (click)="setActive('All')">
-                                                                        All
-                                                                </button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeButton === 'New'}"
-                                                                        (click)="setActive('New')">
-                                                                        New
-                                                                </button>
-                                                                <button class="header-btn"
-                                                                        [ngClass]="{'active': activeButton === 'Close'}"
-                                                                        (click)="setActive('Close')">
-                                                                        Close
-                                                                </button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeButton === 'Open'}"
-                                                                        (click)="setActive('Open')">
-                                                                        Open
-                                                                </button>
-                                                                <button class=" header-btn"
-                                                                        [ngClass]="{'active': activeButton === 'Void'}"
-                                                                        (click)="setActive('Void')">
-                                                                        Void
-                                                                </button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeButton === 'Returned'}"
-                                                                        (click)="setActive('Returned')">
-                                                                        Returned
-                                                                </button>
-                                                        </div>
-                                                        <div>
-                                                                <button class="header-btn mx-1"
-                                                                        [ngClass]="{'active': activeOtherButton === 'Void'}"
-                                                                        (click)="setOtherActive('Void')">Void</button>
-                                                                <button class="header-btn mx-1"
-                                                                        [ngClass]="{'active': activeOtherButton === 'Void'}"
-                                                                        (click)="setOtherActive('Preview')">Preview</button>
-
-                                                        </div>
-                                                        <div class="mt-xl-0 mt-3">
-                                                                <button class="header-btn mx-1"
-                                                                        [ngClass]="{'active': activeFileButton === 'AllFile'}"
-                                                                        (click)="setActiveFile('AllFile')">All</button>
-                                                                <button class="header-btn mx-1"
-                                                                        [ngClass]="{'active': activeFileButton === 'Excel'}"
-                                                                        (click)="setActiveFile('Excel')">Excel</button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeFileButton === 'Csv'}"
-                                                                        (click)="setActiveFile('Csv')">Csv</button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeFileButton === 'Print'}"
-                                                                        (click)="setActiveFile('Print')">Print</button>
-                                                                <button class=" header-btn mx-1"
-                                                                        [ngClass]="{'active': activeFileButton === 'coloumnVisible'}"
-                                                                        (click)="setActiveFile('coloumnVisible')">Coloumn
-                                                                        Visibility</button>
-                                                        </div>
-                                                </div>
-
-                                                <div class="table-responsive">
-                                                        <table class="table">
-                                                                <thead class="tbody">
-                                                                        <tr>
-                                                                                <th><input class="checkbox"
-                                                                                                type="checkbox"
-                                                                                                (change)="toggleAll($event)"
-                                                                                                [checked]="isAllSelected()" />
-                                                                                </th>
-
-                                                                                <th scope="col">So no
-                                                                                        <i
-                                                                                                class="fa-solid fa-angle-down arrow-icon ms-1"></i>
-                                                                                </th>
-                                                                                <th></th>
-                                                                                <th scope="col">Customers
-                                                                                        <i
-                                                                                                class="fa-solid fa-angle-down arrow-icon ms-1"></i>
-                                                                                </th>
-                                                                                <th scope="col">Region
-                                                                                        <i
-                                                                                                class="fa-solid fa-angle-down arrow-icon ms-1"></i>
-                                                                                </th>
-                                                                                <th scope="col">So Date
-                                                                                        <i
-                                                                                                class="fa-solid fa-angle-down arrow-icon ms-1"></i>
-                                                                                </th>
-                                                                                <th scope="col">Confirm Date</th>
-                                                                                <th scope="col">Status</th>
-                                                                                <th scope="col">Quantity</th>
-                                                                                <th scope="col">Amount</th>
-                                                                                <th scope="col">Prepared by</th>
-                                                                                <th scope="col">Approved by</th>
-                                                                        </tr>
-                                                                </thead>
-
-                                                                <tbody class="tbody">
-
-                                                                        <tr *ngFor="let item of items && filteredItems; let i = index"
-                                                                                class=" align-items-center ">
-                                                                                <td class="table-row "><input
-                                                                                                type="checkbox"
-                                                                                                class="checkbox"
-                                                                                                [(ngModel)]="item.selected"
-                                                                                                (change)="updateSelection()" />
-                                                                                </td>
-
-                                                                                <th class="table-row ">
-                                                                                        {{ item.id }}
-                                                                                </th>
-                                                                                <th class="table-row " scope="row">
-
-                                                                                        <img src="assets/images/Group.svg"
-                                                                                                class="img-fluid me-2"
-                                                                                                style="width: 15px;">
-                                                                                        <img src="assets/images/Group1.svg"
-                                                                                                class="img-fluid me-2"
-                                                                                                style="width: 15px;">
-                                                                                        <img src="assets/images/Group2.svg"
-                                                                                                class="img-fluid me-2"
-                                                                                                style="width: 15px;">
-                                                                                        <img src="assets/images/tableIcon.svg"
-                                                                                                class="img-fluid me-2"
-                                                                                                style="width: 15px;">
-                                                                                        <img src="assets/images/tableCross.svg"
-                                                                                                class="img-fluid"
-                                                                                                style="width: 15px;">
-                                                                                </th>
-                                                                                <td class="table-row  text-center">{{
-                                                                                        item.customers
-                                                                                        }}</td>
-                                                                                <td class="table-row ">{{ item.region
-                                                                                        }}</td>
-                                                                                <td class="table-row ">{{ item.date
-                                                                                        }}</td>
-                                                                                <td class="table-row ">{{
-                                                                                        item.confirmDate }}</td>
-                                                                                <td class="table-row">
-                                                                                        <button type="button"
-                                                                                                class="default-btn"
-                                                                                                [ngClass]="{
-                                                                                                  'voidColor': item.status === 'Void',
-                                                                                                  'confirmation-btn': item.status === 'Dispatch'
-                                                                                                }">
-                                                                                                {{ item.status }}
-                                                                                        </button>
-                                                                                </td>
-
-                                                                                <td class="table-row ">{{
-                                                                                        item.quantity }}</td>
-                                                                                <td class="table-row ">{{ item.amount
-                                                                                        }}</td>
-                                                                                <td class="table-row ">{{
-                                                                                        item.preparedBy }}</td>
-                                                                                <td class="table-row ">{{
-                                                                                        item.approvedBy }}</td>
-                                                                        </tr>
-
-                                                                </tbody>
-
-                                                        </table>
-
-
-
-                                                </div>
-
-                                        </div>
-                                </div>
-                        </div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 col-lg-12">
+        <div class="card">
+          <div class="card-body pb-0">
+            <div class="mb-0 d-flex">
+              <img
+                src="assets/images/leftCircle.svg"
+                class="img-fluid"
+                style="cursor: pointer"
+              />
+              <h5 class="mb-0 ms-4 sale-order">Sales Orders</h5>
+            </div>
+            <div class="mt-4">
+              <div class="row">
+                <div class="col-lg-6 col-md-8 col-sm-12">
+                  <div class="search-container d-flex">
+                    <select
+                      name="filters"
+                      id="filters"
+                      class="filter-field me-3"
+                    >
+                      <option value="filter1">Filter</option>
+                      <option value="filter2">Filter2</option>
+                      <option value="filter3">Filter3</option>
+                    </select>
+                    <select
+                      name="operators"
+                      id="operators"
+                      class="filter-field me-3"
+                    >
+                      <option value="operator1">Operators</option>
+                      <option value="operator2">Operator2</option>
+                      <option value="operator3">Operator3</option>
+                    </select>
+                    <input type="text" placeholder="Value" />
+                    <button type="button" class="filter-btn ms-3">
+                      <i class="fa fa-plus"></i>
+                    </button>
+                  </div>
                 </div>
+                <div class="col-lg-6 col-md-4 col-sm-12">
+                  <div class="d-flex align-items-center new-btn-section">
+                    <i
+                      class="fa-solid fa-list list-icon me-4"
+                      style="cursor: pointer"
+                    ></i>
+                    <img
+                      src="assets/images/file.svg"
+                      class="img-fluid me-4"
+                      style="width: 16px; cursor: pointer"
+                    />
+                    <button class="new-btn" (click)="createSaleOrder()">
+                      + New
+                    </button>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="mt-3">
+                    <button type="button" class="outline-btn me-3">
+                      Confirmation
+                      <i class="fa fa-xmark cross-outline ms-2"></i>
+                    </button>
+                    <button type="button" class="outline-btn me-3">
+                      Out Date = 1000
+                      <i class="fa fa-xmark cross-outline ms-2"></i>
+                    </button>
+                    <button type="button" class="outline-btn">
+                      Vehicle No
+                      <i class="fa fa-xmark cross-outline ms-2"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="d-flex flex-xl-row flex-column justify-content-center justify-content-xl-between mt-4 mb-3"
+            >
+              <div>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeButton === 'All' }"
+                  (click)="setActive('All')"
+                >
+                  All
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeButton === 'New' }"
+                  (click)="setActive('New')"
+                >
+                  New
+                </button>
+                <button
+                  class="header-btn"
+                  [ngClass]="{ active: activeButton === 'Close' }"
+                  (click)="setActive('Close')"
+                >
+                  Close
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeButton === 'Open' }"
+                  (click)="setActive('Open')"
+                >
+                  Open
+                </button>
+                <button
+                  class="header-btn"
+                  [ngClass]="{ active: activeButton === 'Void' }"
+                  (click)="setActive('Void')"
+                >
+                  Void
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeButton === 'Returned' }"
+                  (click)="setActive('Returned')"
+                >
+                  Returned
+                </button>
+              </div>
+              <div>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeOtherButton === 'Void' }"
+                  (click)="setOtherActive('Void')"
+                >
+                  Void
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeOtherButton === 'Void' }"
+                  (click)="setOtherActive('Preview')"
+                >
+                  Preview
+                </button>
+              </div>
+              <div class="mt-xl-0 mt-3">
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeFileButton === 'AllFile' }"
+                  (click)="setActiveFile('AllFile')"
+                >
+                  All
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeFileButton === 'Excel' }"
+                  (click)="setActiveFile('Excel')"
+                >
+                  Excel
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeFileButton === 'Csv' }"
+                  (click)="setActiveFile('Csv')"
+                >
+                  Csv
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeFileButton === 'Print' }"
+                  (click)="setActiveFile('Print')"
+                >
+                  Print
+                </button>
+                <button
+                  class="header-btn mx-1"
+                  [ngClass]="{ active: activeFileButton === 'coloumnVisible' }"
+                  (click)="setActiveFile('coloumnVisible')"
+                >
+                  Coloumn Visibility
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table">
+                <thead class="tbody">
+                  <tr>
+                    <th>
+                      <input
+                        class="checkbox"
+                        type="checkbox"
+                        (change)="toggleAll($event)"
+                        [checked]="isAllSelected()"
+                      />
+                    </th>
+
+                    <th scope="col">
+                      So no
+                      <i class="fa-solid fa-angle-down arrow-icon ms-1"></i>
+                    </th>
+                    <th></th>
+                    <th scope="col">
+                      Customers
+                      <i class="fa-solid fa-angle-down arrow-icon ms-1"></i>
+                    </th>
+                    <th scope="col">
+                      Region
+                      <i class="fa-solid fa-angle-down arrow-icon ms-1"></i>
+                    </th>
+                    <th scope="col">
+                      So Date
+                      <i class="fa-solid fa-angle-down arrow-icon ms-1"></i>
+                    </th>
+                    <th scope="col">Confirm Date</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Prepared by</th>
+                    <th scope="col">Approved by</th>
+                  </tr>
+                </thead>
+
+                <tbody class="tbody">
+                  <tr
+                    *ngFor="let item of items && filteredItems; let i = index"
+                    class="align-items-center"
+                  >
+                    <td class="table-row">
+                      <input
+                        type="checkbox"
+                        class="checkbox"
+                        [(ngModel)]="item.selected"
+                        (change)="updateSelection()"
+                      />
+                    </td>
+
+                    <th class="table-row">
+                      {{ item.id }}
+                    </th>
+                    <th class="table-row" scope="row">
+                      <img
+                        src="assets/images/Group.svg"
+                        class="img-fluid me-2"
+                        style="width: 15px"
+                      />
+                      <img
+                        src="assets/images/Group1.svg"
+                        class="img-fluid me-2"
+                        style="width: 15px"
+                      />
+                      <img
+                        src="assets/images/Group2.svg"
+                        class="img-fluid me-2"
+                        style="width: 15px"
+                      />
+                      <img
+                        src="assets/images/tableIcon.svg"
+                        class="img-fluid me-2"
+                        style="width: 15px"
+                      />
+                      <img
+                        src="assets/images/tableCross.svg"
+                        class="img-fluid"
+                        style="width: 15px"
+                      />
+                    </th>
+                    <td class="table-row text-center">{{ item.customers }}</td>
+                    <td class="table-row">{{ item.region }}</td>
+                    <td class="table-row">{{ item.date }}</td>
+                    <td class="table-row">{{ item.confirmDate }}</td>
+                    <td class="table-row">
+                      <button
+                        type="button"
+                        class="default-btn"
+                        [ngClass]="{
+                          voidColor: item.status === 'Void',
+                          'confirmation-btn': item.status === 'Dispatch'
+                        }"
+                      >
+                        {{ item.status }}
+                      </button>
+                    </td>
+
+                    <td class="table-row">{{ item.quantity }}</td>
+                    <td class="table-row">{{ item.amount }}</td>
+                    <td class="table-row">{{ item.preparedBy }}</td>
+                    <td class="table-row">{{ item.approvedBy }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
 </section>
