@@ -7,6 +7,27 @@
 .list-icon {
     color: #20CC90;
 }
+.filter-field {
+    border: 1.3px solid #eeeeee;
+    height: 40px;
+}
+
+select {
+    color: #363636;
+}
+
+.outline-btn {
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #20CC90;
+    background-color: white;
+    color: #20CC90;
+    padding: 3px 13px;
+    border-radius: 5px;
+}
+.cross-outline {
+    font-size: 12px;
+}
 th {
     cursor: pointer;
     font-size: 14px;
@@ -68,7 +89,7 @@ thead tr th {
     color: #20CC90;
 }
 
-.confirmation-btn {
+.default-btn {
     padding: 4px 8px 4px 8px;
     font-size: 10px;
 }
@@ -86,17 +107,9 @@ thead tr th {
     color: white;
 }
 
-.search-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    width: 100%;
-}
-
 input[type="text"] {
-    padding: 8px 33px;
-    border-radius: 8px;
-    border: none;
+    padding: 20px 33px;
+    border: 1.3px solid #eeeeee;
 }
 .new-btn {
     border: 1px solid #20CC90;
@@ -111,47 +124,39 @@ input[type="text"] {
     opacity: 0.7;
 }
 
-.search-bar {
-    width: 100%;
-    padding-left: 35px; /* Add padding to make space for the icon */
-    height: auto;
-    font-size: 16px;
-    outline: none;
-    transition: all 0.3s ease;
-    background-color: #ECF1F5;
-    margin-bottom:  0px;
+.filter-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap; 
+    margin-bottom: 10px;
 }
 
-.search-icon {
-    position: absolute;
-    left: 10px;
-    font-size: 16px;
-    color: #20CC90;
+.filter-btn:hover {
+    opacity: 0.7;
 }
 
-.filter-icon {
-    position: absolute;
-    right: 10px;
-    font-size: 16px;
-    color: #20CC90;
-    cursor: pointer;
-    z-index: 1;
-}
-
-/* confirmation-btn style */
-.confirmation-btn {
+.default-btn {
     color: #363636;
     border: 1px solid transparent; 
-    border-radius: 8px; 
+    border-radius: 6px; 
     padding: 2px 15px; 
     font-size: 14px; 
     cursor: pointer; 
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-.btn-cancel {
+.voidColor {
     background-color: #FF3B30; 
     border-color: #FF3B30; 
+    color: #fff; 
+}
+
+.confirmation-btn {
+    background-color: #20CC90; 
+    border-color: #20CC90; 
     color: #fff; 
 }
 
@@ -180,24 +185,6 @@ input[type="text"] {
 
 /*  */
 
-
-@media (min-width: 1350px) {
-    .search-bar {
-        width: 45rem;
-    }
-}
-
-@media (max-width: 992px) {
-    /* .new-btn {
-        padding: 3px 30px;
-        border-radius: 8PX;
-        font-size: 12px;
-    } */
-    /* .search-bar {
-        width: 10rem;
-    } */
-}
-
 @media (min-width: 576px) {
     .new-btn-section{
         justify-content: end;
@@ -212,13 +199,5 @@ input[type="text"] {
     .new-btn-section{
         margin-top: 15px;
         justify-content: center;
-    }
-    .search-container {
-        display: flex;
-        justify-content: center;
-        margin-top: 15px;
-    }
-    .search-bar {
-        padding-right: 30px; 
     }
 }

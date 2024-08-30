@@ -4,10 +4,9 @@ export interface Sales {
 	region: string;
     date: string;
     confirmDate: string;
-    confirmation: any;
+    status: any;
     quantity: number;
     amount: number;
     preparedBy: string;
     approvedBy: string;
-    status: string;
 }

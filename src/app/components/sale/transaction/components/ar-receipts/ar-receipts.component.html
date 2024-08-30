@@ -8,17 +8,36 @@
                         <div class="card-body pb-0">
                             <div class="d-flex align-items-center justify-content-between mb-0">
                                 <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer;" />
-                                <i class="fa-solid fa-angle-down arrow-icon ms-auto"></i>
                             </div>
                             <h5 class="mb-0 mt-4 general-title">General</h5>
                             <div class="row align-items-center">
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label class="mt-3" for="customer">Customers:</label>
-                                        <ng-select [items]="customersData" bindLabel="name" bindValue="id"
+                                        <ng-select [items]="customersData" 
+                                        bindLabel="name" 
+                                        bindValue="id"
+                                        formControlName="customer" 
+                                        placeholder="Select customer" 
+                                        [searchable]="true"
+                                        (change)="onCustomerSelected($event)">
+                               
+                               <!-- Custom placeholder and icon -->
+                               <ng-template ng-placeholder-tmp>
+                                 <div class="ng-select-placeholder">
+                                   <i class="fa fa-search search-icon"></i>
+                                   <span class="placeholder-text">Select customer</span>
+                                 </div>
+                               </ng-template>
+                               
+                             </ng-select>
+                             
+
+
+                                        <!-- <ng-select [items]="customersData" bindLabel="name" bindValue="id"
                                             formControlName="customer" placeholder="Select customer" [searchable]="true"
                                             (change)="onCustomerSelected($event)">
-                                        </ng-select>
+                                        </ng-select> -->
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -26,7 +45,7 @@
                                         <label class="mt-3" for="status">Status:</label>
                                         <ng-select [items]="statusData" bindLabel="name" bindValue="id"
                                             formControlName="status" placeholder="Select status" [searchable]="true"
-                                            (change)="onStatusSelected($event)">
+                                            (change)="onStatusSelected($event)" readonly="true">
                                         </ng-select>
                                     </div>
                                 </div>
@@ -57,7 +76,6 @@
                         <div class="card-body pb-0">
                             <div class="d-flex align-items-center justify-content-between mb-0">
                                 <h5 class="mb-0  general-title">Address Info</h5>
-                                <i class="fa-solid fa-angle-down arrow-icon ms-auto"></i>
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-4">
@@ -100,7 +118,6 @@
                         <div class="card-body">
                             <div class="d-flex align-items-center justify-content-between mb-0">
                                 <h5 class="mb-0  general-title">Details</h5>
-                                <i class="fa-solid fa-angle-down arrow-icon ms-auto"></i>
                             </div>
                             <div class="row align-items-center">
                                 <div class="col-md-4">
@@ -149,6 +166,47 @@
                         </div>
                     </div>
 
+                    <div class="card mt-2">
+                        <div class="card-body">
+                            <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                                <li [ngbNavItem]="1">
+                                    <button ngbNavLink>Customer Instruction</button>
+                                </li>
+                                <li [ngbNavItem]="2">
+                                    <button ngbNavLink>Item</button>
+                                </li>
+                                <li [ngbNavItem]="3">
+                                    <button ngbNavLink>Office Instruction</button>
+                                </li>
+                            </ul>
+
+                            <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+                            <div *ngIf="active === 1">
+                                <div class="mt-3">
+                                    <label for="customerInst">Customer Instructions:</label>
+                                </div>
+                                <textarea id="customerInst" formControlName="customerInstruction"
+                                    name="customerInstruction" rows="4" cols="100" class="w-auto textarea-field"
+                                    readonly></textarea>
+                            </div>
+
+                            <div *ngIf="active === 2">
+                                <div class="mt-3">
+                                    <label for="item">Item:</label>
+                                </div>
+                                <textarea id="item" formControlName="item" name="item" rows="4" cols="100"
+                                    class="w-auto textarea-field" readonly></textarea>
+                            </div>
+                            <div *ngIf="active === 3">
+                                <div class="mt-3">
+                                    <label for="officeInst">Office Instructions:</label>
+                                </div>
+                                <textarea id="officeInst" formControlName="officeInstruction" name="officeInstruction"
+                                    rows="4" cols="100" class="w-auto textarea-field" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
@@ -195,7 +253,11 @@
                                     <span class="total-order">Rs 3864</span>
                                 </div>
                             </div>
-                           
+
+                            <div class="footer-btn d-flex align-items-center justify-content-center mt-4">
+                                <button class="add-btn">Save</button>
+                            </div>
+
                         </div>
 
                     </div>
