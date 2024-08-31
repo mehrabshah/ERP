@@ -1,5 +1,4 @@
 <div class="sidebar" [class.toggleSidebar]="toggleSidebar">
-    <div class="scroll-sidebar">
         <div>
             <ng-container *ngIf="toggleSidebar">
                 <img src="assets/images/dummy logo.png" class="img-fluid d-flex align-items-center mt-3 ml-3"
@@ -15,7 +14,7 @@
                     </h6>
                 </div>
             </div>
-
+            <div class="scroll-sidebar pb-4 ">
             <ul class="nav flex-column">
                 <li *ngFor="let item of sideBarList">
                     <!-- Main link with icon -->
@@ -69,25 +68,6 @@
                     </div>
                 </li>
             </ul>
-
-
-
-
-
-
-            <!-- <ul class="nav flex-column">
-                <li class="nav-item" [routerLinkActive]="['active']" routerLink="{{item.link}}" *ngFor="let item of list">
-                   <img src="{{item.icon}}" class="img-fluid side-bar-img" 
-                         [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
-                         [ngClass]="{'active-svg': isActive(item.link)}">
-                
-                    <ng-container *ngIf="!toggleSidebar">
-                        <a class="nav-link">{{item.name}}</a>
-                        <i class="fa-solid fa-angle-down arrow-icon"></i>
-                    </ng-container>
-                </li>
-                
-            </ul> -->
         </div>
     </div>
 </div>

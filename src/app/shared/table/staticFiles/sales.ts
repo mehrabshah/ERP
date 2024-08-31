@@ -62,29 +62,6 @@ export const SALES: Sales[] = [
         preparedBy: "Rich",
         approvedBy: "Anderson",
 	},
-	{
-		id: 6,
-        customers: '17722-Al Karam',
-        region: "Lahore,Punjab",
-		date: "06/08/24",
-		confirmDate: "07/08/24",
-        status: "Open",
-        quantity: 25,
-        amount: 345,
-        preparedBy: "Rich",
-        approvedBy: "Anderson",
-	},
-	{
-		id: 7,
-        customers: '1701-Al Karam',
-        region: "Lahore,Punjab",
-		date: "06/08/24",
-		confirmDate: "07/08/24",
-        status: "Dispatch",
-        quantity: 25,
-        amount: 345,
-        preparedBy: "Rich",
-        approvedBy: "Anderson",
-	},
-   
+	
+	
 ];

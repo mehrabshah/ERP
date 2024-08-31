@@ -108,9 +108,18 @@ input[type="text"] {
 }
 
 .textarea-field {
+
     background-color: #F6F6F6;
     padding: 5px;
     border: none;
+    width: 100%; 
+    max-width: 100%; 
+    box-sizing: border-box; 
+    resize: vertical; 
+}
+
+textarea {
+    padding: 5px;
 }
 
 .nav-tabs {
@@ -131,4 +140,16 @@ input[type="text"] {
     border-color: #20CC90; 
     color: #20CC90; 
   }
-  
+
+
+   .order-summary{
+       position: fixed;
+       right:0;
+       top:158px;
+       width: 420px;
+       height: 80%;
+    } 
+
+    .ar-receipts{
+        margin-right: 420px;
+    }

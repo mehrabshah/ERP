@@ -73,22 +73,6 @@ export class ArReceiptsComponent {
       taxAmount: "19.32",
       price: '3000'
     },
-    {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
-      netPrice: '3864',
-      quantity: '200',
-      taxAmount: "19.32",
-      price: '3000'
-    },
-    {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
-      netPrice: '3864',
-      quantity: '200',
-      taxAmount: "19.32",
-      price: '3000'
-    }
   ]
   constructor() { }
   ngOnInit(): void {
