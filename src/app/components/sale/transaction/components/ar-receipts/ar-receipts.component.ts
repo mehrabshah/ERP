@@ -4,6 +4,7 @@ import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent,
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 
 
@@ -11,7 +12,7 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
   selector: 'app-ar-receipts',
   standalone: true,
   imports: [CommonModule, TopBarComponent, NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule
+    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,
   ],
   templateUrl: './ar-receipts.component.html',
   styleUrl: './ar-receipts.component.css'
@@ -73,6 +74,92 @@ export class ArReceiptsComponent {
       taxAmount: "19.32",
       price: '3000'
     },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+ 
+
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower',
+      subTitle: 'Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+ 
+
+
   ]
   constructor() { }
   ngOnInit(): void {

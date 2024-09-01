@@ -78,6 +78,7 @@
                     <input
                       formControlName="soDate"
                       class="form-control"
+                      bsDatepicker
                       type="date"
                     />
                   </div>
@@ -308,11 +309,11 @@
           </div>
         </div>
       </div>
-      <div class="order-summary pe-3">
-        <div class="card">
+     
+        <div class="card order-summary pe-3">
           <div class="card-body py-3">
             <h5 class="general-title">Order Summary</h5>
-            <div class="mt-3">
+            <div class="mt-3 order-summary-scroll">
               <div
                 class="main-order"
                 *ngFor="let item of summaryData; let i = index"
@@ -367,7 +368,7 @@
             </div>
           </div>
         </div>
-      </div>
+    
     </form>
   </div>
 </section>
