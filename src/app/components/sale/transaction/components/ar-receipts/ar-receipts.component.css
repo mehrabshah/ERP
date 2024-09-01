@@ -140,14 +140,16 @@ textarea {
     color: #20CC90; 
   }
 
-
    .order-summary{
        position: fixed;
        right:0;
        top:158px;
        width: 420px;
        height:  calc(100vh - 165px);
-    } 
+  } 
+
+  
+
 
 
 
@@ -179,6 +181,25 @@ textarea {
     .ar-receipts{
         margin-right: 420px;
     }
+
+
+    input[type="date"] {
+        padding: 8px;
+        height: 40px;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+      }
+      
+      input[type="date"]::-webkit-calendar-picker-indicator {
+        margin-right: 10px;
+        align-self: center;
+      }
+      
+      input[type="date"]::-moz-calendar-picker-indicator {
+        margin-right: 10px;
+        align-self: center;
+      }
+      
 
 
     @media only screen and (min-height: 900px) {
