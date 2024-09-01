@@ -5,6 +5,8 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
+
+
 @Component({
   selector: 'app-ar-receipts',
   standalone: true,
@@ -17,7 +19,6 @@ import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 export class ArReceiptsComponent {
   toBarTitle:string= 'Sales Orders';
   showtopNav:boolean= true;
-  
   generalForm!: FormGroup;
   customerId: number = 0;
   statusId: number = 0;
@@ -34,9 +35,8 @@ export class ArReceiptsComponent {
   ];
   statusData = [
     { id: 1, name: 'New' },
-    { id: 2, name: 'Dispatch' },
-    { id: 3, name: 'Cancel' },
-    { id: 4, name: 'Confirm' },
+    { id: 2, name: 'Confirmed' },
+    { id: 3, name: 'Void' },
   ];
   shipAddressData = [
     { id: 1, name: 'Abbas Ali Traders Chak # 117 DB,Yazman' },
@@ -89,6 +89,7 @@ export class ArReceiptsComponent {
       itemID: new FormControl(null),
       description: new FormControl(null),
       orderQty: new FormControl(null),
+      comment: new FormControl(null),
       price: new FormControl(null),
       extPrice: new FormControl(null),
       customerInstruction: new FormControl('Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloribus nihil, quam perspiciatis nostrum, aliquid dolorum culpa eligendi ratione ducimus possimus in deserunt debitis earum, vitae soluta at accusamus sequi odio.'),

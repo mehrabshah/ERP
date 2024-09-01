@@ -28,7 +28,7 @@ label {
   .placeholder-text {
     font-size: 14px;
   }
-  
+   
 
 input[type="date"],
 input[type="text"] {
@@ -54,7 +54,7 @@ input[type="text"] {
 
 .add-btn {
     border: 1px solid;
-    padding: 6px 32px;
+    padding: 6px 42px;
     border-radius: 8px;
     color: white;
     background-color: #20CC90;
@@ -68,10 +68,8 @@ input[type="text"] {
 
 .main-order {
     background-color: #fbfbfb;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 6px;
+    padding: 9px;
+    margin-top: 4px;
 }
 
 .order-title {

@@ -69,10 +69,8 @@
             </div>
         </div>
         <ng-container *ngIf="showtopNav">
-            <div class="row">
-                <div class="col-md-6 mt-3">
-                    <ul class="nav d-flex align-items-center justify-content-between">
-                        <li *ngFor="let item of topBarList" class="nav-item" [routerLinkActive]="['active']"
+                    <ul class="nav d-flex align-items-center mt-4">
+                        <li *ngFor="let item of topBarList" class="nav-item pe-1" [routerLinkActive]="['active']"
                             #rla="routerLinkActive">
                             <div class="d-flex align-items-center main-nav">
                                 <ng-container *ngIf="!toggleSidebar">
@@ -87,9 +85,6 @@
                         </li>
                     </ul>
 
-
-                </div>
-            </div>
         </ng-container>
     </div>
 </section>
