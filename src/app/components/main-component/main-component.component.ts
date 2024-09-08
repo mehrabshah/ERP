@@ -33,7 +33,7 @@ export class MainComponentComponent {
   
   private updateSidebarStatus(): void {
     this.screenWidth = window.innerWidth;
-    if (this.screenWidth < 768) {
+    if (this.screenWidth < 1200) {
       this.sideNavStatus = true; 
       this.showSideNavBtn = true;
     } else {

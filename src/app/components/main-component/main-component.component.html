@@ -1,5 +1,5 @@
 <div class="parent-wrapper" [class.toggled-nav]="sideNavStatus">
-  <button *ngIf="showSideNavBtn && screenWidth < 768" 
+  <!-- <button *ngIf="showSideNavBtn && screenWidth < 1200" 
           (click)="toggleSidebar()" 
           [class.move-left]="sideNavStatus" 
           class="collapse-btn" 
@@ -9,7 +9,7 @@
       <span></span>
       <span></span>
     </span>
-  </button>
+  </button> -->
   <app-side-bar [sideNavStatus]="sideNavStatus"></app-side-bar>
   <router-outlet></router-outlet>
 </div>

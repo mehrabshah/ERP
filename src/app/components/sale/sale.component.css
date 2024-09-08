@@ -10,6 +10,7 @@
 .filter-field {
     border: 1.3px solid #eeeeee;
     height: 40px;
+    width: 170px;
 }
 
 select {
@@ -200,4 +201,19 @@ input[type="text"] {
         margin-top: 15px;
         justify-content: center;
     }
+}
+
+@media (min-width: 1440px) {
+    .table {
+        max-width: 100% !important ;      
+        width: 100%  !important;   
+    } 
+}
+
+
+@media  (max-width: 1400px) {
+    .table {
+        max-width: 150% !important;     
+        width: 150% !important;      
+    } 
 }

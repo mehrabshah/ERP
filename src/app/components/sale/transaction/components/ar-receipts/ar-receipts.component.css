@@ -1,5 +1,5 @@
 .main-wrapper {
-    margin-top: 160px;
+    margin-top: 90px;
 }
 
 .general-title {
@@ -18,18 +18,18 @@ label {
     display: flex;
     align-items: center;
     color: #aaa;
-  }
-  
-  .search-icon {
-    margin-right: 8px; 
-    color: #20CC90; 
-  }
-  
-  .placeholder-text {
+}
+
+.search-icon {
+    margin-right: 8px;
+    color: #20CC90;
+}
+
+.placeholder-text {
     font-size: 14px;
-  }
-  
-  
+}
+
+
 
 input[type="date"],
 input[type="text"] {
@@ -111,10 +111,10 @@ input[type="text"] {
     background-color: #F6F6F6;
     padding: 5px;
     border: none;
-    width: 100%; 
-    max-width: 100%; 
-    box-sizing: border-box; 
-    resize: vertical; 
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
 }
 
 textarea {
@@ -122,98 +122,131 @@ textarea {
 }
 
 .nav-tabs {
-    border-bottom: none; 
-  }
-  
-  .nav-tabs .nav-item .nav-link {
+    border-bottom: none;
+}
+
+.nav-tabs .nav-item .nav-link {
     border: none;
-    border-bottom: 2px solid transparent; 
-    color: #363636; 
+    border-bottom: 2px solid transparent;
+    color: #363636;
     font-size: 16px;
     font-weight: 600;
-    padding: 10px 0px 10px 0px; 
+    padding: 10px 0px 10px 0px;
     margin-right: 40px;
-  }
-  
-  .nav-tabs .nav-item .nav-link.active {
-    border-color: #20CC90; 
-    color: #20CC90; 
-  }
+}
 
-   .order-summary{
-       position: fixed;
-       right:0;
-       top:158px;
-       width: 420px;
-       height:  calc(100vh - 165px);
-  } 
+.nav-tabs .nav-item .nav-link.active {
+    border-color: #20CC90;
+    color: #20CC90;
+}
 
-  
+.order-summary {
+    position: fixed;
+    right: 0;
+    top: 90px;
+    width: 370px;
+    height: calc(100vh - 90px);
+}
 
 
 
 
-    .order-summary ::-webkit-scrollbar {
-        width: 7px; 
-    }
-    
-    .order-summary ::-webkit-scrollbar-track {
-        background: #B0B0B0; 
-        border-radius: 24px; 
-    }
-    
-    .order-summary ::-webkit-scrollbar-thumb {
-        border-radius: 20px; 
-    }
-    
-    .order-summary ::-webkit-scrollbar-thumb:hover {
-        background: #B0B0B0; 
-    }
-    
 
 
-    .order-summary-scroll{
-        height: 40vh;
+.order-summary ::-webkit-scrollbar {
+    width: 7px;
+}
+
+.order-summary ::-webkit-scrollbar-track {
+    background: #B0B0B0;
+    border-radius: 24px;
+}
+
+.order-summary ::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+}
+
+.order-summary ::-webkit-scrollbar-thumb:hover {
+    background: #B0B0B0;
+}
+
+
+
+.order-summary-scroll {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+
+.ar-receipts {
+    margin-right: 0px;
+}
+
+
+input[type="date"] {
+    padding: 8px;
+    height: 40px;
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    margin-right: 10px;
+    align-self: center;
+}
+
+input[type="date"]::-moz-calendar-picker-indicator {
+    margin-right: 10px;
+    align-self: center;
+}
+
+
+
+@media only screen and (min-height: 900px) {
+    .order-summary-scroll {
+        height: 50vh;
         overflow-y: scroll;
-      }
-    
-     
-    .ar-receipts{
-        margin-right: 420px;
     }
 
+}
 
-    input[type="date"] {
-        padding: 8px;
-        height: 40px;
-        -webkit-appearance: none;
-        -moz-appearance: textfield;
-      }
-      
-      input[type="date"]::-webkit-calendar-picker-indicator {
-        margin-right: 10px;
-        align-self: center;
-      }
-      
-      input[type="date"]::-moz-calendar-picker-indicator {
-        margin-right: 10px;
-        align-self: center;
-      }
-      
+@media only screen and (min-height: 980px) {
+    .order-summary-scroll {
+        height: 55vh;
+        overflow-y: scroll;
+    }
+
+}
+
+@media only screen and (min-width: 1400px) {
+
+    .order-summary {
+        position: fixed;
+        right: 0;
+        top: 158px;
+        width: 420px;
+        height: calc(100vh - 165px);
+    }
+
+    .main-wrapper {
+        margin-top: 160px;
+    }
+}
 
 
-    @media only screen and (min-height: 900px) {
-        .order-summary-scroll{
-            height: 50vh;
-            overflow-y: scroll;
-          }
+@media only screen and (min-width:768px) {
 
-      }
+    .ar-receipts {
+    margin-right: 370px;
+    }
 
-      @media only screen and (min-height: 980px) {
-        .order-summary-scroll{
-            height: 55vh;
-            overflow-y: scroll;
-          }
+}
 
-      }
+
+@media only screen and (min-width:1400px) {
+
+    .ar-receipts {
+    margin-right: 420px;
+    }
+
+}

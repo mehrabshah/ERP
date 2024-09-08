@@ -14,13 +14,12 @@
               <h5 class="mb-0 ms-4 sale-order">Sales Orders</h5>
             </div>
             <div class="mt-4">
-              <div class="row">
-                <div class="col-lg-6 col-md-8 col-sm-12">
-                  <div class="search-container d-flex">
+              <!-- <div class="col-lg-6 col-md-8 col-sm-12">
+                  <div class="search-container d-none  d-lg-flex">
                     <select
                       name="filters"
                       id="filters"
-                      class="filter-field me-3"
+                      class="filter-field form-control me-3"
                     >
                       <option value="filter1">Filter</option>
                       <option value="filter2">Filter2</option>
@@ -29,13 +28,13 @@
                     <select
                       name="operators"
                       id="operators"
-                      class="filter-field me-3"
+                      class="filter-field form-control me-3"
                     >
                       <option value="operator1">Operators</option>
                       <option value="operator2">Operator2</option>
                       <option value="operator3">Operator3</option>
                     </select>
-                    <input type="text" placeholder="Value" />
+                    <input type="text" placeholder="Value" class="form-control" />
                     <button type="button" class="filter-btn ms-3">
                       <i class="fa fa-plus"></i>
                     </button>
@@ -72,13 +71,65 @@
                       <i class="fa fa-xmark cross-outline ms-2"></i>
                     </button>
                   </div>
+                </div> -->
+              <div class="d-flex justify-content-lg-between  justify-content-end  align-items-center mt-5 ">
+                <div class="search-container align-items-center d-lg-flex d-none">
+                  <select
+                    name="filters"
+                    id="filters"
+                    class="filter-field  me-3"
+                  >
+                    <option value="filter1">Filter</option>
+                    <option value="filter2">Filter2</option>
+                    <option value="filter3">Filter3</option>
+                  </select>
+                  <select
+                    name="operators"
+                    id="operators"
+                    class="filter-field  me-3"
+                  >
+                    <option value="operator1">Operators</option>
+                    <option value="operator2">Operator2</option>
+                    <option value="operator3">Operator3</option>
+                  </select>
+                  <input type="text" placeholder="Value" class="mb-0 filter-field"  />
+                  <button type="button" class="filter-btn ms-3 mb-0">
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div class="d-flex align-items-center new-btn-section">
+                  <i
+                    class="fa-solid fa-list list-icon me-4"
+                    style="cursor: pointer"
+                  ></i>
+                  <img
+                    src="assets/images/file.svg"
+                    class="img-fluid me-4"
+                    style="width: 16px; cursor: pointer"
+                  />
+                  <button class="new-btn" (click)="createSaleOrder()">
+                    + New
+                  </button>
+                </div>
+              </div>
+              <div class="d-flex justify-content-start d-xxl-flex d-none">
+                <div class="mt-3">
+                  <button type="button" class="outline-btn me-3">
+                    Confirmation
+                    <i class="fa fa-xmark cross-outline ms-2"></i>
+                  </button>
+                  <button type="button" class="outline-btn me-3">
+                    Out Date = 1000
+                    <i class="fa fa-xmark cross-outline ms-2"></i>
+                  </button>
+                  <button type="button" class="outline-btn">
+                    Vehicle No
+                    <i class="fa fa-xmark cross-outline ms-2"></i>
+                  </button>
                 </div>
               </div>
             </div>
-
-            <div
-              class="d-flex flex-xl-row flex-column justify-content-center justify-content-xl-between mt-4 mb-3"
-            >
+            <div class="d-flex flex-row justify-content-between mt-5">
               <div>
                 <button
                   class="header-btn mx-1"
@@ -139,7 +190,7 @@
                   Preview
                 </button>
               </div>
-              <div class="mt-xl-0 mt-3">
+              <div class="mt-xl-0">
                 <button
                   class="header-btn mx-1"
                   [ngClass]="{ active: activeFileButton === 'AllFile' }"

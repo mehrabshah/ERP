@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CustomDatePickerComponent } from './../../../../../shared/custom-date-picker/custom-date-picker.component';
 
 
 
@@ -12,7 +13,7 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
   selector: 'app-ar-receipts',
   standalone: true,
   imports: [CommonModule, TopBarComponent, NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,
+    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,CustomDatePickerComponent
   ],
   templateUrl: './ar-receipts.component.html',
   styleUrl: './ar-receipts.component.css'

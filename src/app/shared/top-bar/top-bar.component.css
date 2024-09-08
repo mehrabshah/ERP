@@ -4,11 +4,9 @@
     right: 0;
     z-index: 998;
     transition: all 0.5s ease;
+    width: 100%;
 }
 
-.topbar-wrapper.full-wrap {
-    left: 60px;
-}
 
 .header {
     background-color: white;
@@ -134,18 +132,28 @@ a:hover {
     font-size: 12px;
 }
 
-@media (min-width: 992px) {
+.navbar{
+  position: absolute;
+  top: 1;
+  left: 0;
+}
+
+@media (min-width: 1200px) {
     .search-bar {
         width: 25rem;
     }
 
     .topbar-wrapper {
         left: 285px;
+        width: auto;
     }
+  
+   
 }
 
-@media (max-width: 992px) {
-    .topbar-wrapper {
-        left: 250px;
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .topBar-title {
+        color: #363636;
+        font-size: 20px;
     }
-}
+  }
