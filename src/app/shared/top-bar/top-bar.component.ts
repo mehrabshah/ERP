@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
-import {  Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
-import {  Router, RouterLink, RouterModule } from '@angular/router';
+import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { Router, RouterLink, RouterModule } from '@angular/router';
 import { SharedServiceService } from '../service/shared-service.service';
 
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [CommonModule,RouterLink,RouterModule],
+  imports: [CommonModule, RouterLink, RouterModule],
   templateUrl: './top-bar.component.html',
   styleUrl: './top-bar.component.css'
 })
@@ -50,11 +50,11 @@ export class TopBarComponent {
       // link: '/sales/transaction/arReceipt',
     }
   ]
+
   constructor(private sharedService: SharedServiceService,
     private router: Router) { }
 
-
-  ngOnInit(): void {
+ngOnInit(): void {
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
     this.checkScreenSize();
@@ -63,9 +63,6 @@ export class TopBarComponent {
       this.toggleSidebar = true;
     }
   }
-
-
-
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
@@ -104,5 +101,5 @@ export class TopBarComponent {
 
 
 
-  
+
 }

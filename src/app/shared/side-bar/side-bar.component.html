@@ -1,71 +1,30 @@
 <div class="sidebar d-none d-xl-block" [class.toggleSidebar]="toggleSidebar">
-        <div>
-            <ng-container *ngIf="toggleSidebar">
-                <img src="assets/images/dummy logo.png" class="img-fluid d-flex align-items-center mt-3 ml-3"
-                    style="width: 40px;" routerLink="">
+    <div>
+        <div class="d-flex align-items-center user-profile mt-3 ms-4">
+            <ng-container>
+                <img src="assets/images/dummy logo.png" class="img-fluid me-2" style="width: 56px;" routerLink="">
             </ng-container>
-            <div class="d-flex align-items-center user-profile mt-3 ms-4">
-                <ng-container *ngIf="!toggleSidebar">
-                    <img src="assets/images/dummy logo.png" class="img-fluid me-2" style="width: 56px;" routerLink="">
-                </ng-container>
-                <div class="ml-2">
-                    <h6 *ngIf="!toggleSidebar" class="header-title m-0">
-                        {{userName}}
-                    </h6>
-                </div>
+            <div class="ml-2">
+                <h6 class="header-title m-0">
+                    {{userName}}
+                </h6>
             </div>
-            <div class="scroll-sidebar pb-4 ">
-            <ul class="nav flex-column">
-                <li *ngFor="let item of sideBarList">
-                    <!-- Main link with icon -->
-                    <div class="nav-item" >
-                        <div class="d-flex align-items-center main-nav" [routerLinkActive]="['active']" #rla="routerLinkActive">
-                            <img src="{{item.icon}}" class="img-fluid side-bar-img"
-                              [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
-                              [ngClass]="{'active-svg': rla.isActive}">
-                          
-                            <ng-container *ngIf="!toggleSidebar">
-                              <a class="nav-link main-item" [routerLink]="item.link" [ngClass]="{'text-white': rla.isActive}">
-                                {{item.name}}
-                              </a>
-                              <i class="fa-solid fa-angle-down main-arrow-icon ms-auto"
-                                 [ngClass]="{'text-white': rla.isActive}"
-                                 (click)="toggleDropdown(item)"></i>
-                            </ng-container>
-                          </div>
-                        <!-- First-level Dropdown -->
-                        <div class="dropdown-container" [ngClass]="{'show': item.isMainOpen}"
-                            *ngIf="item.child && item.child.length > 0">
-                            <ng-container *ngFor="let child of item.child">
-                                <div class="dropdown-item-container">
-                                    <a (click)="toggleChildDropdown(item,child)" class="nav-link dropdown-item">
-                                        <ng-container *ngIf="!child.isChildOpen">
-                                            <i class="fa-solid fa-angle-right arrow-icon ms-2"
-                                                *ngIf="child.children && child.children.length > 0"></i>
-                                        </ng-container>
-                                        <ng-container *ngIf="child.isChildOpen">
-                                            <i class="fa-solid fa-angle-down arrow-icon ms-2"
-                                                *ngIf="child.children && child.children.length > 0"></i>
-                                        </ng-container>
-
-                                        {{child.name}}
-                                    </a>
-
-                                    <!-- Second-level Dropdown (nested inside the first) -->
-                                    <div class="nested-dropdown-container" [ngClass]="{'show': child.isChildOpen}"
-                                        *ngIf="child.children && child.children.length > 0">
-                                        <a *ngFor="let subChild of child.children" [routerLink]="subChild.subLink"
-                                            routerLinkActive="active"
-                                            class="nav-link dropdown-item nested-dropdown-item">
-                                            {{subChild.name}}
-                                        </a>
-                                    </div>
-                                </div>
-                            </ng-container>
-                        </div>
-                    </div>
-                </li>
-            </ul>
         </div>
+         <app-side-bar-template></app-side-bar-template>
     </div>
 </div>
+
+<ng-template #content let-offcanvas>
+    <div class="offcanvas-header">
+            <img src="assets/images/dummy logo.png" class="img-fluid me-2" style="width: 56px;" routerLink="">
+            <div class="ml-2">
+                 <h6 class="header-title m-0">
+                     {{userName}}
+                 </h6>
+             </div>
+        <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
+    </div>
+    <div class="offcanvas-body">
+         <app-side-bar-template></app-side-bar-template>
+    </div>
+</ng-template>

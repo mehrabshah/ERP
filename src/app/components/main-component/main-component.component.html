@@ -1,15 +1,13 @@
 <div class="parent-wrapper" [class.toggled-nav]="sideNavStatus">
-  <!-- <button *ngIf="showSideNavBtn && screenWidth < 1200" 
-          (click)="toggleSidebar()" 
-          [class.move-left]="sideNavStatus" 
-          class="collapse-btn" 
-          id="topnav-hamburger-icon">
+  <button *ngIf="showSideNavBtn && screenWidth < 1200" (click)="open()"
+    class="collapse-btn" id="topnav-hamburger-icon">
     <span class="hamburger-icon">
       <span></span>
       <span></span>
       <span></span>
     </span>
-  </button> -->
-  <app-side-bar [sideNavStatus]="sideNavStatus"></app-side-bar>
+  </button>
+
+  <app-side-bar #sidebar [sideNavStatus]="sideNavStatus"></app-side-bar>
   <router-outlet></router-outlet>
 </div>

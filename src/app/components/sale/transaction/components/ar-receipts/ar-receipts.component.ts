@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, inject, TemplateRef } from '@angular/core';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { CommonModule } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { CustomDatePickerComponent } from './../../../../../shared/custom-date-picker/custom-date-picker.component';
+import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
 
@@ -13,7 +14,8 @@ import { CustomDatePickerComponent } from './../../../../../shared/custom-date-p
   selector: 'app-ar-receipts',
   standalone: true,
   imports: [CommonModule, TopBarComponent, NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,CustomDatePickerComponent
+    FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,CustomDatePickerComponent,
+    OrderSummaryComponent
   ],
   templateUrl: './ar-receipts.component.html',
   styleUrl: './ar-receipts.component.css'
@@ -28,6 +30,7 @@ export class ArReceiptsComponent {
   billAddressId: number = 0;
   descriptionId: number = 0;
   active = 1;
+  screenWidth!: number;
 
   customersData = [
     { id: 1, name: 'Abbas Ali Traders Chak # 117 DB,Yazman' },
@@ -162,6 +165,8 @@ export class ArReceiptsComponent {
 
 
   ]
+
+  private offcanvasService = inject(NgbOffcanvas);
   constructor() { }
   ngOnInit(): void {
     this.generalForm = new FormGroup({
@@ -187,6 +192,15 @@ export class ArReceiptsComponent {
     });
   }
 
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: any) {
+    this.updateScreenWidthVal();
+  }
+
+  private updateScreenWidthVal(): void {
+    this.screenWidth = window.innerWidth;
+  }
+  
   onCustomerSelected(event: any) {
     let id = event.id;
     if (id) {
@@ -221,5 +235,9 @@ export class ArReceiptsComponent {
       this.descriptionId = id;
     }
   }
+
+  showSummartList(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'end' });
+	}
 
 }
