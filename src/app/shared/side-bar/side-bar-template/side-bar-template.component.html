@@ -1,0 +1,55 @@
+<section class="sidebar-template">
+    <div class="scroll-sidebar pb-4 ">
+        <ul class="nav flex-column">
+            <li *ngFor="let item of sideBarList">
+                <!-- Main link with icon -->
+                <div class="nav-item">
+                    <div class="d-flex align-items-center main-nav" [routerLinkActive]="['active']"
+                        #rla="routerLinkActive">
+                        <img src="{{item.icon}}" class="img-fluid side-bar-img"
+                            [ngStyle]="{'width': '22px', 'height': item.height ? item.height : 'auto'}"
+                            [ngClass]="{'active-svg': rla.isActive}">
+
+                            <a class="nav-link main-item" [routerLink]="item.link"
+                                [ngClass]="{'text-white': rla.isActive}">
+                                {{item.name}}
+                            </a>
+                            <i class="fa-solid fa-angle-down main-arrow-icon ms-auto"
+                                [ngClass]="{'text-white': rla.isActive}" (click)="toggleDropdown(item)"></i>
+                    </div>
+                    <!-- First-level Dropdown -->
+                    <div class="dropdown-container" [ngClass]="{'show': item.isMainOpen}"
+                        *ngIf="item.child && item.child.length > 0">
+                        <ng-container *ngFor="let child of item.child">
+                            <div class="dropdown-item-container">
+                                <a (click)="toggleChildDropdown(item,child)" class="nav-link dropdown-item">
+                                    <ng-container *ngIf="!child.isChildOpen">
+                                        <i class="fa-solid fa-angle-right arrow-icon ms-2"
+                                            *ngIf="child.children && child.children.length > 0"></i>
+                                    </ng-container>
+                                    <ng-container *ngIf="child.isChildOpen">
+                                        <i class="fa-solid fa-angle-down arrow-icon ms-2"
+                                            *ngIf="child.children && child.children.length > 0"></i>
+                                    </ng-container>
+
+                                    {{child.name}}
+                                </a>
+
+                                <!-- Second-level Dropdown (nested inside the first) -->
+                                <div class="nested-dropdown-container" [ngClass]="{'show': child.isChildOpen}"
+                                    *ngIf="child.children && child.children.length > 0">
+                                    <a *ngFor="let subChild of child.children" [routerLink]="subChild.subLink"
+                                        routerLinkActive="active"
+                                        class="nav-link dropdown-item nested-dropdown-item">
+                                        {{subChild.name}}
+                                    </a>
+                                </div>
+                            </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</section>

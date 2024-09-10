@@ -1,0 +1,75 @@
+.main-order {
+    background-color: #fbfbfb;
+    padding: 9px;
+    margin-top: 4px;
+}
+
+.sub-order {
+    color: #363636;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.order-summary-scroll {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.order-title {
+    color: #363636;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.order-price {
+    color: #20CC90;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.delete-icon {
+    color: #ffffff;
+    background-color: #20CC90;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.total-order {
+    color: #20CC90;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.add-btn {
+    border: 1px solid;
+    padding: 6px 42px;
+    border-radius: 8px;
+    color: white;
+    background-color: #20CC90;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    background-color: #34b186;
+}
+
+
+
+@media only screen and (min-height: 900px) {
+    .order-summary-scroll {
+        height: 50vh;
+        overflow-y: scroll;
+    }
+
+}
+
+@media only screen and (min-height: 980px) {
+    .order-summary-scroll {
+        height: 55vh;
+        overflow-y: scroll;
+    }
+
+}
