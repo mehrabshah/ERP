@@ -209,9 +209,49 @@ input[type="text"] {
 }
 
 
-@media  (max-width: 1400px) {
+@media (min-width: 992px) and (max-width: 1400px) {
     .table {
-        max-width: 150% !important;     
-        width: 150% !important;      
-    } 
+        max-width: 120% !important;
+        width: 120% !important;
+    }
 }
+
+
+@media (min-width: 772px) and (max-width: 992px) {
+    .table {
+        max-width: 140% !important;
+        width: 140% !important;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 772px) {
+    .table {
+        max-width: 180% !important;
+        width: 180% !important;
+    }
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .table {
+        max-width: 250% !important;
+        width: 250% !important;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 500px) {
+    .table {
+        max-width: 300% !important;
+        width: 300% !important;
+    }
+}
+
+@media (min-width: 380px) and (max-width: 420px) {
+    .table {
+        max-width: 350% !important;
+        width: 350% !important;
+    }
+}
+
+
+
+

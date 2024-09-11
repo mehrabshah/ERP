@@ -29,8 +29,6 @@ label {
     font-size: 14px;
 }
 
-
-
 input[type="date"],
 input[type="text"] {
     padding: 18px 8px;
@@ -66,17 +64,6 @@ input[type="text"] {
 .add-btn:hover {
     background-color: #34b186;
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 .textarea-field {
@@ -122,10 +109,6 @@ textarea {
 }
 
 
-
-
-
-
 .order-summary ::-webkit-scrollbar {
     width: 7px;
 }
@@ -142,11 +125,6 @@ textarea {
 .order-summary ::-webkit-scrollbar-thumb:hover {
     background: #B0B0B0;
 }
-
-
-
-
-
 
 .ar-receipts {
     margin-right: 0px;
@@ -170,6 +148,9 @@ input[type="date"]::-moz-calendar-picker-indicator {
     align-self: center;
 }
 
+.btn-close:focus {
+    box-shadow: none !important; 
+}
 
 
 
@@ -205,3 +186,20 @@ input[type="date"]::-moz-calendar-picker-indicator {
     }
 
 }
+
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+    .order-summary {
+        position: fixed;
+        right: 0;
+        top: 140px;
+        width: 370px;
+        height: calc(100vh - 140px);
+    }
+
+    .main-wrapper {
+        margin-top: 140px;
+    }
+  
+}
+
