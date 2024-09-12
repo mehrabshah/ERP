@@ -211,6 +211,11 @@ input[type="text"] {
     .filter-field {
         width: 100% !important;
     }
+    .new-btn {
+        padding: 8px 10px;
+        font-size: 12px; 
+    }
+    
 
 }
 
