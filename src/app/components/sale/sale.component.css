@@ -182,7 +182,7 @@ input[type="text"] {
 }
 
 
-/*  */
+
 
 @media (min-width: 576px) {
     .new-btn-section{
@@ -222,6 +222,12 @@ input[type="text"] {
         max-width: 140% !important;
         width: 140% !important;
     }
+
+    .filter-field {
+        width: 120px;
+    }
+
+
 }
 
 @media (min-width: 600px) and (max-width: 772px) {
@@ -229,6 +235,12 @@ input[type="text"] {
         max-width: 180% !important;
         width: 180% !important;
     }
+
+    .filter-field {
+        width: 100px;
+    }
+
+
 }
 
 @media (min-width: 500px) and (max-width: 600px) {
@@ -236,22 +248,50 @@ input[type="text"] {
         max-width: 250% !important;
         width: 250% !important;
     }
+
+    .filter-field {
+        width: 100px;
+    }
+
 }
 
 @media (min-width: 420px) and (max-width: 500px) {
     .table {
-        max-width: 300% !important;
-        width: 300% !important;
+        max-width: 320% !important;
+        width: 320% !important;
     }
+
+    .filter-field {
+        width: 100px;
+    }
+
+    .filter-filed-child-1{
+      width: 85px !important;
+    }
+
 }
 
 @media (min-width: 380px) and (max-width: 420px) {
     .table {
-        max-width: 350% !important;
-        width: 350% !important;
+        max-width: 360% !important;
+        width: 360% !important;
     }
+
+    .filter-field {
+        width: 120px;
+    }
+
 }
 
 
 
 
+
+
+
+
+@media  (min-width: 576px) and (max-width: 772px) {
+     .filter-field {
+        width: 120px;
+    }
+    }
