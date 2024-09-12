@@ -190,7 +190,7 @@ input[type="text"] {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 779px) {
     .new-btn {
         padding: 8px 20px;
         font-size: 12px; 
@@ -199,7 +199,26 @@ input[type="text"] {
         margin-top: 15px;
         justify-content: center;
     }
+
+    .filter-field {
+        width: 140px !important;
+    }
+
 }
+
+@media (max-width: 576px) {
+   
+    .filter-field {
+        width: 100% !important;
+    }
+
+}
+
+
+
+
+
+/* This is just for table responsiveness */
 
 @media (min-width: 1440px) {
     .table {
@@ -223,10 +242,6 @@ input[type="text"] {
         width: 140% !important;
     }
 
-    .filter-field {
-        width: 120px;
-    }
-
 
 }
 
@@ -236,9 +251,7 @@ input[type="text"] {
         width: 180% !important;
     }
 
-    .filter-field {
-        width: 100px;
-    }
+   
 
 
 }
@@ -249,9 +262,7 @@ input[type="text"] {
         width: 250% !important;
     }
 
-    .filter-field {
-        width: 100px;
-    }
+   
 
 }
 
@@ -261,13 +272,7 @@ input[type="text"] {
         width: 320% !important;
     }
 
-    .filter-field {
-        width: 100px;
-    }
-
-    .filter-filed-child-1{
-      width: 85px !important;
-    }
+   
 
 }
 
@@ -277,21 +282,8 @@ input[type="text"] {
         width: 360% !important;
     }
 
-    .filter-field {
-        width: 120px;
-    }
 
 }
 
 
 
-
-
-
-
-
-@media  (min-width: 576px) and (max-width: 772px) {
-     .filter-field {
-        width: 120px;
-    }
-    }

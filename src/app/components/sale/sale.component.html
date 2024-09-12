@@ -21,21 +21,23 @@
             </div>
             <div class="mt-md-4 mt-0 ">  
               <div class="d-flex  justify-content-between  justify-content-end  align-items-center mt-md-5 mt-3 ">
-                <div class="search-container align-items-center d-flex   flex-row ">
-                  <select name="filters" id="filters" class="filter-field  filter-filed-child-1  me-sm-3 me-2">
+                <div class="search-container align-items-center d-flex  flex-column   flex-sm-row ">
+                  <select name="filters" id="filters" class="filter-field  filter-filed-child-1  ms-0   me-sm-3 me-2">
                     <option value="filter1">Filter</option>
                     <option value="filter2">Filter2</option>
                     <option value="filter3">Filter3</option>
                   </select>
-                  <select name="operators" id="operators" class="filter-field  me-sm-3 me-2">
+                  <select name="operators" id="operators" class="filter-field  me-sm-3 me-2  ms-0  mt-3 mt-sm-0">
                     <option value="operator1">Operators</option>
                     <option value="operator2">Operator2</option>
                     <option value="operator3">Operator3</option>
                   </select>
-                  <input type="text" placeholder="Value" class="mb-0 filter-field" />
-                  <button type="button" class="filter-btn ms-sm-3 ms-2 mb-0">
+                  <div>
+                  <input type="text" placeholder="Value" class="mb-0 filter-field mt-3 mt-sm-0 " />
+                  <button type="button " class="d-none filter-btn ms-sm-3 ms-2 mb-0">
                     <i class="fa fa-plus"></i>
                   </button>
+                </div>
                 </div>
                 <div class="d-md-flex  d-none  align-items-center new-btn-section ">
                   <i class="fa-solid fa-list list-icon me-md-4 me-3" style="cursor: pointer"></i>
@@ -93,7 +95,7 @@
                   (click)="setOtherActive('Void')">
                   Void
                 </button>
-                <button class="header-btn mx-1 " [ngClass]="{ active: activeOtherButton === 'Preview' }"
+                <button class="header-btn mx-md-1  ps-2 ps-md-2 " [ngClass]="{ active: activeOtherButton === 'Preview' }"
                   (click)="setOtherActive('Preview')">
                   Preview
                 </button>
