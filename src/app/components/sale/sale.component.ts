@@ -30,7 +30,6 @@ export class SaleComponent {
 
   ngOnInit(): void {
     this.filteredItems = [...this.items];
-    console.log("data")
   }
 
   toggleAll(event: any): void {

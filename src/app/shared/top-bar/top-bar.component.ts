@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
 import { Router, RouterLink, RouterModule } from '@angular/router';
 import { SharedServiceService } from '../service/shared-service.service';
 
@@ -51,10 +51,14 @@ export class TopBarComponent {
     }
   ]
 
-  constructor(private sharedService: SharedServiceService,
+  isExpanded = false;
+  isLargeScreen = false;
+
+  constructor(private sharedService: SharedServiceService, private cdr: ChangeDetectorRef,
     private router: Router) { }
 
-ngOnInit(): void {
+  ngOnInit(): void {
+    this.checkScreenSize();
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;
     this.checkScreenSize();
@@ -63,6 +67,7 @@ ngOnInit(): void {
       this.toggleSidebar = true;
     }
   }
+
   toggleDropdown() {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
@@ -90,6 +95,14 @@ ngOnInit(): void {
   }
   private checkScreenSize() {
     this.showTitle = window.innerWidth > 786;
+    const previousSize = this.isLargeScreen;
+    this.isLargeScreen = window.innerWidth > 920;
+    if (previousSize !== this.isLargeScreen) {
+      this.cdr.detectChanges();
+    }
+  }
+  toggleSearch() {
+    this.isExpanded = !this.isExpanded;
   }
   updateProfile() {
 
