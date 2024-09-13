@@ -8,7 +8,7 @@
 .filter-field {
     border: 1.3px solid #eeeeee;
     height: 40px;
-    width: 170px;
+    width: 160px;
 }
 
 select {
@@ -182,6 +182,13 @@ input[type="text"] {
 }
 
 
+.search-container{
+   width: auto;
+}
+
+.select-container{
+   width: auto;
+}
 
 
 @media (min-width: 576px) {
@@ -204,6 +211,7 @@ input[type="text"] {
         width: 140px !important;
     }
 
+
 }
 
 @media (max-width: 576px) {
@@ -215,6 +223,14 @@ input[type="text"] {
         padding: 8px 10px;
         font-size: 12px; 
     }
+
+    .search-container{
+        width: 100%;
+     }
+     
+     .select-container{
+        width: 100%;
+     }
     
 
 }
