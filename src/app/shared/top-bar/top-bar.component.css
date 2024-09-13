@@ -57,7 +57,6 @@
 .search-container {
     position: relative;
     display: inline-block;
-    margin-right: 60px;
 }
 
 .search-container input[type="text"] {
@@ -86,7 +85,6 @@
 }
 
 .search-bar {
-    width: 250px;
     padding-left: 35px;
     height: auto;
     font-size: 16px;
@@ -169,12 +167,28 @@ a:hover {
     }
 }
 
-@media (min-width: 580px) {
-    .popup-search {
-        right: -25%;
+@media (max-width: 620px) {
+    .header {
+        height: 60px;
     }
-    .shadow-bar {
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 480px) {
+    .search-container {
+        margin-right: 40px;
+    }
+    .search-bar {
+        width: 12rem;
+    }
+}
+
+@media (min-width: 480px) {
+    .search-container {
+        margin-right: 60px;
+    }
+
+    .search-bar {
+        width: 20rem;
     }
 }
 

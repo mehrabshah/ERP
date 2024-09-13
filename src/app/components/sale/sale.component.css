@@ -1,7 +1,6 @@
   
 .sale-order {
     color: #363636;
-    font-size: 20px;
     font-weight: 600;
 }
 
@@ -190,6 +189,12 @@ input[type="text"] {
     }
 }
 
+@media (min-width: 779px) {
+    .sale-order {
+        font-size: 20px;
+    }
+}
+
 @media (max-width: 779px) {
     .new-btn {
         padding: 8px 20px;
@@ -202,6 +207,10 @@ input[type="text"] {
 
     .filter-field {
         width: 140px !important;
+    }
+
+    .sale-order {
+        font-size: 16px;
     }
 
 }
