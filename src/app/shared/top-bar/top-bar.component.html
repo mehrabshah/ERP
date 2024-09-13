@@ -1,24 +1,31 @@
 <section class="topbar-wrapper" [class.full-wrap]="toggleSidebar">
   <div class="header d-flex d-lg-block justify-content-end">
-
     <div class="d-flex justify-content-end justify-content-xl-between">
 
       <div *ngIf="showTitle" class="d-xl-flex d-none align-items-center justify-content-between">
         <h4 class="topBar-title">{{ toBarTitle }}</h4>
       </div>
+      <div *ngIf="!isLargeScreen" class="search-container" [class.expanded]="isExpanded">
+        <i class="fa fa-search search-icon" (click)="toggleSearch()"></i>
+        <div class="popup-search" *ngIf="isExpanded">
+          <i class="fa fa-search search-icon"></i>
+          <input type="text" placeholder="Search here..." class="search-bar h-auto shadow-bar" *ngIf="isExpanded"
+            (blur)="toggleSearch()" autofocus />
+        </div>
+      </div>
 
       <div class="profile d-flex align-items-center justify-content-end justify-content-xl-between me-3">
-        <div class="search-container">
-          <i class="fa fa-search search-icon"></i>
-          <input type="text" placeholder="Search here.." class="search-bar h-auto" />
+        <div *ngIf="isLargeScreen" class="search-container">
+          <i class="fa fa-search search-icon" (click)="toggleSearch()"></i>
+          <input type="text" placeholder="Search..." class="search-bar h-auto" />
         </div>
         <div class="d-flex flex-row align-items-center justify-content-center">
           <div class="d-flex flex-row align-items-center justify-content-center Profile me-5"
             (click)="toggleLangDropdown()">
             <img src="assets/images/United.svg" class="img-fluid united-image me-2" />
-
-            <h1 class="flex-item mb-0 Profile-text me-2">Eng (US)</h1>
-
+            <ng-container *ngIf="isLargeScreen">
+              <h1 class="flex-item mb-0 Profile-text me-2">Eng (US)</h1>
+            </ng-container>
             <div class="dropdown">
               <i class="fa-solid fa-angle-down arrow-icon"></i>
               <ul *ngIf="isDropdownLangVisible" class="dropdown-menu">
@@ -38,9 +45,9 @@
           </div>
           <div class="d-flex flex-row align-items-center justify-content-center Profile" (click)="toggleDropdown()">
             <img src="assets/images/profileImage.png" class="img-fluid Profile-image me-2" />
-
-            <h1 class="flex-item mb-0 Profile-text me-2">{{ userName }}</h1>
-
+            <ng-container *ngIf="isLargeScreen">
+              <h1 class="flex-item mb-0 Profile-text me-2">{{ userName }}</h1>
+            </ng-container>
             <div class="dropdown">
               <i class="fa-solid fa-angle-down arrow-icon"></i>
               <ul *ngIf="isDropdownVisible" class="dropdown-menu">
@@ -87,4 +94,3 @@
     </ng-container>
   </div>
 </section>
-
