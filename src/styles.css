@@ -116,6 +116,13 @@ body {
     }
 }
 
+@media only screen and (max-width: 767px) {
+  body{
+     padding-left: 0px;
+     padding-right: 0px;
+ 
 
+  }
+}
 
 

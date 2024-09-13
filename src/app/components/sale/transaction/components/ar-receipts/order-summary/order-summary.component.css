@@ -56,6 +56,36 @@
     background-color: #34b186;
 }
 
+.small-grey-icon {
+    color: grey;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.quantity-input {
+    width: 30px;
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: end;
+}
+
+
+
+input[type="text"] {
+   
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    -moz-transition: border linear .2s, box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+}
+
 
 
 @media only screen and (min-height: 900px) {

@@ -182,7 +182,7 @@ input[type="text"] {
 }
 
 
-/*  */
+
 
 @media (min-width: 576px) {
     .new-btn-section{
@@ -190,7 +190,7 @@ input[type="text"] {
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 779px) {
     .new-btn {
         padding: 8px 20px;
         font-size: 12px; 
@@ -199,7 +199,31 @@ input[type="text"] {
         margin-top: 15px;
         justify-content: center;
     }
+
+    .filter-field {
+        width: 140px !important;
+    }
+
 }
+
+@media (max-width: 576px) {
+   
+    .filter-field {
+        width: 100% !important;
+    }
+    .new-btn {
+        padding: 8px 10px;
+        font-size: 12px; 
+    }
+    
+
+}
+
+
+
+
+
+/* This is just for table responsiveness */
 
 @media (min-width: 1440px) {
     .table {
@@ -209,9 +233,62 @@ input[type="text"] {
 }
 
 
-@media  (max-width: 1400px) {
+@media (min-width: 992px) and (max-width: 1400px) {
     .table {
-        max-width: 150% !important;     
-        width: 150% !important;      
-    } 
+        max-width: 120% !important;
+        width: 120% !important;
+    }
 }
+
+
+@media (min-width: 772px) and (max-width: 992px) {
+    .table {
+        max-width: 140% !important;
+        width: 140% !important;
+    }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 772px) {
+    .table {
+        max-width: 180% !important;
+        width: 180% !important;
+    }
+
+   
+
+
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .table {
+        max-width: 250% !important;
+        width: 250% !important;
+    }
+
+   
+
+}
+
+@media (min-width: 420px) and (max-width: 500px) {
+    .table {
+        max-width: 320% !important;
+        width: 320% !important;
+    }
+
+   
+
+}
+
+@media (min-width: 380px) and (max-width: 420px) {
+    .table {
+        max-width: 360% !important;
+        width: 360% !important;
+    }
+
+
+}
+
+
+
