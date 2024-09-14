@@ -51,8 +51,9 @@ export class TopBarComponent {
     }
   ]
 
-  isExpanded = false;
-  isLargeScreen = false;
+  isExpanded:boolean = false;
+  isLargeScreen:boolean = false;
+  showMenu:boolean = false;
 
   constructor(private sharedService: SharedServiceService, private cdr: ChangeDetectorRef,
     private router: Router) { }
@@ -97,12 +98,14 @@ export class TopBarComponent {
     this.showTitle = window.innerWidth > 786;
     const previousSize = this.isLargeScreen;
     this.isLargeScreen = window.innerWidth > 920;
-    if (previousSize !== this.isLargeScreen) {
+    let isMenu = window.innerWidth < 620;
+    if (previousSize !== this.isLargeScreen || isMenu) {
       this.cdr.detectChanges();
     }
   }
   toggleSearch() {
     this.isExpanded = !this.isExpanded;
+    this.showMenu = !this.showMenu;
   }
   updateProfile() {
 
