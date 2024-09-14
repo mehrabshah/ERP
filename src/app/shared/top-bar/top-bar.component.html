@@ -13,11 +13,11 @@
             (blur)="toggleSearch()" autofocus />
         </div>
         <div *ngIf="isLargeScreen" class="search-container">
-          <i class="fa fa-search search-icon" (click)="toggleSearch()"></i>
+          <i class="fa fa-search search-icon"></i>
           <input type="text" placeholder="Search..." class="search-bar h-auto" />
         </div>
         <div class="d-flex flex-row align-items-center justify-content-center">
-          <ng-container *ngIf="!showMenu">
+          <ng-container *ngIf="showMenu">
             <div class="d-flex flex-row align-items-center justify-content-center Profile me-5"
               (click)="toggleLangDropdown()">
               <img src="assets/images/United.svg" class="img-fluid united-image me-2" />

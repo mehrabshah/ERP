@@ -53,7 +53,7 @@ export class TopBarComponent {
 
   isExpanded:boolean = false;
   isLargeScreen:boolean = false;
-  showMenu:boolean = false;
+  showMenu:boolean = true;
 
   constructor(private sharedService: SharedServiceService, private cdr: ChangeDetectorRef,
     private router: Router) { }
@@ -97,9 +97,8 @@ export class TopBarComponent {
   private checkScreenSize() {
     this.showTitle = window.innerWidth > 786;
     const previousSize = this.isLargeScreen;
-    this.isLargeScreen = window.innerWidth > 920;
-    let isMenu = window.innerWidth < 620;
-    if (previousSize !== this.isLargeScreen || isMenu) {
+    this.isLargeScreen = window.innerWidth > 620;
+    if (previousSize !== this.isLargeScreen ) {
       this.cdr.detectChanges();
     }
   }
