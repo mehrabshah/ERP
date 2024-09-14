@@ -140,7 +140,7 @@ input[type="date"] {
 }
 
 input[type="date"] {
-    min-width:95.6%;
+    min-width:40% !important;
     -webkit-appearance : none;
     min-height: calc(var(--lwc-heightInput,1.875rem) + (1px * 2) + 24px) !important;
 }
