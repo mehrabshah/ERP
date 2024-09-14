@@ -157,6 +157,20 @@ input[type="date"]::-moz-calendar-picker-indicator {
     box-shadow: none !important; 
 }
 
+
+
+.form-group[_ngcontent-ng-c3809702746] .calendar-btn[_ngcontent-ng-c3809702746] {
+    position: absolute;
+    right: 10px;
+    top: 75%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #999 !important;
+}
+
 .ng-select .ng-select-container {
     background-color: #F6F6F6 !important ;
     border: none;
