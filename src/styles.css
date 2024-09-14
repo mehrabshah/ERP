@@ -130,3 +130,19 @@ body {
 }
 
 
+
+@media (max-width:  768px) {
+    .main-wrapper {
+        margin-top: 70px !important;
+        transition: all 0.5s ease;
+    }
+}
+
+
+
+
+
+
+
+
+
