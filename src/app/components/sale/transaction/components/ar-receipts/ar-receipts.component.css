@@ -159,6 +159,10 @@ input[type="date"]::-moz-calendar-picker-indicator {
     box-shadow: none !important; 
 }
 
+.ng-select .ng-select-container {
+    background-color: #F6F6F6 !important ;
+    border: none;
+  }
 
 
 @media only screen and (min-width: 1400px) {

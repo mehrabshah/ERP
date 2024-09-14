@@ -208,6 +208,11 @@ input[type="text"] {
 .placeholder-text {
     font-size: 14px;
 }
+.ng-select .ng-select-container {
+    background-color: #Ffffff !important;
+    border: none;
+  }
+
 
 
 
