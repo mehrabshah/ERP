@@ -2,21 +2,29 @@ import { Component } from '@angular/core';
 import { TopBarComponent } from '../../shared/top-bar/top-bar.component';
 import { CommonModule } from '@angular/common';
 import { TableComponent } from '../../shared/table/table/table.component';
-import { FormsModule } from '@angular/forms';
 import { SALES } from '../../shared/table/staticFiles/sales';
 import { Router } from '@angular/router';
+import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @Component({
   selector: 'app-sale',
   standalone: true,
-  imports: [CommonModule,TopBarComponent, TableComponent,
-    FormsModule],
+  imports: [CommonModule,TopBarComponent, TableComponent, ReactiveFormsModule ,
+    FormsModule,NgSelectModule,NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,],
   templateUrl: './sale.component.html',
   styleUrl: './sale.component.css'
 })
 export class SaleComponent {
   toBarTitle:string= 'Dashboard';
+
+  salesFilterForm!: FormGroup;
+
+  filterId: number = 0;
+  operatorId: number = 0;
 
   items: any[] = SALES;
   filteredItems: any[] = [];
@@ -25,11 +33,29 @@ export class SaleComponent {
   activeFileButton: string = 'AllFile';
   activeOtherButton: string = '';
 
+
+  filterData = [
+    { id: 1, name: 'Filter 1' },
+    { id: 2, name: 'Filter 2' },
+    { id: 3, name: 'Filter 3' },
+  ];
+  operatorData = [
+    { id: 1, name: 'operator 1' },
+    { id: 2, name: 'operaotr 2' },
+    { id: 3, name: 'operator 3' },
+  ];
+
   constructor(private router: Router) {
   }
 
   ngOnInit(): void {
     this.filteredItems = [...this.items];
+
+    this.salesFilterForm = new FormGroup({
+      filter: new FormControl(null),
+      operator: new FormControl(null),
+      value: new FormControl(null),
+    })
   }
 
   toggleAll(event: any): void {
@@ -45,20 +71,27 @@ export class SaleComponent {
   }
 
 
+  onfilterSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.filterId = id;
+    }
+  }
+
+  onCustomerSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.operatorId = id;
+    }
+  }
+
+
+
   setActive(buttonName: string) {
     this.activeButton = buttonName;
     this.filterItems();
   }
 
-  // filterItems() {
-  //   if (this.activeButton === '') {
-  //     // If no button is active, show all items
-  //     this.filteredItems = [...this.items];
-  //   } else {
-  //     // Filter items based on the active button value
-  //     this.filteredItems = this.items.filter(item => item.status === this.activeButton);
-  //   }
-  // }
   filterItems() {
     if (this.activeButton === '') {
       this.filteredItems = [...this.items];

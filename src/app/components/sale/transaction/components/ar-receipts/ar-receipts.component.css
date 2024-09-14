@@ -131,12 +131,19 @@ textarea {
 }
 
 
+
 input[type="date"] {
     padding: 8px;
     height: 40px;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
+    /* -webkit-appearance: none;
+    -moz-appearance: textfield; */
 }
+
+input[type="date"] {
+    min-width:40% !important;
+    -webkit-appearance : none;
+}
+
 
 input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 10px;
@@ -202,4 +209,5 @@ input[type="date"]::-moz-calendar-picker-indicator {
     }
   
 }
+
 

@@ -21,7 +21,6 @@
                     <ng-select [items]="customersData" bindLabel="name" bindValue="id" class="custom"
                       formControlName="customer" placeholder="Select customer" [searchable]="true"
                       (change)="onCustomerSelected($event)">
-                      <!-- Custom placeholder and icon -->
                       <ng-template ng-placeholder-tmp>
                         <div class="ng-select-placeholder">
                           <i class="fa fa-search search-icon"></i>
@@ -29,11 +28,6 @@
                         </div>
                       </ng-template>
                     </ng-select>
-
-                    <!-- <ng-select [items]="customersData" bindLabel="name" bindValue="id"
-                                            formControlName="customer" placeholder="Select customer" [searchable]="true"
-                                            (change)="onCustomerSelected($event)">
-                                        </ng-select> -->
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
@@ -54,7 +48,7 @@
                 <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="soDate">So Date:</label>
-                    <input formControlName="soDate" class="form-control" bsDatepicker type="date" />
+                    <input formControlName="soDate" class="form-control"  type="date" />
 
                   </div>
                 </div>
@@ -143,7 +137,7 @@
                     <input formControlName="extPrice" class="form-control" type="text" placeholder="Enter ext price" />
                   </div>
                 </div>
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-4">
+                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="com">Commnet:</label>
                     <input formControlName="comment" class="form-control" type="text" placeholder="Enter comment" />
@@ -157,7 +151,6 @@
               </div>
             </div>
           </div>
-
           <div class="card mt-2">
             <div class="card-body">
               <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
@@ -209,8 +202,6 @@
     </form>
   </div>
 </section>
-
-
 <ng-template #content let-offcanvas>
   <div class="offcanvas-header">
     <h5 class="general-title">Order Summary</h5>

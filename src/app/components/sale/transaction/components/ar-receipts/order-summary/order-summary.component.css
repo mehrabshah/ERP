@@ -36,6 +36,18 @@
     cursor: pointer;
 }
 
+.edit-icon {
+    color: #ffffff;
+    background-color: #20CC90;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+
+
 .total-order {
     color: #20CC90;
     font-size: 20px;
@@ -64,7 +76,7 @@
 
 
 .quantity-input {
-    width: 30px;
+    width: 58px;
     border: none;
     background: none;
     text-align: center;
@@ -73,6 +85,17 @@
     text-align: end;
 }
 
+.edit-quantity-input{
+    width: 60px;
+    border: none;
+    text-align: start;
+    background-color:#20CC90;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-left: 4px;
+    margin: 0px;
+   
+}
 
 
 input[type="text"] {
@@ -102,4 +125,12 @@ input[type="text"] {
         overflow-y: scroll;
     }
 
+}
+
+
+@media only screen and (min-height: 768px) and (max-width: 1200px) {
+    .order-summary-scroll {
+        height: 53vh;
+        overflow-y: scroll;
+    }
 }

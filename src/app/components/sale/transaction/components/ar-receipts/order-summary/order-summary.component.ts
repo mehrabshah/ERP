@@ -14,6 +14,16 @@ export class OrderSummaryComponent {
   @Input() summaryData: any ;
   
   isEditing: boolean = false;
+  openIndex: number | null = null;
+
+  toggleDetails(index: number) {
+    if (this.openIndex === index) {
+      this.openIndex = null;
+    } else {
+      this.openIndex = index;
+    }
+  }
+
 
   constructor() { }
   ngOnInit(): void {
@@ -22,6 +32,15 @@ export class OrderSummaryComponent {
 
   toggleEdit() {
     this.isEditing = !this.isEditing; 
+  }
+
+  validateInput(event: KeyboardEvent) {
+    const inputChar = String.fromCharCode(event.charCode);
+
+    // Prevent entering non-numeric characters
+    if (!/[0-9]/.test(inputChar)) {
+      event.preventDefault();
+    }
   }
 
 }
