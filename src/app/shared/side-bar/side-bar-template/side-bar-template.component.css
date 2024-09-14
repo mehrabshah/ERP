@@ -14,17 +14,17 @@
 }
 
 .scroll-sidebar::-webkit-scrollbar-track {
-    background: #B0B0B0;
-    border-radius: 24px;
+   border-radius: 24px;
 }
 
 .scroll-sidebar::-webkit-scrollbar-thumb {
+    background-color: #B0B0B0;
     border-radius: 20px;
 }
 
-.scroll-sidebar::-webkit-scrollbar-thumb:hover {
+/* .scroll-sidebar::-webkit-scrollbar-thumb:hover {
     background: #B0B0B0;
-}
+} */
 
 .nav {
     list-style: none;

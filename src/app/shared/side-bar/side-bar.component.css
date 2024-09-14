@@ -39,6 +39,7 @@
 
 .offcanvas-body {
     padding: 0px;
+    overflow: hidden;
 }
 
 @media (min-width: 992px) {

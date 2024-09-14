@@ -132,14 +132,12 @@ textarea {
 
 
 
-input[type="date"] {
+/* input[type="date"] {
     padding: 8px;
     height: 40px;
-    /* -webkit-appearance: none;
-    -moz-appearance: textfield; */
-}
+} */
 
-input[type="date"] {
+/* input[type="date"] {
     min-width:40% !important;
     -webkit-appearance : none;
 }
@@ -153,14 +151,39 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 input[type="date"]::-moz-calendar-picker-indicator {
     margin-right: 10px;
     align-self: center;
-}
+} */
 
 .btn-close:focus {
     box-shadow: none !important; 
 }
 
+.form-group .calendar-btn {
+    position: absolute;
+    right: 10px; 
+    top: 75%;
+    transform: translateY(-50%); 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #000; 
+}
 
+.form-group .calendar-btn:hover {
+    background: transparent; 
+    color: #000; 
+}
 
+.form-group .form-control {
+    padding-right: 40px; 
+}
+
+.ngb-dateInput {
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F6F6F6;
+}
 @media only screen and (min-width: 1400px) {
 
     .order-summary {
