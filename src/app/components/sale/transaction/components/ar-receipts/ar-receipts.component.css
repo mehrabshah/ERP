@@ -134,8 +134,7 @@ textarea {
 input[type="date"] {
     padding: 8px;
     height: 40px;
-    -webkit-appearance: none;
-    -moz-appearance: textfield;
+   
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
