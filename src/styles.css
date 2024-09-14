@@ -110,6 +110,16 @@ body {
     width: auto !important;
 }
 
+.ngb-dp-weekday,
+.ngb-dp-navigation-chevron,
+.ngb-dp-arrow-next .ngb-dp-navigation-chevron {
+    color: #20CC90 !important;
+}
+
+.bg-primary,
+.btn-light:hover {
+    background-color: #20CC90 !important;
+}
 
 @media (min-width: 1200px) {
     .main-wrapper {

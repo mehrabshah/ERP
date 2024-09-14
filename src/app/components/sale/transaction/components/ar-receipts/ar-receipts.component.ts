@@ -1,9 +1,9 @@
 import { Component, HostListener, inject, TemplateRef } from '@angular/core';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
+import { NgbAlertModule, NgbDatepickerModule, NgbDateStruct, NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
@@ -14,7 +14,7 @@ import { OrderSummaryComponent } from './order-summary/order-summary.component';
   standalone: true,
   imports: [CommonModule, TopBarComponent, NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
     FormsModule, ReactiveFormsModule, NgSelectModule,NgbNavModule, BsDatepickerModule,
-    OrderSummaryComponent
+    OrderSummaryComponent,NgbDatepickerModule, NgbAlertModule, JsonPipe
   ],
   templateUrl: './ar-receipts.component.html',
   styleUrl: './ar-receipts.component.css'
@@ -62,48 +62,42 @@ export class ArReceiptsComponent {
   ];
   summaryData = [
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
@@ -111,24 +105,21 @@ export class ArReceiptsComponent {
     },
 
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
@@ -137,24 +128,21 @@ export class ArReceiptsComponent {
  
 
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
       price: '3000'
     },
     {
-      title: 'Broiler Breeder Grower',
-      subTitle: 'Crumbs',
+      title: 'Broiler Breeder Grower Crumbs',
       netPrice: '3864',
       quantity: '200',
       taxAmount: "19.32",
@@ -166,6 +154,8 @@ export class ArReceiptsComponent {
   ]
 
   private offcanvasService = inject(NgbOffcanvas);
+  soDateModel!: NgbDateStruct;
+  cancelDateModel!: NgbDateStruct;
   constructor() { }
   ngOnInit(): void {
     this.generalForm = new FormGroup({
