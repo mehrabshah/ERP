@@ -138,6 +138,13 @@ input[type="date"] {
     -moz-appearance: textfield; */
 }
 
+input[type="date"] {
+    min-width:95.6%;
+    -webkit-appearance : none;
+    min-height: calc(var(--lwc-heightInput,1.875rem) + (1px * 2) + 24px) !important;
+}
+
+
 input[type="date"]::-webkit-calendar-picker-indicator {
     margin-right: 10px;
     align-self: center;
