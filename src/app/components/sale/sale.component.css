@@ -5,10 +5,11 @@
 }
 
 .filter-field {
-    border: 1.3px solid #eeeeee;
     height: 40px;
     width: 160px;
 }
+
+
 
 select {
     color: #363636;
@@ -65,7 +66,13 @@ td {
    overflow-y: scroll;
 }
 
-
+input[type="date"],
+input[type="text"] {
+    padding: 12px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #Ffffffff;
+}
 
 .table-row td,
 .table-row th {
@@ -79,9 +86,6 @@ thead tr th {
     top: 0;
     z-index: 100 ;
   }
-
-
-
 
 .checkbox {
     color: #20CC90;
@@ -190,6 +194,27 @@ input[type="text"] {
 }
 
 
+.ng-select-placeholder {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
+.search-icon {
+    margin-right: 8px;
+    color: #20CC90;
+}
+
+.placeholder-text {
+    font-size: 14px;
+}
+
+
+
+
+
+
+
 @media (min-width: 576px) {
     .new-btn-section{
         justify-content: end;
@@ -235,7 +260,7 @@ input[type="text"] {
     .search-container{
         width: 100%;
      }
-     
+    
      .select-container{
         width: 100%;
      }
