@@ -121,6 +121,42 @@ body {
     background-color: #20CC90 !important;
 }
 
+/* styling for ng-multiselct-dropdown */
+.multiselect-dropdown {
+    background-color: #F6F6F6;
+}
+
+.multiSelectDropDown .dropdown-btn {
+    border: none !important;
+    box-shadow: none !important; 
+}
+
+/* .multiSelectDropDown .dropdown-list {
+    border: none !important;
+    box-shadow: none !important;
+} */
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+    border: 1px solid #20CC90 !important;
+    margin-right: 4px !important;
+    background: white !important;
+    padding: 0px 10px !important;
+    color: #20CC90 !important;
+    border-radius: 6px !important;
+    float: left !important;
+    max-width: none !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item a{
+    color: #20CC90 !important;
+}
+
+.dropdown-list .filter-textbox input {
+    padding: 18px 2px 18px 26px !important;
+}
+
+/* ----------------------------------------------------   */
+
 @media (min-width: 1200px) {
     .main-wrapper {
         padding-left: 285px !important;

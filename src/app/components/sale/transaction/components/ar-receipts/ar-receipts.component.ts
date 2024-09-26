@@ -153,6 +153,33 @@ export class ArReceiptsComponent {
 
   ]
 
+  topBarList: any = [
+    {
+      id: '1',
+      name: 'Ar Receipt',
+      icon: 'fa fa-xmark',
+      link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '2',
+      name: 'Delivery Challan',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '3',
+      name: 'Sales Invoice',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    },
+    {
+      id: '4',
+      name: 'Sales Return',
+      icon: 'fa fa-xmark',
+      // link: '/sales/transaction/arReceipt',
+    }
+  ]
+
   private offcanvasService = inject(NgbOffcanvas);
   soDateModel!: NgbDateStruct;
   cancelDateModel!: NgbDateStruct;

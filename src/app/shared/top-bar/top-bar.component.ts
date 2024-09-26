@@ -13,6 +13,7 @@ import { SharedServiceService } from '../service/shared-service.service';
 export class TopBarComponent {
   @Input() toBarTitle: string = '';
   @Input() showtopNav: boolean = false;
+  @Input() listNav: any = [];
 
   @Output() toggled = new EventEmitter<boolean>();
   menuStatus: boolean = false;
@@ -24,32 +25,7 @@ export class TopBarComponent {
   isDropdownLangVisible: boolean = false;
   userName: string = "Rick";
 
-  topBarList: any = [
-    {
-      id: '1',
-      name: 'Ar Receipt',
-      icon: 'fa fa-xmark',
-      link: '/sales/transaction/arReceipt',
-    },
-    {
-      id: '2',
-      name: 'Delivery Challan',
-      icon: 'fa fa-xmark',
-      // link: '/sales/transaction/arReceipt',
-    },
-    {
-      id: '3',
-      name: 'Sales Invoice',
-      icon: 'fa fa-xmark',
-      // link: '/sales/transaction/arReceipt',
-    },
-    {
-      id: '4',
-      name: 'Sales Return',
-      icon: 'fa fa-xmark',
-      // link: '/sales/transaction/arReceipt',
-    }
-  ]
+  topBarList: any = [];
 
   isExpanded:boolean = false;
   isLargeScreen:boolean = false;
@@ -59,6 +35,7 @@ export class TopBarComponent {
     private router: Router) { }
 
   ngOnInit(): void {
+    this.topBarList = this.listNav;
     this.checkScreenSize();
     this.toggleSidebarFun();
     this.screenWidth = window.innerWidth;

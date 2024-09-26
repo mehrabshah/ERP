@@ -15,6 +15,7 @@ import { StoreInventoryComponent } from './components/store-inventory/store-inve
 import { QuantityControlComponent } from './components/quantity-control/quantity-control.component';
 import { SaleComponent } from './components/sale/sale.component';
 import { ArReceiptsComponent } from './components/sale/transaction/components/ar-receipts/ar-receipts.component';
+import { AccountSetupComponent } from './components/accounts/Maintenance/components/account-setup/account-setup.component';
 
 export const routes: Routes = [
     {
@@ -43,6 +44,10 @@ export const routes: Routes = [
     {
         path: 'accounts',
         component: AccountsComponent,
+    },
+    {
+        path: 'accounts/maintenance/accountSetup',
+        component: AccountSetupComponent,
     },
     {
         path: 'purchases',

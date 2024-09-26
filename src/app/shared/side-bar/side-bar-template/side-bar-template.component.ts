@@ -62,13 +62,23 @@ export class SideBarTemplateComponent {
       isMainOpen: false,
       child: [
         {
-          name: '',
+          name: 'Transaction',
           isChildOpen: false,
           children: [
-            // {
-            //   name: 'AR Receipts',
-            //   subLink: '/sales/transaction/arReceipt'
-            // }
+            {
+              name: 'Dummy Text',
+              subLink: '/accounts'
+            }
+          ]
+        },
+        {
+          name: 'Maintenance',
+          isChildOpen: false,
+          children: [
+            {
+              name: 'Account Setup',
+              subLink: 'accounts/maintenance/accountSetup'
+            }
           ]
         }
       ]

@@ -1,0 +1,93 @@
+<app-top-bar [toBarTitle]="toBarTitle" [showtopNav]="showtopNav" [listNav]="topBarList"></app-top-bar>
+<section class="main-wrapper">
+    <div class="container-fluid mb-3">
+        <div class="d-flex mb-2">
+            <button class="header-btn me-5"
+                    [ngClass]="{ 'active-button': activeButton === 'cashFlow' }"
+                    (click)="setActiveButton('cashFlow')">Cash Flow Setup</button>
+            
+            <button class="header-btn me-5"
+                    [ngClass]="{ 'active-button': activeButton === 'incomeStatement' }"
+                    (click)="setActiveButton('incomeStatement')">Income Statement Setup</button>
+            
+            <button class="header-btn"
+                    [ngClass]="{ 'active-button': activeButton === 'accountSetting' }"
+                    (click)="setActiveButton('accountSetting')">Account Setting</button>
+        </div>
+        
+        <div class="card p-4">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer" />
+                <i class="fa-solid fa-angle-down arrow-icon"></i>
+            </div>
+            <h4 class="account-title mb-4">Cash Flow Setup</h4>
+            <div class="card-body p-0">
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetIncomeList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetReceiveList"></app-multi-select-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-2 p-4">
+            <div class="d-flex align-items-center justify-content-end mb-3">
+                <i class="fa-solid fa-angle-down arrow-icon"></i>
+            </div>
+            <h4 class="account-title mb-4">Cash Flow Setup</h4>
+            <div class="card-body p-0">
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"></app-multi-select-field>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card mt-2 p-4">
+            <div class="d-flex align-items-center justify-content-end mb-3">
+                <i class="fa-solid fa-angle-down arrow-icon"></i>
+            </div>
+            <h4 class="account-title mb-4">Cash Flow Setup</h4>
+            <div class="card-body p-0">
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"></app-multi-select-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mt-2 p-4">
+            <div class="d-flex align-items-center justify-content-end mb-3">
+                <i class="fa-solid fa-angle-down arrow-icon"></i>
+            </div>
+            <h4 class="account-title mb-4">Cash Flow Setup</h4>
+            <div class="card-body p-0">
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"></app-multi-select-field>
+                </div>
+            </div>
+            <div class="save-btn text-center m-4">
+                <button class="submit-btn">Save</button>
+            </div>
+        </div>
+
+    </div>
+</section>
