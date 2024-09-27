@@ -129,11 +129,16 @@ a:hover {
     font-size: 1.5em;
     transform: scale(1.2);
     transition: transform 0.3s ease, font-size 0.3s ease;
+    margin-right: 6px;
 }
 
 .nav-item .nav-link {
     font-size: 1em;
     transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.nav-item .nav-link:hover {
+    color: #20CC90;
 }
 
 .main-arrow-icon {

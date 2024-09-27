@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgMultiSelectDropDownModule, IDropdownSettings } from 'ng-multiselect-dropdown';
 
@@ -13,6 +13,7 @@ import { NgMultiSelectDropDownModule, IDropdownSettings } from 'ng-multiselect-d
 })
 export class MultiSelectFieldComponent {
   @Input() multiNetIncomeList: any;
+  @Output() selectedItemsChange = new EventEmitter<{ label: string, selectedItems: any[] }>(); 
 
   dropdownSettings: IDropdownSettings = {
     singleSelection: false,
@@ -27,21 +28,40 @@ export class MultiSelectFieldComponent {
   selectedItems: any = [];
 
   accountForm!: FormGroup;
+  constructor() { }
   ngOnInit() {
     this.accountForm = new FormGroup({
-      accountVal: new FormControl(null),
+      accountVal: new FormControl([]),
     });
     if (this.multiNetIncomeList.data) {
       this.dropdownList = this.multiNetIncomeList.data;
     }
   }
-
   onItemSelect(item: any) {
-    console.log(item);
+    this.emitSelectedItems();
   }
+
+  onItemDeselect(item: any) {
+    this.emitSelectedItems();
+  }
+
   onSelectAll(items: any) {
-    console.log(items);
+    this.accountForm.get('accountVal')?.setValue(items);
+    this.emitSelectedItems();
   }
-  
+
+  onDeselectAll(items: any) {
+    this.accountForm.get('accountVal')?.setValue([]);
+    this.emitSelectedItems();
+  }
+
+
+  emitSelectedItems() {
+    const selectedItems = this.accountForm.get('accountVal')?.value || [];
+    this.selectedItemsChange.emit({
+      label: this.multiNetIncomeList.label,
+      selectedItems: selectedItems || []
+    });
+  }
 
 }

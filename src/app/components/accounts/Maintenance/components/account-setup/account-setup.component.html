@@ -23,11 +23,19 @@
             <h4 class="account-title mb-4">Cash Flow Setup</h4>
             <div class="card-body p-0">
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetIncomeList"></app-multi-select-field>
+                    <app-multi-select-field 
+                        [multiNetIncomeList]="multiNetIncomeList"
+                        (selectedItemsChange)="updateSelectedItems($event)">
+                    </app-multi-select-field>
                 </div>
+                
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetReceiveList"></app-multi-select-field>
+                    <app-multi-select-field 
+                        [multiNetIncomeList]="multiNetReceiveList"
+                        (selectedItemsChange)="updateSelectedItems($event)">
+                    </app-multi-select-field>
                 </div>
+                
             </div>
         </div>
 
@@ -38,13 +46,16 @@
             <h4 class="account-title mb-4">Cash Flow Setup</h4>
             <div class="card-body p-0">
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
             </div>
         </div>
@@ -57,7 +68,8 @@
             <h4 class="account-title mb-4">Cash Flow Setup</h4>
             <div class="card-body p-0">
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
             </div>
         </div>
@@ -69,19 +81,24 @@
             <h4 class="account-title mb-4">Cash Flow Setup</h4>
             <div class="card-body p-0">
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"></app-multi-select-field>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
             </div>
             <div class="save-btn text-center m-4">

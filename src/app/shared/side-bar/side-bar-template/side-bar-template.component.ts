@@ -77,7 +77,7 @@ export class SideBarTemplateComponent {
           children: [
             {
               name: 'Account Setup',
-              subLink: 'accounts/maintenance/accountSetup'
+              subLink: '/accounts/maintenance/accountSetup'
             }
           ]
         }

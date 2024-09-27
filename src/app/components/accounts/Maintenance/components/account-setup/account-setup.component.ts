@@ -13,6 +13,7 @@ import { MultiSelectFieldComponent } from '../../../../../common/components/mult
 export class AccountSetupComponent {
   toBarTitle: string = 'Account setup Cash Flow Setup';
   showtopNav: boolean = true;
+  selectedData: any = {};
   topBarList: any = [
     {
       id: '1',
@@ -24,7 +25,7 @@ export class AccountSetupComponent {
       id: '2',
       name: 'Account setup Cash Flow Setup',
       icon: 'fa fa-xmark',
-      link: 'accounts/maintenance/accountSetup',
+      link: '/accounts/maintenance/accountSetup',
     },
     {
       id: '3',
@@ -162,8 +163,23 @@ export class AccountSetupComponent {
     ]
   }
 
+  constructor(){}
+  ngOnInit() {
+   
+  }
   setActiveButton(button: string) {
     this.activeButton = button;
   }
+
+  updateSelectedItems(event: { label: string, selectedItems: any[] }) {
+    if (event.selectedItems.length > 0) {
+      this.selectedData[event.label] = event.selectedItems;
+    } else {
+      delete this.selectedData[event.label];
+    }
+
+    console.log('Updated selected data:', this.selectedData);
+  }
+
 
 }

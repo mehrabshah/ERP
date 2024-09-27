@@ -131,11 +131,6 @@ body {
     box-shadow: none !important; 
 }
 
-/* .multiSelectDropDown .dropdown-list {
-    border: none !important;
-    box-shadow: none !important;
-} */
-
 .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
     border: 1px solid #20CC90 !important;
     margin-right: 4px !important;
@@ -154,7 +149,31 @@ body {
 .dropdown-list .filter-textbox input {
     padding: 18px 2px 18px 26px !important;
 }
+/* checkbox styling in ng-multiselect */
+.multiselect-item-checkbox input[type=checkbox]:checked+div:before {
+    background: #20CC90 !important;
+    border: 1px solid #20CC90 !important;
+}
 
+.multiselect-item-checkbox input[type=checkbox]+div:before {
+    color: #20CC90 !important;
+    width: 16px !important;
+    height: 16px !important;
+    border: 1.2px solid #20CC90 !important;
+    border-radius: 3px !important;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+}
+
+.multiselect-dropdown .dropdown-btn .selected-item-container .selected-item a {
+    margin-right: 8px;
+    margin-bottom: 1px;
+    text-decoration: none;
+}
 /* ----------------------------------------------------   */
 
 @media (min-width: 1200px) {
@@ -163,7 +182,6 @@ body {
     }
 
 }
-
 
 @media (min-width: 1200px) {
     .main-wrapper {
