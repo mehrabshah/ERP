@@ -53,8 +53,7 @@ export class TopBarComponent {
     this.isDropdownLangVisible = !this.isDropdownLangVisible;
   }
   logout() {
-    // localStorage.removeItem(this.user);
-    // this.router.navigate(['/login']);
+    
   }
   toggle() {
     this.menuStatus = !this.menuStatus;

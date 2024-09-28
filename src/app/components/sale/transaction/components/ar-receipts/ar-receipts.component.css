@@ -132,27 +132,6 @@ textarea {
 
 
 
-/* input[type="date"] {
-    padding: 8px;
-    height: 40px;
-} */
-
-/* input[type="date"] {
-    min-width:40% !important;
-    -webkit-appearance : none;
-}
-
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    margin-right: 10px;
-    align-self: center;
-}
-
-input[type="date"]::-moz-calendar-picker-indicator {
-    margin-right: 10px;
-    align-self: center;
-} */
-
 .btn-close:focus {
     box-shadow: none !important; 
 }
