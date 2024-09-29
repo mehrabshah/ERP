@@ -132,27 +132,6 @@ textarea {
 
 
 
-/* input[type="date"] {
-    padding: 8px;
-    height: 40px;
-} */
-
-/* input[type="date"] {
-    min-width:40% !important;
-    -webkit-appearance : none;
-}
-
-
-input[type="date"]::-webkit-calendar-picker-indicator {
-    margin-right: 10px;
-    align-self: center;
-}
-
-input[type="date"]::-moz-calendar-picker-indicator {
-    margin-right: 10px;
-    align-self: center;
-} */
-
 .btn-close:focus {
     box-shadow: none !important; 
 }
@@ -207,13 +186,13 @@ input[type="date"]::-moz-calendar-picker-indicator {
     .order-summary {
         position: fixed;
         right: 0;
-        top: 158px;
+        top: 150px;
         width: 420px;
         height: calc(100vh - 165px);
     }
 
     .main-wrapper {
-        margin-top: 160px;
+        margin-top: 150px;
     }
 }
 
@@ -247,6 +226,15 @@ input[type="date"]::-moz-calendar-picker-indicator {
 
     .main-wrapper {
         margin-top: 140px;
+    }
+  
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+   
+
+    .main-wrapper {
+        margin-top: 85px !important;
     }
   
 }

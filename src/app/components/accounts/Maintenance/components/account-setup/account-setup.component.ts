@@ -31,13 +31,11 @@ export class AccountSetupComponent {
       id: '3',
       name: 'Sales Invoice',
       icon: 'fa fa-xmark',
-      // link: '/sales/transaction/arReceipt',
     },
     {
       id: '4',
       name: 'Sales Return',
       icon: 'fa fa-xmark',
-      // link: '/sales/transaction/arReceipt',
     }
   ];
 

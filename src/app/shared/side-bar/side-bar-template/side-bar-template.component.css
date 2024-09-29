@@ -22,16 +22,12 @@
     border-radius: 20px;
 }
 
-/* .scroll-sidebar::-webkit-scrollbar-thumb:hover {
-    background: #B0B0B0;
-} */
 
 .nav {
     list-style: none;
     padding-top: 25px;
 }
 
-/* Main item styling */
 .nav-item {
     display: flex;
     flex-direction: column;

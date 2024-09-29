@@ -1,5 +1,5 @@
 .main-wrapper {
-    margin-top: 10rem;
+    margin-top: 75px !important;
 }
 
 .account-title {
@@ -40,8 +40,23 @@
     background-color: #34b186;
 }
 
-@media (min-width: 1400px) and (max-width: 1480px){
+@media (min-width: 1468px) {
     .main-wrapper {
-        margin-top: 11rem;
+        margin-top: 150px !important;
     }
+}
+
+@media (min-width: 1200px) and (max-width: 1468px) {
+    .main-wrapper {
+        margin-top: 180px !important;
+    }
+  
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+   
+    .main-wrapper {
+        margin-top: 90px !important;
+    }
+  
 }
