@@ -186,13 +186,13 @@ textarea {
     .order-summary {
         position: fixed;
         right: 0;
-        top: 158px;
+        top: 150px;
         width: 420px;
         height: calc(100vh - 165px);
     }
 
     .main-wrapper {
-        margin-top: 160px;
+        margin-top: 150px;
     }
 }
 
@@ -226,6 +226,15 @@ textarea {
 
     .main-wrapper {
         margin-top: 140px;
+    }
+  
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+   
+
+    .main-wrapper {
+        margin-top: 85px !important;
     }
   
 }
