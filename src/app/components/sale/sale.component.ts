@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { TopBarComponent } from '../../shared/top-bar/top-bar.component';
 import { CommonModule } from '@angular/common';
-import { TableComponent } from '../../shared/table/table/table.component';
-import { SALES } from '../../shared/table/staticFiles/sales';
 import { Router } from '@angular/router';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SALES } from '../../shared/staticFiles/sales';
 
 
 
@@ -13,7 +12,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 @Component({
   selector: 'app-sale',
   standalone: true,
-  imports: [CommonModule,TopBarComponent, TableComponent, ReactiveFormsModule ,
+  imports: [CommonModule,TopBarComponent, ReactiveFormsModule ,
     FormsModule,NgSelectModule,NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,],
   templateUrl: './sale.component.html',
   styleUrl: './sale.component.css'

@@ -20,15 +20,15 @@
                     <!-- First-level Dropdown -->
                     <div class="dropdown-container" [ngClass]="{'show': item.isMainOpen}"
                         *ngIf="item.child && item.child.length > 0">
-                        <ng-container *ngFor="let child of item.child">
-                            <div class="dropdown-item-container">
+                        <ng-container *ngFor="let child of item.child; let i = index">
+                            <div class="dropdown-item-container" [ngClass]="{'mt-3': i !== 0}">
                                 <a (click)="toggleChildDropdown(item,child)" class="nav-link dropdown-item">
                                     <ng-container *ngIf="!child.isChildOpen">
-                                        <i class="fa-solid fa-angle-right arrow-icon ms-2"
+                                        <i class="fa-solid fa-angle-right arrow-icon ms-2 me-3"
                                             *ngIf="child.children && child.children.length > 0"></i>
                                     </ng-container>
                                     <ng-container *ngIf="child.isChildOpen">
-                                        <i class="fa-solid fa-angle-down arrow-icon ms-2"
+                                        <i class="fa-solid fa-angle-down arrow-icon ms-2 me-3"
                                             *ngIf="child.children && child.children.length > 0"></i>
                                     </ng-container>
 

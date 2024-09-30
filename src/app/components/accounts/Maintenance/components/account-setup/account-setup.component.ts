@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
-import { MultiSelectFieldComponent } from '../../../../../common/components/multi-select-field/multi-select-field.component';
+import { MultiSelectFieldComponent } from '../../../../../shared/multi-select-field/multi-select-field.component';
 
 @Component({
   selector: 'app-account-setup',

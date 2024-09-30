@@ -6,7 +6,7 @@ import { SharedServiceService } from '../../service/shared-service.service';
 @Component({
   selector: 'app-side-bar-template',
   standalone: true,
-  imports: [CommonModule,RouterModule, RouterLink],
+  imports: [CommonModule, RouterModule, RouterLink],
   templateUrl: './side-bar-template.component.html',
   styleUrl: './side-bar-template.component.css'
 })
@@ -61,16 +61,16 @@ export class SideBarTemplateComponent {
       height: '',
       isMainOpen: false,
       child: [
-        {
-          name: 'Transaction',
-          isChildOpen: false,
-          children: [
-            {
-              name: 'Dummy Text',
-              subLink: '/accounts'
-            }
-          ]
-        },
+        // {
+        //   name: 'Transaction',
+        //   isChildOpen: false,
+        //   children: [
+        //     {
+        //       name: 'Dummy Text',
+        //       subLink: '/accounts'
+        //     }
+        //   ]
+        // },
         {
           name: 'Maintenance',
           isChildOpen: false,
@@ -78,6 +78,10 @@ export class SideBarTemplateComponent {
             {
               name: 'Account Setup',
               subLink: '/accounts/maintenance/accountSetup'
+            },
+            {
+              name: 'Account Setting',
+              subLink: '/accounts/maintenance/accountSetting'
             }
           ]
         }
@@ -291,12 +295,29 @@ export class SideBarTemplateComponent {
   constructor(private router: Router, private sharedService: SharedServiceService) { }
   ngOnInit(): void {
     this.list = this.sideBarList;
+    this.router.events.subscribe(() => {
+      this.closeOtherMenus();
+    });
+  }
+
+  closeOtherMenus() {
+    const currentUrl = this.router.url;
+    this.sideBarList.forEach((menuItem: any) => {
+      if (!currentUrl.startsWith(menuItem.link)) {
+        menuItem.isMainOpen = false;  
+        menuItem.child.forEach((child: any) => {
+          child.isChildOpen = false; 
+        });
+      } else {
+        menuItem.isMainOpen = true;
+      }
+    });
   }
 
   isActive(link: string): boolean {
     return this.router.url === link;
   }
-  
+
   toggleDropdown(item: any) {
     this.sideBarList.forEach((menuItem: any) => {
       if (menuItem !== item) {
