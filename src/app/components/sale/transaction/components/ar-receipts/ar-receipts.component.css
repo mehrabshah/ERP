@@ -231,10 +231,15 @@ textarea {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-   
-
     .main-wrapper {
         margin-top: 85px !important;
+    }
+  
+}
+
+@media (max-width: 576px) {
+    .cancel-date {
+        margin-bottom: 8px;
     }
   
 }
