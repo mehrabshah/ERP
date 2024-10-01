@@ -2,21 +2,123 @@
 <section class="main-wrapper">
     <div class="container-fluid mb-3">
         <div class="d-flex     flex-md-row flex-column mb-2">
+            <button class="header-btn me-md-5 mt-2 mt-md-0" [ngClass]="{ 'active-button': activeButton === 'cashFlow' }"
+                (click)="setActiveButton('cashFlow')">Cash Flow Setup</button>
+
             <button class="header-btn me-md-5 mt-2 mt-md-0"
-                    [ngClass]="{ 'active-button': activeButton === 'cashFlow' }"
-                    (click)="setActiveButton('cashFlow')">Cash Flow Setup</button>
-            
-            <button class="header-btn me-md-5 mt-2 mt-md-0"
-                    [ngClass]="{ 'active-button': activeButton === 'incomeStatement' }"
-                    (click)="setActiveButton('incomeStatement')">Income Statement Setup</button>
-            
+                [ngClass]="{ 'active-button': activeButton === 'incomeStatement' }"
+                (click)="setActiveButton('incomeStatement')">Income Statement Setup</button>
+
             <button class="header-btn mt-2 mt-md-0 mb-md-0 mb-2"
-                    [ngClass]="{ 'active-button': activeButton === 'accountSetting' }"
-                    (click)="setActiveButton('accountSetting')">Account Setting</button>
+                [ngClass]="{ 'active-button': activeButton === 'accountSetting' }"
+                (click)="setActiveButton('accountSetting')">Account Setting</button>
         </div>
-        
+
         <ng-container *ngIf="activeButton === 'cashFlow'">
-            <div class="card p-4">
+            <div ngbAccordion>
+                <div ngbAccordionItem [collapsed]="isCollapsed" class="mb-3">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton (click)="isCollapsed = !isCollapsed">
+                            <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer" />
+                        </button>
+                    </h2>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed" class="p-4">
+                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                        <div>
+                            <!-- First multi-select field -->
+                            <div class="mb-2">
+                                <app-multi-select-field [multiNetIncomeList]="multiNetIncomeList"
+                                    (selectedItemsChange)="updateSelectedItems($event)">
+                                </app-multi-select-field>
+                            </div>
+
+                            <!-- Second multi-select field -->
+                            <div>
+                                <app-multi-select-field [multiNetIncomeList]="multiNetReceiveList"
+                                    (selectedItemsChange)="updateSelectedItems($event)">
+                                </app-multi-select-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ngbAccordionItem [collapsed]="isCollapsed1" class="mb-3">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton (click)="isCollapsed1 = !isCollapsed1">
+                        </button>
+                    </h2>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed1" class="p-4">
+                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                        <div>
+                            <div class="mb-2">
+                                <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"
+                                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                            </div>
+                            <div class="mb-2">
+                                <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"
+                                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                            </div>
+                            <div>
+                                <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"
+                                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ngbAccordionItem [collapsed]="isCollapsed2" class="mb-3">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton (click)="isCollapsed2 = !isCollapsed2">
+                        </button>
+                    </h2>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed2" class="p-4">
+                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                        <div>
+                            <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"
+                            (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+                    </div>
+                </div>
+
+                <div ngbAccordionItem [collapsed]="isCollapsed3" class="mb-3">
+                    <h2 ngbAccordionHeader>
+                        <button ngbAccordionButton (click)="isCollapsed3 = !isCollapsed3">
+                        </button>
+                    </h2>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed3" class="p-4">
+                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                        <div class="mb-2">
+                            <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"
+                                (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+                        <div class="mb-2">
+                            <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"
+                                (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+                        <div class="mb-2">
+                            <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"
+                                (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+                        <div class="mb-2">
+                            <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"
+                                (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+                        <div>
+                            <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"
+                                (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                        </div>
+
+                        <div class="save-btn text-center">
+                            <button class="submit-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- <div class="card p-4">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer" />
                     <i class="fa-solid fa-angle-down arrow-icon"></i>
@@ -36,9 +138,10 @@
                     </div>
 
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card mt-2 p-4">
+
+            <!-- <div class="card mt-2 p-4">
                 <div class="d-flex align-items-center justify-content-end mb-3">
                     <i class="fa-solid fa-angle-down arrow-icon"></i>
                 </div>
@@ -57,10 +160,10 @@
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
 
-            <div class="card mt-2 p-4">
+            <!-- <div class="card mt-2 p-4">
                 <div class="d-flex align-items-center justify-content-end mb-3">
                     <i class="fa-solid fa-angle-down arrow-icon"></i>
                 </div>
@@ -71,9 +174,9 @@
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <div class="card mt-2 p-4">
+            <!-- <div class="card mt-2 p-4">
                 <div class="d-flex align-items-center justify-content-end mb-3">
                     <i class="fa-solid fa-angle-down arrow-icon"></i>
                 </div>
@@ -103,7 +206,7 @@
                 <div class="save-btn text-center m-4">
                     <button class="submit-btn">Save</button>
                 </div>
-            </div>
+            </div> -->
         </ng-container>
     </div>
 </section>

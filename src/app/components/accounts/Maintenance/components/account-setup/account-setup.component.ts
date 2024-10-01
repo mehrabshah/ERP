@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { MultiSelectFieldComponent } from '../../../../../shared/multi-select-field/multi-select-field.component';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-account-setup',
   standalone: true,
-  imports: [CommonModule, TopBarComponent, MultiSelectFieldComponent],
+  imports: [CommonModule, TopBarComponent, MultiSelectFieldComponent, NgbAccordionModule],
   templateUrl: './account-setup.component.html',
   styleUrl: './account-setup.component.css'
 })
@@ -14,6 +15,11 @@ export class AccountSetupComponent {
   toBarTitle: string = 'Account setup Cash Flow Setup';
   showtopNav: boolean = true;
   selectedData: any = {};
+  isCollapsed = false;
+  isCollapsed1= false;
+  isCollapsed2= false;
+  isCollapsed3= false;
+
   topBarList: any = [
     {
       id: '1',
