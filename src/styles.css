@@ -159,6 +159,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
+   
 }
 
 .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item a {
@@ -197,5 +198,15 @@ body {
     .main-wrapper {
         margin-top: 70px !important;
         transition: all 0.5s ease;
+    }
+}
+
+
+@media  (max-width: 576px) {
+    .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        margin-top: 8px !important;  
     }
 }
