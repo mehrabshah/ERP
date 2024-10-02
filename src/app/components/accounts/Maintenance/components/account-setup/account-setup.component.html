@@ -17,13 +17,14 @@
         <ng-container *ngIf="activeButton === 'cashFlow'">
             <div ngbAccordion>
                 <div ngbAccordionItem [collapsed]="isCollapsed" class="mb-3">
+                   
                     <h2 ngbAccordionHeader>
+
                         <button ngbAccordionButton (click)="isCollapsed = !isCollapsed">
-                            <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer" />
+                            <h4 class="account-title ">Cash Flow Setup</h4>
                         </button>
                     </h2>
-                    <div ngbAccordionCollapse *ngIf="!isCollapsed" class="p-4">
-                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed" class="p-4 pt-0">
                         <div>
                             <!-- First multi-select field -->
                             <div class="mb-2">
@@ -44,11 +45,13 @@
 
                 <div ngbAccordionItem [collapsed]="isCollapsed1" class="mb-3">
                     <h2 ngbAccordionHeader>
+                       
                         <button ngbAccordionButton (click)="isCollapsed1 = !isCollapsed1">
+                            <h4 class="account-title ">Cash Flow Setup</h4>
                         </button>
                     </h2>
-                    <div ngbAccordionCollapse *ngIf="!isCollapsed1" class="p-4">
-                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed1" class="p-4 pt-0">
+                        
                         <div>
                             <div class="mb-2">
                                 <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"
@@ -69,10 +72,10 @@
                 <div ngbAccordionItem [collapsed]="isCollapsed2" class="mb-3">
                     <h2 ngbAccordionHeader>
                         <button ngbAccordionButton (click)="isCollapsed2 = !isCollapsed2">
+                            <h4 class="account-title">Cash Flow Setup</h4>
                         </button>
                     </h2>
-                    <div ngbAccordionCollapse *ngIf="!isCollapsed2" class="p-4">
-                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed2" class="p-4 pt-0">
                         <div>
                             <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
@@ -83,10 +86,10 @@
                 <div ngbAccordionItem [collapsed]="isCollapsed3" class="mb-3">
                     <h2 ngbAccordionHeader>
                         <button ngbAccordionButton (click)="isCollapsed3 = !isCollapsed3">
+                            <h4 class="account-title">Cash Flow Setup</h4>
                         </button>
                     </h2>
-                    <div ngbAccordionCollapse *ngIf="!isCollapsed3" class="p-4">
-                        <h4 class="account-title mb-4">Cash Flow Setup</h4>
+                    <div ngbAccordionCollapse *ngIf="!isCollapsed3" class="p-4 pt-0">
                         <div class="mb-2">
                             <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"
                                 (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
@@ -107,11 +110,10 @@
                             <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"
                                 (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                         </div>
-
-                        <div class="save-btn text-center">
-                            <button class="submit-btn">Save</button>
-                        </div>
                     </div>
+                </div>
+                <div class="save-btn mt-2 text-center d-flex justify-content-end">
+                    <button class="submit-btn">Save</button>
                 </div>
             </div>
 
