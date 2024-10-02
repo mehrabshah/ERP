@@ -40,6 +40,16 @@
     background-color: #34b186;
 }
 
+.save-btn {
+    margin-top: 50px;
+}
+
+  
+.accordion-button:not(.collapsed) {
+    background-color: #ffffff;
+}
+  
+
 @media (min-width: 1468px) {
     .main-wrapper {
         margin-top: 150px !important;
