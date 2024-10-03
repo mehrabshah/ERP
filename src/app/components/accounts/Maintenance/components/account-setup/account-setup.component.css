@@ -21,6 +21,20 @@
     border-radius: 8px;
 }
 
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: none !important;
+    border-color: transparent !important; 
+    box-shadow: none !important;
+}
+
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+}
+
+
 .active-button {
     background-color: #20CC90; 
     color: white; 
@@ -70,3 +84,4 @@
     }
   
 }
+
