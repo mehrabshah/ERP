@@ -1,0 +1,35 @@
+
+.account-title {
+    font-weight: 600;
+    font-size: 20px;
+    color: #363636;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: none !important;
+    border-color: transparent !important; 
+    box-shadow: none !important;
+}
+
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+.submit-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    color: white;
+    padding: 5px 55px;
+    border-radius: 6px;
+}
+
+.submit-btn:hover {
+    background-color: #34b186;
+}
+
+.save-btn {
+    margin-top: 50px;
+}

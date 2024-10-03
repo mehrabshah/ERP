@@ -2,12 +2,6 @@
     margin-top: 75px !important;
 }
 
-.account-title {
-    font-weight: 600;
-    font-size: 20px;
-    color: #363636;
-}
-
 .arrow-icon {
     color: #20CC90;
 }
@@ -21,46 +15,10 @@
     border-radius: 8px;
 }
 
-
-.accordion-button:focus {
-    z-index: 3;
-    outline: none !important;
-    border-color: transparent !important; 
-    box-shadow: none !important;
-}
-
-
-.accordion-button:not(.collapsed) {
-    box-shadow: none;
-}
-
-
 .active-button {
     background-color: #20CC90; 
     color: white; 
     border: 1px solid #20CC90;
-}
-
-
-.submit-btn {
-    border: 1px solid #20CC90;
-    background-color: #20CC90;
-    color: white;
-    padding: 5px 55px;
-    border-radius: 6px;
-}
-
-.submit-btn:hover {
-    background-color: #34b186;
-}
-
-.save-btn {
-    margin-top: 50px;
-}
-
-  
-.accordion-button:not(.collapsed) {
-    background-color: #ffffff;
 }
   
 

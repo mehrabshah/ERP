@@ -1,0 +1,103 @@
+<section class="cash-flow-setup">
+    <div ngbAccordion>
+        <div ngbAccordionItem [collapsed]="isCollapsed" class="mb-3">
+           
+            <h2 ngbAccordionHeader>
+
+                <button ngbAccordionButton (click)="isCollapsed = !isCollapsed">
+                    <h4 class="account-title ">Cash Flow Setup</h4>
+                </button>
+            </h2>
+            <div ngbAccordionCollapse *ngIf="!isCollapsed" class="p-4 pt-0">
+                <div>
+                    <!-- First multi-select field -->
+                    <div class="mb-2">
+                        <app-multi-select-field [multiNetIncomeList]="multiNetIncomeList"
+                            (selectedItemsChange)="updateSelectedItems($event)">
+                        </app-multi-select-field>
+                    </div>
+
+                    <!-- Second multi-select field -->
+                    <div>
+                        <app-multi-select-field [multiNetIncomeList]="multiNetReceiveList"
+                            (selectedItemsChange)="updateSelectedItems($event)">
+                        </app-multi-select-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed1" class="mb-3">
+            <h2 ngbAccordionHeader>
+               
+                <button ngbAccordionButton (click)="isCollapsed1 = !isCollapsed1">
+                    <h4 class="account-title ">Cash Flow Setup</h4>
+                </button>
+            </h2>
+            <div ngbAccordionCollapse *ngIf="!isCollapsed1" class="p-4 pt-0">
+                
+                <div>
+                    <div class="mb-2">
+                        <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"
+                            (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                    </div>
+                    <div class="mb-2">
+                        <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"
+                            (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                    </div>
+                    <div>
+                        <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"
+                            (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed2" class="mb-3">
+            <h2 ngbAccordionHeader>
+                <button ngbAccordionButton (click)="isCollapsed2 = !isCollapsed2">
+                    <h4 class="account-title">Cash Flow Setup</h4>
+                </button>
+            </h2>
+            <div ngbAccordionCollapse *ngIf="!isCollapsed2" class="p-4 pt-0">
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"
+                    (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+            </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed3" class="mb-3">
+            <h2 ngbAccordionHeader>
+                <button ngbAccordionButton (click)="isCollapsed3 = !isCollapsed3">
+                    <h4 class="account-title">Cash Flow Setup</h4>
+                </button>
+            </h2>
+            <div ngbAccordionCollapse *ngIf="!isCollapsed3" class="p-4 pt-0">
+                <div class="mb-2">
+                    <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"
+                        (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+                <div class="mb-2">
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"
+                        (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+                <div class="mb-2">
+                    <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"
+                        (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+                <div class="mb-2">
+                    <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"
+                        (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+                <div>
+                    <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"
+                        (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
+                </div>
+            </div>
+        </div>
+        <div class="save-btn mt-2 text-center d-flex justify-content-md-end justify-content-center">
+            <button class="submit-btn">Save</button>
+        </div>
+    </div>
+</section>
