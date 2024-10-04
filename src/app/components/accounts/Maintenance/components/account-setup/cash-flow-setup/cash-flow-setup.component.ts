@@ -1,14 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { NgbAccordionModule, NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { MultiSelectFieldComponent } from '../../../../../../shared/multi-select-field/multi-select-field.component';
 
 @Component({
   selector: 'app-cash-flow-setup',
   standalone: true,
-  imports: [CommonModule,NgbCollapseModule,NgbAccordionModule,MultiSelectFieldComponent],
+  imports: [CommonModule,NgbAccordionModule ,MultiSelectFieldComponent],
   templateUrl: './cash-flow-setup.component.html',
-  styleUrl: './cash-flow-setup.component.css'
+  styleUrl: './cash-flow-setup.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class CashFlowSetupComponent {
   selectedData: any = {};
@@ -150,7 +151,9 @@ export class CashFlowSetupComponent {
     } else {
       delete this.selectedData[event.label];
     }
+  }
 
+  cashFlowSave(){
     console.log('Updated selected data:', this.selectedData);
   }
 }
