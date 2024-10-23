@@ -1,19 +1,7 @@
 <app-top-bar [toBarTitle]="toBarTitle" [showtopNav]="showtopNav" [listNav]="topBarList"></app-top-bar>
 <section class="main-wrapper">
     <div class="container-fluid mb-3">
-        <div class="d-flex     flex-md-row flex-column mb-2">
-            <button class="header-btn me-md-5 mt-2 mt-md-0" [ngClass]="{ 'active-button': activeButton === 'cashFlow' }"
-                (click)="setActiveButton('cashFlow')">Cash Flow Setup</button>
-
-            <button class="header-btn me-md-5 mt-2 mt-md-0"
-                [ngClass]="{ 'active-button': activeButton === 'incomeStatement' }"
-                (click)="setActiveButton('incomeStatement')">Income Statement Setup</button>
-
-            <button class="header-btn mt-2 mt-md-0 mb-md-0 mb-2"
-                [ngClass]="{ 'active-button': activeButton === 'accountSetting' }"
-                (click)="setActiveButton('accountSetting')">Account Setting</button>
-        </div>
-
+        <app-account-setup-button [activeParentBtn]="activeButton"  (buttonClicked)="setActiveButton($event)"></app-account-setup-button>
         <ng-container *ngIf="activeButton === 'cashFlow'">
             <app-cash-flow-setup></app-cash-flow-setup>
         </ng-container>

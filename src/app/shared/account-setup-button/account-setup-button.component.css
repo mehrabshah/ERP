@@ -1,0 +1,13 @@
+.active-header-btn {
+    background-color: white; 
+    color: #20CC90; 
+    border: 3px solid #20CC90; 
+    padding: 3px 20px; 
+    cursor: pointer;
+    border-radius: 8px;
+}
+.active-button {
+    background-color: #20CC90; 
+    color: white; 
+    border: 1px solid #20CC90;
+}

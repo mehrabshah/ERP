@@ -1,0 +1,14 @@
+<section class="account-setup-button">
+    <div class="d-flex flex-md-row flex-column mb-2">
+        <button class="active-header-btn me-md-5 mt-2 mt-md-0" [ngClass]="{ 'active-button': activeButton === 'cashFlow' }"
+            (click)="onButtonClick('cashFlow')">Cash Flow Setup</button>
+
+        <button class="active-header-btn me-md-5 mt-2 mt-md-0"
+            [ngClass]="{ 'active-button': activeButton === 'incomeStatement' }"
+            (click)="onButtonClick('incomeStatement')">Income Statement Setup</button>
+
+        <button class="active-header-btn mt-2 mt-md-0 mb-md-0 mb-2"
+            [ngClass]="{ 'active-button': activeButton === 'accountSetting' }"
+            (click)="onButtonClick('accountSetting')">Account Setting</button>
+    </div>
+</section>
