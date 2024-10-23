@@ -3,12 +3,12 @@
     <div class="container-fluid mb-3">
         <app-account-setup-button [activeParentBtn]="activeButton"  (buttonClicked)="setActiveButton($event)"></app-account-setup-button>
         <div  *ngIf="activeButton === 'accountSetting'" class="card">
-            <div class="card-body pb-0">
+            <div class="card-body pt-0 pb-0">
                 <div class="mt-md-4 mt-0">
-                    <div class="d-flex justify-content-between justify-content-end align-items-center mt-md-5 mt-3">
+                    <div class="d-flex justify-content-between justify-content-end align-items-center mt-md-5 mt-1">
                         <form [formGroup]="accountSettingForm"
                             class="search-container align-items-start align-items-sm-center mb-0 d-flex flex-column flex-sm-row">
-                            <div class="form d-flex select-container mt-2 mt-sm-0 flex-row">
+                            <div class="form d-flex select-container mt-sm-0 flex-row">
                                 <ng-select [items]="filterData" bindLabel="name" bindValue="id"
                                     class="filter-field me-2 mt-1" formControlName="filter" placeholder="Filter"
                                     [searchable]="true" (change)="onfilterSelected($event)">
