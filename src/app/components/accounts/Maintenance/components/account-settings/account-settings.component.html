@@ -95,16 +95,16 @@
                     <table class="table">
                         <thead class="tbody">
                             <tr>
-                                <th>
+                                <th class="narrow-space col-checbox-fixed">
                                     <input class="checkbox" type="checkbox" (change)="toggleAll($event)"
                                         [checked]="isAllSelected()" />
                                 </th>
-                                <th scope="col">
+                                <th scope="col" class="narrow-space col-fixed d-flex">
                                     Account Tag
-                                    <i class="fa-solid fa-angle-down arrow-icon ms-1"></i>
+                                    <i class="fa-solid fa-angle-down arrow-icon mt-1 ms-2"></i>
                                 </th>
-                                <th></th>
-                                <th scope="col">
+                                <th class="narrow-space col-fixed"></th>
+                                <th scope="col" class="col-flex">
                                     Account No
                                 </th>
                             </tr>
@@ -112,19 +112,17 @@
 
                         <tbody class="tbody">
                             <tr *ngFor="let item of items && filteredItems; let i = index" class="align-items-center">
-                                <td>
+                                <td class="table-row col-checbox-fixed">
                                     <input type="checkbox" class="checkbox" [(ngModel)]="item.selected"
                                         (change)="updateSelection()" />
                                 </td>
-                                <td>{{ item.accountTag }}</td>
-                                <th scope="row">
-                                    <img src="assets/images/Group.svg" class="img-fluid me-2" style="width: 15px" />
-                                    <img src="assets/images/Group1.svg" class="img-fluid me-2" style="width: 15px" />
-                                    <img src="assets/images/Group2.svg" class="img-fluid me-2" style="width: 15px" />
-                                    <img src="assets/images/tableIcon.svg" class="img-fluid me-2" style="width: 15px" />
-                                    <img src="assets/images/tableCross.svg" class="img-fluid" style="width: 15px" />
+                                <td class="table-row col-fixed">{{ item.accountTag }}</td>
+                                <th class="table-row col-fixed d-flex" scope="row">
+                                    <img src="assets/images/Group2.svg" class="img-fluid me-3" style="width: 22px" />
+                                    <img src="assets/images/Group1.svg" class="img-fluid me-3" style="width: 15px" />
+                                    <img src="assets/images/trash-icon.svg" class="img-fluid" style="width: 15px" />
                                 </th>
-                                <td>{{ item.accountNumber }}</td>
+                                <td class="table-row col-flex">{{ item.accountNumber }}</td>
                             </tr>
                         </tbody>
                     </table>
