@@ -1,5 +1,5 @@
 .main-wrapper {
-    margin-top: 10rem !important;
+    margin-top: 75px !important;
 }
 
 .sale-order {
@@ -7,9 +7,45 @@
     font-weight: 600;
 }
 
+select {
+    color: #363636;
+}
+
 .filter-field {
     height: 40px;
-    width: 200px;
+    width: 160px;
+
+}
+
+.filter-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 5px 13px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn {
+    border: 2px solid #20CC90;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #20CC90;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn:hover,
+.filter-btn:hover {
+    opacity: 0.7;
+}
+
+
+.search-icon {
+    margin-right: 8px;
+    color: #20CC90;
 }
 
 select {
@@ -25,6 +61,8 @@ select {
     padding: 3px 13px;
     border-radius: 5px;
 }
+
+
 
 .cross-outline {
     font-size: 12px;
@@ -57,14 +95,10 @@ td {
     padding: 0px 0px !important;
 }
 
-/* .table > :not(caption) > * > * {
-    padding: .4rem .5rem !important;
-} */
 
 .table-row {
     background-color: #f9fafc;
     border: 1px solid #f9fafc;
-    /* vertical-align: middle; */
 }
 
 .table-wrapper {
@@ -83,7 +117,6 @@ input[type="text"] {
 .table-row td,
 .table-row th {
     border: 1px solid #f9fafc;
-    /* padding: 8px 0px !important; */
 }
 
 
@@ -134,19 +167,6 @@ input[type="text"] {
     border: 1.3px solid #eeeeee;
 }
 
-.new-btn {
-    border: 1px solid #20CC90;
-    background-color: #20CC90;
-    padding: 8px 40px;
-    border-radius: 8px;
-    font-size: 14px;
-    color: white;
-    white-space: nowrap;
-}
-
-.new-btn:hover {
-    opacity: 0.7;
-}
 
 .filter-btn {
     border: 1px solid #20CC90;
@@ -211,22 +231,26 @@ input[type="text"] {
     border-color: #20CC90;
 }
 
+
+.new-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 8px 40px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+}
+
+.new-btn:hover {
+    opacity: 0.7;
+}
+
 .disabled {
     cursor: not-allowed;
     opacity: 0.6;
     border: none;
 }
-
-
-
-.search-container {
-    width: auto;
-}
-
-.select-container {
-    width: auto;
-}
-
 
 .ng-select-placeholder {
     display: flex;
@@ -243,19 +267,6 @@ input[type="text"] {
     border: none;
 }
 
-
-
-
-
-
-
-
-@media (min-width: 576px) {
-    .new-btn-section {
-        justify-content: end;
-    }
-}
-
 @media (min-width: 779px) {
     .sale-order {
         font-size: 20px;
@@ -263,19 +274,6 @@ input[type="text"] {
 }
 
 @media (max-width: 779px) {
-    .new-btn {
-        padding: 8px 20px;
-        font-size: 12px;
-    }
-
-    .new-btn-section {
-        margin-top: 15px;
-        justify-content: center;
-    }
-
-    .filter-field {
-        width: 140px !important;
-    }
 
     .sale-order {
         font-size: 16px;
@@ -283,95 +281,47 @@ input[type="text"] {
 
 }
 
-@media (max-width: 576px) {
-
-    .filter-field {
-        width: 100% !important;
-    }
-
-    .new-btn {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    .search-container {
-        width: 100%;
-    }
-
-    .select-container {
-        width: 100%;
-    }
-
-
-}
-
-
-
-
-
 /* This is just for table responsiveness */
-
-@media (min-width: 1440px) {
-    .table {
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-}
-
-
-@media (min-width: 992px) and (max-width: 1400px) {
-    .table {
-        max-width: 120% !important;
-        width: 120% !important;
-    }
-}
-
-
-@media (min-width: 772px) and (max-width: 992px) {
-    .table {
-        max-width: 140% !important;
-        width: 140% !important;
-    }
-
-
-}
-
-@media (min-width: 600px) and (max-width: 772px) {
-    .table {
-        max-width: 180% !important;
-        width: 180% !important;
-    }
-
-
-
-
-}
-
 @media (min-width: 500px) and (max-width: 600px) {
     .table {
-        max-width: 250% !important;
-        width: 250% !important;
+        max-width: 130% !important;
+        width: 130% !important;
     }
-
-
-
 }
 
 @media (min-width: 420px) and (max-width: 500px) {
     .table {
-        max-width: 320% !important;
-        width: 320% !important;
+        max-width: 150% !important;
+        width: 150% !important;
     }
-
-
-
 }
 
 @media (min-width: 380px) and (max-width: 420px) {
     .table {
-        max-width: 360% !important;
-        width: 360% !important;
+        max-width: 230% !important;
+        width: 230% !important;
     }
 
+}
+
+
+@media (min-width: 1468px) {
+    .main-wrapper {
+        margin-top: 150px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1468px) {
+    .main-wrapper {
+        margin-top: 180px !important;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+
+    .main-wrapper {
+        margin-top: 90px !important;
+    }
 
 }

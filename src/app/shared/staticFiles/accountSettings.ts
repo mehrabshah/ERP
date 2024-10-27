@@ -22,11 +22,5 @@ export const ACCOUNTSETTINGS: accountSettingInter[] = [
         accountTag: 'AssetDisposal',
         accountNumber: "Gain/(Loss) on Sale of Asset",
 	},
-	{
-		id: 5,
-        accountTag: 'AssetDisposal',
-        accountNumber: "Gain/(Loss) on Sale of Asset",
-	},
-	
 	
 ];
