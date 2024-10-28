@@ -1,6 +1,6 @@
 <section class="multiSelect">
     <form class="form" [formGroup]="accountForm">
-        <label>{{multiNetIncomeList?.label}}</label>
+        <label>{{multiList?.label}}</label>
         <ng-multiselect-dropdown [placeholder]="'Select..'" [settings]="dropdownSettings"
             [data]="dropdownList" formControlName="accountVal" (onSelect)="onItemSelect($event)"
              (onDeSelect)="onItemDeselect($event)"

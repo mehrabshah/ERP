@@ -10,14 +10,14 @@
                 <div>
                     <!-- First multi-select field -->
                     <div class="mb-2">
-                        <app-multi-select-field [multiNetIncomeList]="multiNetIncomeList"
+                        <app-multi-select-field [multiList]="multiNetIncomeList"
                             (selectedItemsChange)="updateSelectedItems($event)">
                         </app-multi-select-field>
                     </div>
 
                     <!-- Second multi-select field -->
                     <div>
-                        <app-multi-select-field [multiNetIncomeList]="multiNetReceiveList"
+                        <app-multi-select-field [multiList]="multiNetReceiveList"
                             (selectedItemsChange)="updateSelectedItems($event)">
                         </app-multi-select-field>
                     </div>
@@ -35,15 +35,15 @@
                 
                 <div>
                     <div class="mb-2">
-                        <app-multi-select-field [multiNetIncomeList]="multiNetRawMaterialList"
+                        <app-multi-select-field [multiList]="multiNetRawMaterialList"
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                     </div>
                     <div class="mb-2">
-                        <app-multi-select-field [multiNetIncomeList]="multiNetWorkInventoryList"
+                        <app-multi-select-field [multiList]="multiNetWorkInventoryList"
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                     </div>
                     <div>
-                        <app-multi-select-field [multiNetIncomeList]="multiNetGoodsInventoryList"
+                        <app-multi-select-field [multiList]="multiNetGoodsInventoryList"
                             (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
             </h2>
             <div ngbAccordionCollapse class="p-4 pt-0">
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetCustomerDepositList"
+                    <app-multi-select-field [multiList]="multiNetCustomerDepositList"
                     (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
             </div>
@@ -72,23 +72,23 @@
             </h2>
             <div ngbAccordionCollapse class="p-4 pt-0">
                 <div class="mb-2">
-                    <app-multi-select-field [multiNetIncomeList]="multiNetDepricationList"
+                    <app-multi-select-field [multiList]="multiNetDepricationList"
                         (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div class="mb-2">
-                    <app-multi-select-field [multiNetIncomeList]="multiNetPreExtensionList"
+                    <app-multi-select-field [multiList]="multiNetPreExtensionList"
                         (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div class="mb-2">
-                    <app-multi-select-field [multiNetIncomeList]="multiNetPayablesList"
+                    <app-multi-select-field [multiList]="multiNetPayablesList"
                         (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div class="mb-2">
-                    <app-multi-select-field [multiNetIncomeList]="multiNetAccurExpensesList"
+                    <app-multi-select-field [multiList]="multiNetAccurExpensesList"
                         (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
                 <div>
-                    <app-multi-select-field [multiNetIncomeList]="multiNetLoansList"
+                    <app-multi-select-field [multiList]="multiNetLoansList"
                         (selectedItemsChange)="updateSelectedItems($event)"></app-multi-select-field>
                 </div>
             </div>

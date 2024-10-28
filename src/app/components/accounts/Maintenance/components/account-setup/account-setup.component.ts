@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { CashFlowSetupComponent } from './cash-flow-setup/cash-flow-setup.component';
-import { AccountSettingsComponent } from '../account-settings/account-settings.component';
 import { Router } from '@angular/router';
 import { AccountSetupButtonComponent } from '../../../../../shared/account-setup-button/account-setup-button.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
 
 @Component({
   selector: 'app-account-setup',

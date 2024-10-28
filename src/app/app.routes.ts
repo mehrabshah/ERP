@@ -16,7 +16,8 @@ import { QuantityControlComponent } from './components/quantity-control/quantity
 import { SaleComponent } from './components/sale/sale.component';
 import { ArReceiptsComponent } from './components/sale/transaction/components/ar-receipts/ar-receipts.component';
 import { AccountSetupComponent } from './components/accounts/Maintenance/components/account-setup/account-setup.component';
-import { AccountSettingsComponent } from './components/accounts/Maintenance/components/account-settings/account-settings.component';
+import { AccountSettingsComponent } from './components/accounts/Maintenance/components/account-setup/account-settings/account-settings.component';
+import { NewCustomersComponent } from './components/receivables/Maintenance/components/customers/new-customers/new-customers.component';
 
 export const routes: Routes = [
     {
@@ -61,6 +62,10 @@ export const routes: Routes = [
     {
         path: 'receivable',
         component: ReceivablesComponent,
+    },
+    {
+        path: 'receivable/maintenance/customers/newCustomers',
+        component: NewCustomersComponent,
     },
     {
         path: 'payables',

@@ -1,12 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { Router } from '@angular/router';
-import { ACCOUNTSETTINGS } from '../../../../../shared/staticFiles/accountSettings';
-import { AccountSetupButtonComponent } from '../../../../../shared/account-setup-button/account-setup-button.component';
-import { CashFlowSetupComponent } from '../account-setup/cash-flow-setup/cash-flow-setup.component';
+import { TopBarComponent } from '../../../../../../shared/top-bar/top-bar.component';
+import { AccountSetupButtonComponent } from '../../../../../../shared/account-setup-button/account-setup-button.component';
+import { CashFlowSetupComponent } from '../cash-flow-setup/cash-flow-setup.component';
+import { ACCOUNTSETTINGS } from '../../../../../../shared/staticFiles/accountSettings';
 
 @Component({
   selector: 'app-account-settings',

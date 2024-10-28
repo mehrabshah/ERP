@@ -12,7 +12,7 @@ import { NgMultiSelectDropDownModule, IDropdownSettings } from 'ng-multiselect-d
   styleUrl: './multi-select-field.component.css'
 })
 export class MultiSelectFieldComponent {
-  @Input() multiNetIncomeList: any;
+  @Input() multiList: any;
   @Output() selectedItemsChange = new EventEmitter<{ label: string, selectedItems: any[] }>(); 
 
   dropdownSettings: IDropdownSettings = {
@@ -33,8 +33,8 @@ export class MultiSelectFieldComponent {
     this.accountForm = new FormGroup({
       accountVal: new FormControl([]),
     });
-    if (this.multiNetIncomeList.data) {
-      this.dropdownList = this.multiNetIncomeList.data;
+    if (this.multiList.data) {
+      this.dropdownList = this.multiList.data;
     }
   }
   onItemSelect(item: any) {
@@ -59,7 +59,7 @@ export class MultiSelectFieldComponent {
   emitSelectedItems() {
     const selectedItems = this.accountForm.get('accountVal')?.value || [];
     this.selectedItemsChange.emit({
-      label: this.multiNetIncomeList.label,
+      label: this.multiList.label,
       selectedItems: selectedItems || []
     });
   }
