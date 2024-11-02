@@ -275,6 +275,14 @@ input[type="text"] {
     border: none;
 }
 
+.filter-value-field {
+    height: 28px !important;
+    padding-top: 18px !important;
+    padding-bottom: 17px !important;
+    width: 160px;
+}
+
+
 @media (min-width: 779px) {
     .sale-order {
         font-size: 20px;
@@ -312,6 +320,31 @@ input[type="text"] {
     .sale-order {
         font-size: 16px;
     }
+
+}
+
+@media (max-width: 779px) {
+
+    .sale-order {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+    .filter-field {
+        height: 40px;
+        width: 220px;
+    }
+
+    .filter-value-field {
+        height: 28px !important;
+        padding-top: 18px !important;
+        padding-bottom: 17px !important;
+        width: 220px;
+    }
+    
 
 }
 
@@ -359,3 +392,5 @@ input[type="text"] {
     }
 
 }
+
+
