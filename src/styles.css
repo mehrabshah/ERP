@@ -81,7 +81,6 @@ body {
 }
 
 /*-------------------------------------------------------------------------------------------------*/
-
 .ng-dropdown-panel .ng-dropdown-panel-items .ng-option.ng-option-marked {
     background-color: #20CC9033 !important;
     color: #333 !important;
@@ -167,6 +166,15 @@ body {
     margin-bottom: 1px;
     text-decoration: none;
 }
+
+.filter-value-field {
+    height: 28px !important;
+    padding-top: 18px !important;
+    padding-bottom: 17px !important;
+    width: 160px;
+}
+
+
 /* ----------------------------------------------------   */
   
 @media (min-width: 1200px) {
