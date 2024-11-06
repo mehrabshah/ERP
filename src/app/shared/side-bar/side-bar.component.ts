@@ -15,7 +15,6 @@ import { SideBarTemplateComponent } from './side-bar-template/side-bar-template.
 export class SideBarComponent {
   @Input() sideNavStatus: boolean = false;
   @Input() moduleType: any = '';
-
   @ViewChild('content') contentTemplate!: TemplateRef<any>;
 
   userName: string = 'LOGO';

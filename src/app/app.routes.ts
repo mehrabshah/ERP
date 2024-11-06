@@ -18,6 +18,8 @@ import { ArReceiptsComponent } from './components/sale/transaction/components/ar
 import { AccountSetupComponent } from './components/accounts/Maintenance/components/account-setup/account-setup.component';
 import { AccountSettingsComponent } from './components/accounts/Maintenance/components/account-setup/account-settings/account-settings.component';
 import { NewCustomersComponent } from './components/receivables/Maintenance/components/customers/new-customers/new-customers.component';
+import {CustomersComponent} from "./components/receivables/Maintenance/components/customers/customers.component"
+
 
 export const routes: Routes = [
     {
@@ -67,6 +69,13 @@ export const routes: Routes = [
         path: 'receivable/maintenance/customers/newCustomers',
         component: NewCustomersComponent,
     },
+
+    {
+        path: 'receivable/maintenance/customers',
+        component: CustomersComponent,
+    },
+
+
     {
         path: 'payables',
         component: PayablesComponent,

@@ -1,0 +1,398 @@
+.main-wrapper {
+    margin-top: 75px !important;
+}
+
+.sale-order {
+    color: #363636;
+    font-weight: 600;
+}
+
+select {
+    color: #363636;
+}
+
+.filter-field {
+    height: 40px;
+    width: 160px;
+}
+
+.filter-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 5px 13px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn {
+    border: 2px solid #20CC90;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #20CC90;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn:hover,
+.filter-btn:hover {
+    opacity: 0.7;
+}
+
+
+.search-icon {
+    margin-right: 8px;
+    color: #20CC90;
+}
+
+select {
+    color: #363636;
+}
+
+.outline-btn {
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid #20CC90;
+    background-color: white;
+    color: #20CC90;
+    padding: 3px 13px;
+    border-radius: 5px;
+}
+
+
+
+.cross-outline {
+    font-size: 12px;
+}
+
+th {
+    cursor: pointer;
+    font-size: 14px;
+    color: #808191;
+    font-weight: 500;
+}
+
+.arrow-icon {
+    color: #363636;
+    font-size: 12px;
+    margin-left: 4px;
+}
+
+td {
+    font-size: 14px;
+    color: #363636;
+    font-weight: 500;
+}
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding: 0px 0px !important;
+}
+
+
+.table-row {
+    background-color: #f9fafc;
+    border: 1px solid #f9fafc;
+}
+
+.table-wrapper {
+    height: 55vh;
+    overflow-y: scroll;
+}
+
+input[type="date"],
+input[type="text"] {
+    padding: 12px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #Ffffffff;
+}
+
+.table-row td,
+.table-row th {
+    border: 1px solid #f9fafc;
+}
+
+
+thead tr th {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.col-checbox-fixed {
+    width: 80px;
+    padding-right: 10px;
+}
+
+.col-fixed {
+    width: 140px;
+    padding-right: 30px;
+}
+
+.col-flex {
+    width: 100%;
+}
+
+.checkbox {
+    color: #20CC90;
+}
+
+.default-btn {
+    padding: 4px 8px 4px 8px;
+    font-size: 10px;
+}
+
+.header-btn {
+    padding: 4px 8px 4px 8px;
+    font-size: 12px;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.header-btn.active {
+    background-color: #20CC90;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 20px 33px;
+    border: 1.3px solid #eeeeee;
+}
+
+
+.filter-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 5px 13px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn {
+    border: 2px solid #20CC90;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #20CC90;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.filter-plus-btn:hover,
+.filter-btn:hover {
+    opacity: 0.7;
+}
+
+.default-btn {
+    color: #363636;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 2px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.voidColor {
+    background-color: #FF3B30;
+    border-color: #FF3B30;
+    color: #fff;
+}
+
+.confirmation-btn {
+    background-color: #20CC90;
+    border-color: #20CC90;
+    color: #fff;
+}
+
+.btn-outline-cancel {
+    background-color: transparent;
+    border-color: #FF3B30;
+}
+
+.btn-confirm {
+    background-color: #20CC90;
+    border-color: #20CC90;
+    color: #fff;
+}
+
+.btn-outline-confirm {
+    background-color: transparent;
+    border-color: #20CC90;
+}
+
+
+.new-btn {
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: white;
+    white-space: nowrap;
+}
+
+.search-btn{
+    border: 1px solid #20CC90;
+    background-color: #20CC90;
+    padding: 9px 13px;
+    border-radius: 5px;
+    color: white;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.new-btn:hover {
+    opacity: 0.7;
+}
+
+.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    border: none;
+}
+
+.ng-select-placeholder {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
+.placeholder-text {
+    font-size: 14px;
+}
+
+.ng-select .ng-select-container {
+    background-color: #Ffffff !important;
+    border: none;
+}
+
+.filter-value-field {
+    height: 28px !important;
+    padding-top: 18px !important;
+    padding-bottom: 17px !important;
+    width: 160px;
+}
+
+
+@media (min-width: 779px) {
+    .sale-order {
+        font-size: 20px;
+    }
+}
+
+
+@media (min-width: 992px) {
+    
+    .new-btn {
+        border: 1px solid #20CC90;
+        background-color: #20CC90;
+        padding: 8px 40px;
+        border-radius: 8px;
+        font-size: 14px;
+        color: white;
+        white-space: nowrap;
+    }
+
+
+    .search-btn{
+        border: 1px solid #20CC90;
+        background-color: #20CC90;
+        padding: 5px 13px;
+        border-radius: 5px;
+        color: white;
+        white-space: nowrap;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media (max-width: 779px) {
+
+    .sale-order {
+        font-size: 16px;
+    }
+
+}
+
+@media (max-width: 779px) {
+
+    .sale-order {
+        font-size: 16px;
+    }
+
+}
+
+
+@media (min-width: 1400px) {
+    .filter-field {
+        height: 40px;
+        width: 220px;
+    }
+
+    .filter-value-field {
+        height: 28px !important;
+        padding-top: 18px !important;
+        padding-bottom: 17px !important;
+        width: 220px;
+    }
+    
+
+}
+
+/* This is just for table responsiveness */
+/* @media (min-width: 500px) and (max-width: 600px) {
+    .table {
+        max-width: 130% !important;
+        width: 130% !important;
+    }
+}
+
+@media (min-width: 420px) and (max-width: 500px) {
+    .table {
+        max-width: 150% !important;
+        width: 150% !important;
+    }
+}
+
+@media (min-width: 380px) and (max-width: 420px) {
+    .table {
+        max-width: 230% !important;
+        width: 230% !important;
+    }
+
+} */
+
+
+
+
+@media (min-width: 1468px) {
+    .main-wrapper {
+        margin-top: 150px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1468px) {
+    .main-wrapper {
+        margin-top: 180px !important;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+
+    .main-wrapper {
+        margin-top: 90px !important;
+    }
+
+}
+
+

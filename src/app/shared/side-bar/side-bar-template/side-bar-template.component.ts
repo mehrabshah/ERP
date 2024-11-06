@@ -85,6 +85,8 @@ export class SideBarTemplateComponent {
             }
           ]
         }
+
+        
       ]
     },
     {
@@ -121,7 +123,7 @@ export class SideBarTemplateComponent {
           children: [
             {
               name: 'Customers',
-              subLink: 'receivable/maintenance/customers/newCustomers'
+              subLink: 'receivable/maintenance/customers'
             }
           ]
         }

@@ -3,6 +3,8 @@
   <div class="container-fluid mb-3">
     <app-account-setup-button [activeParentBtn]="activeButton"
       (buttonClicked)="setActiveButton($event)"></app-account-setup-button>
+
+      
     <div *ngIf="activeButton === 'accountSetting'" class="card">
       <div class="card-body pt-0 pb-0">
         <div class="mb-0  d-flex align-items-center justify-content-end mt-4 mt-md-0">

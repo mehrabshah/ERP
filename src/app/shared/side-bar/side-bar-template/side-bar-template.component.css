@@ -43,7 +43,6 @@
     position: relative;
 }
 
-/* Main item active state */
 .nav-item .main-nav.active {
     background-color: #20CC90;
     color: #ffffff;

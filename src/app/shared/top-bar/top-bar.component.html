@@ -1,11 +1,9 @@
 <section class="topbar-wrapper" [class.full-wrap]="toggleSidebar">
   <div class="header d-flex d-lg-block justify-content-end">
     <div class="d-flex justify-content-end justify-content-xl-between">
-
       <div *ngIf="showTitle" class="d-xl-flex d-none align-items-center justify-content-between">
         <h4 class="topBar-title">{{ toBarTitle }}</h4>
       </div>
-
       <div class="profile d-flex align-items-center justify-content-end justify-content-xl-between me-3">
         <div *ngIf="!isLargeScreen" class="search-container" [class.expanded]="isExpanded">
           <i class="fa fa-search search-icon" (click)="toggleSearch()"></i>
@@ -61,7 +59,6 @@
                       <i class="fa fa-user-circle icon-color"></i>
                       <span class="ms-2 text-color">Profile</span>
                     </li>
-
                     <li class="dropdown-item d-flex align-items-center" (click)="resetPassword()">
                       <i class="fa fa-lock icon-color"></i>
                       <span class="ms-2 text-color">Reset Password</span>

@@ -2,7 +2,6 @@
     <div class="scroll-sidebar pb-4 ">
         <ul class="nav flex-column">
             <li *ngFor="let item of sideBarList">
-                <!-- Main link with icon -->
                 <div class="nav-item">
                     <div class="d-flex align-items-center main-nav" [routerLinkActive]="['active']"
                         #rla="routerLinkActive">
@@ -17,7 +16,6 @@
                             <i class="fa-solid fa-angle-down main-arrow-icon ms-auto"
                                 [ngClass]="{'text-white': rla.isActive}" (click)="toggleDropdown(item)"></i>
                     </div>
-                    <!-- First-level Dropdown -->
                     <div class="dropdown-container" [ngClass]="{'show': item.isMainOpen}"
                         *ngIf="item.child && item.child.length > 0">
                         <ng-container *ngFor="let child of item.child; let i = index">
@@ -34,8 +32,6 @@
 
                                     {{child.name}}
                                 </a>
-
-                                <!-- Second-level Dropdown (nested inside the first) -->
                                 <div class="nested-dropdown-container" [ngClass]="{'show': child.isChildOpen}"
                                     *ngIf="child.children && child.children.length > 0">
                                     <a *ngFor="let subChild of child.children" [routerLink]="subChild.subLink"
