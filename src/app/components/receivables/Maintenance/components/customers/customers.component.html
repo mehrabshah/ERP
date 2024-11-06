@@ -20,7 +20,7 @@
             </button>
           </div>
         </div>
-        <div class="mt-md-1 mt-0">
+         <div class="mt-md-1 mt-0">
           <div
             class="d-flex justify-content-between justify-content-end align-items-center mt-md-4 mt-3"
           >
@@ -82,6 +82,7 @@
                 </button>
               </div>
             </form>
+
             <div class="d-md-flex d-none align-items-center new-btn-section">
               <button
                 class="new-btn d-flex align-items-center justify-content-center"
@@ -108,74 +109,123 @@
               </button>
             </div>
           </div>
-        </div>
-        <div class="d-flex flex-column flex-sm-row justify-content-end mt-sm-5 mt-4">
+        </div> 
+        <div
+          class="d-flex flex-column flex-sm-row justify-content-end mt-sm-5 mt-4"
+        >
           <div class="mt-xl-0 mt-3 mt-sm-0">
-            <button class="header-btn mx-1" [ngClass]="{ active: activeFileButton === 'AllFile' }"
-              (click)="setActiveFile('AllFile')">
+            <button
+              class="header-btn mx-1"
+              [ngClass]="{ active: activeFileButton === 'AllFile' }"
+              (click)="setActiveFile('AllFile')"
+            >
               All
             </button>
-            <button class="header-btn mx-1" [ngClass]="{ active: activeFileButton === 'Excel' }"
-              (click)="setActiveFile('Excel')">
+            <button
+              class="header-btn mx-1"
+              [ngClass]="{ active: activeFileButton === 'Excel' }"
+              (click)="setActiveFile('Excel')"
+            >
               Excel
             </button>
-            <button class="header-btn mx-1" [ngClass]="{ active: activeFileButton === 'Csv' }"
-              (click)="setActiveFile('Csv')">
+            <button
+              class="header-btn mx-1"
+              [ngClass]="{ active: activeFileButton === 'Csv' }"
+              (click)="setActiveFile('Csv')"
+            >
               Csv
             </button>
-            <button class="header-btn mx-1" [ngClass]="{ active: activeFileButton === 'Print' }"
-              (click)="setActiveFile('Print')">
+            <button
+              class="header-btn mx-1"
+              [ngClass]="{ active: activeFileButton === 'Print' }"
+              (click)="setActiveFile('Print')"
+            >
               Print
             </button>
-            <button class="header-btn mx-md-1 ps-1 ps-md-2"
-              [ngClass]="{ active: activeFileButton === 'coloumnVisible' }" (click)="setActiveFile('coloumnVisible')">
+            <button
+              class="header-btn mx-md-1 ps-1 ps-md-2"
+              [ngClass]="{ active: activeFileButton === 'coloumnVisible' }"
+              (click)="setActiveFile('coloumnVisible')"
+            >
               Coloumn Visibility
             </button>
           </div>
         </div>
-
         <div class="table-responsive">
           <table class="table">
             <thead class="tbody">
               <tr>
                 <th class="narrow-space col-checbox-fixed">
-                  <input class="checkbox" type="checkbox" (change)="toggleAll($event)" [checked]="isAllSelected()" />
+                  <input
+                    class="checkbox"
+                    type="checkbox"
+                    (change)="toggleAll($event)"
+                    [checked]="isAllSelected()"
+                  />
                 </th>
                 <th scope="col" class="narrow-space col-fixed d-flex">
                   Customer ID
                   <i class="fa-solid fa-angle-down arrow-icon mt-1 ms-2"></i>
                 </th>
-                <th class="narrow-space col-fixed"></th>
-                <th scope="col" class="col-flex">
-                  Company Name
-                </th>
-                <!-- <th scope="col" class="col-flex">
-                  Contact Name
-                </th>
-                <th scope="col" class="col-flex">
-                  Status
-                </th>
-                <th scope="col" class="col-flex">
+                <th scope="col">Company Name</th>
+                <th scope="col">Contact Name</th>
+
+                <th scope="col">Status</th>
+                 <th scope="col" >
                   Region
                 </th>
-                <th scope="col" class="col-flex">
+                <th scope="col" >
                   Address 
-                </th> -->
-
+                </th>   
               </tr>
             </thead>
             <tbody class="tbody">
-              <tr *ngFor="let item of items && filteredItems; let i = index" class="align-items-center">
+              <tr
+                *ngFor="let item of items && filteredItems; let i = index"
+                class="align-items-center"
+              >
                 <td class="table-row col-checbox-fixed">
-                  <input type="checkbox" class="checkbox" [(ngModel)]="item.selected" (change)="updateSelection()" />
+                  <input
+                    type="checkbox"
+                    class="checkbox"
+                    [(ngModel)]="item.selected"
+                    (change)="updateSelection()"
+                  />
                 </td>
-                <td class="table-row col-fixed">{{ item.accountTag }}</td>
-                <th class="table-row col-fixed d-flex" scope="row">
-                  <img src="assets/images/Group2.svg" class="img-fluid me-3" style="width: 22px" />
-                  <img src="assets/images/Group1.svg" class="img-fluid me-3" style="width: 15px" />
-                  <img src="assets/images/trash-icon.svg" class="img-fluid" style="width: 15px" />
-                </th>
-                <td class="table-row col-flex">{{ item.accountNumber }}</td>
+                <td class="table-row">
+                  <span class="me-3">{{ item.customers }}</span>
+                  <img
+                    src="assets/images/Group2.svg"
+                    class="img-fluid me-3"
+                    style="width: 22px"
+                  />
+                  <img
+                    src="assets/images/Group1.svg"
+                    class="img-fluid me-3"
+                    style="width: 15px"
+                  />
+                  <img
+                  src="assets/images/Group2.svg"
+                  class="img-fluid me-2"
+                  style="width: 15px"
+                />
+                </td>
+                <td class="table-row">{{ item.company }}</td>
+                <td class="table-row">{{ item.contact }}</td>
+                <td class="table-row">
+                  <button
+                    type="button"
+                    class="status-btn"
+                  >
+                    {{ item.status }}
+                  </button>
+                </td>
+                <td class="table-row">
+                 {{item.region}}
+                </td>
+                <td class="table-row">
+                  {{item.address}}
+                 </td>
               </tr>
             </tbody>
           </table>

@@ -142,6 +142,15 @@ thead tr th {
     color: #20CC90;
 }
 
+
+.status-btn{
+   background-color:#20CC90;
+   color:  #FFFFFF;
+   border-radius: 5px;
+   border: 2px solid #20CC90;
+
+}
+
 .default-btn {
     padding: 4px 8px 4px 8px;
     font-size: 10px;
@@ -348,28 +357,73 @@ input[type="text"] {
 
 }
 
+
 /* This is just for table responsiveness */
-/* @media (min-width: 500px) and (max-width: 600px) {
+
+@media (min-width: 1440px) {
     .table {
-        max-width: 130% !important;
-        width: 130% !important;
+        max-width: 100% !important;
+        width: 100% !important;
     }
+}
+
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .table {
+        max-width: 120% !important;
+        width: 120% !important;
+    }
+}
+
+
+@media (min-width: 772px) and (max-width: 992px) {
+    .table {
+        max-width: 140% !important;
+        width: 140% !important;
+    }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 772px) {
+    .table {
+        max-width: 180% !important;
+        width: 180% !important;
+    }
+
+
+
+
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .table {
+        max-width: 250% !important;
+        width: 250% !important;
+    }
+
+
+
 }
 
 @media (min-width: 420px) and (max-width: 500px) {
     .table {
-        max-width: 150% !important;
-        width: 150% !important;
+        max-width: 320% !important;
+        width: 320% !important;
     }
+
+
+
 }
 
 @media (min-width: 380px) and (max-width: 420px) {
     .table {
-        max-width: 230% !important;
-        width: 230% !important;
+        max-width: 360% !important;
+        width: 360% !important;
     }
 
-} */
+
+}
 
 
 

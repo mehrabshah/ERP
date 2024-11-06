@@ -1,32 +1,48 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
+import {
+  FormControl,
+  FormGroup,
+  FormsModule,
+  ReactiveFormsModule,
+} from '@angular/forms';
+import {
+  NgLabelTemplateDirective,
+  NgOptionTemplateDirective,
+  NgSelectComponent,
+  NgSelectModule,
+} from '@ng-select/ng-select';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
-import { ACCOUNTSETTINGS } from '../../../../../shared/staticFiles/accountSettings';
+import { Customers } from '../../../../../shared/staticFiles/customers';
+import { Router } from '@angular/router';
 
 
 @Component({
   selector: 'app-customers',
   standalone: true,
-  imports: [CommonModule,TopBarComponent,ReactiveFormsModule,FormsModule,
-    NgSelectModule,NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,
+  imports: [
+    CommonModule,
+    TopBarComponent,
+    ReactiveFormsModule,
+    FormsModule,
+    NgSelectModule,
+    NgSelectComponent,
+    NgOptionTemplateDirective,
+    NgLabelTemplateDirective,
   ],
   templateUrl: './customers.component.html',
-  styleUrl: './customers.component.css'
+  styleUrl: './customers.component.css',
 })
 export class CustomersComponent {
   toBarTitle: string = 'Customers';
-  showtopNav: boolean = true;  
+  showtopNav: boolean = true;
 
   customersForm!: FormGroup;
   filterId: number = 0;
   operatorId: number = 0;
   activeFileButton: string = 'AllFile';
-  items: any[] = ACCOUNTSETTINGS;
+  items: any[] = Customers;
   filteredItems: any[] = [];
-
-
 
   filterData = [
     { id: 1, name: 'Filter 1' },
@@ -39,6 +55,8 @@ export class CustomersComponent {
     { id: 3, name: 'operator 3' },
   ];
 
+  constructor(private router: Router) {
+  }
 
 
   topBarList: any = [
@@ -50,9 +68,9 @@ export class CustomersComponent {
     },
     {
       id: '2',
-      name: 'Account setup Cash Flow Setup',
+      name: 'Customers',
       icon: 'fa fa-xmark',
-      link: '/accounts/maintenance/accountSetting',
+      link: '/receivable/maintenance/customers',
     },
     {
       id: '3',
@@ -66,9 +84,8 @@ export class CustomersComponent {
     }
   ];
 
-  createCustomers(){
-
-
+  createCustomers() {
+    this.router.navigate(['receivable/maintenance/customers/newCustomers']);
   }
 
   onfilterSelected(event: any) {
@@ -90,19 +107,19 @@ export class CustomersComponent {
 
   toggleAll(event: any): void {
     const isChecked = event.target.checked;
-    this.items.forEach(item => item.selected = isChecked);
+    this.items.forEach((item) => (item.selected = isChecked));
   }
   isAllSelected(): boolean {
-    return this.items.length > 0 && this.items.every(item => item.selected);
+    return this.items.length > 0 && this.items.every((item) => item.selected);
   }
-  updateSelection(): void {
-  }
-
+  updateSelection(): void {}
 
   ngOnInit(): void {
     this.filteredItems = [...this.items];
-    
+    this.customersForm = new FormGroup({
+      filter: new FormControl(null),
+      operator: new FormControl(null),
+      value: new FormControl(null),
+    });
   }
-
-
 }
