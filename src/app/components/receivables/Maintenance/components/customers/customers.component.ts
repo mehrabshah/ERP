@@ -112,6 +112,8 @@ export class CustomersComponent {
   isAllSelected(): boolean {
     return this.items.length > 0 && this.items.every((item) => item.selected);
   }
+
+  
   updateSelection(): void {}
 
   ngOnInit(): void {

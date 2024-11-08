@@ -13,7 +13,7 @@ import {
   NgSelectModule,
 } from '@ng-select/ng-select';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
-import {SALESRETURN} from "../../../../../shared/staticFiles/saleReturns"
+import { SALESRETURN } from '../../../../../shared/staticFiles/saleReturns';
 
 @Component({
   selector: 'app-sales-return',
@@ -27,6 +27,7 @@ import {SALESRETURN} from "../../../../../shared/staticFiles/saleReturns"
     NgSelectComponent,
     NgOptionTemplateDirective,
     NgLabelTemplateDirective,
+
   ],
   templateUrl: './sales-return.component.html',
   styleUrl: './sales-return.component.css',
@@ -38,12 +39,13 @@ export class SalesReturnComponent {
   filterId: number = 0;
   operatorId: number = 0;
   filteredItems: any[] = [];
-  activeButton: string = 'All'; 
+  activeButton: string = 'All';
   activeFileButton: string = 'AllFile';
   activeOtherButton: string = '';
 
-
   items: any[] = SALESRETURN;
+
+  
 
   topBarList: any = [
     {
@@ -70,7 +72,6 @@ export class SalesReturnComponent {
     },
   ];
 
-
   filterData = [
     { id: 1, name: 'Filter 1' },
     { id: 2, name: 'Filter 2' },
@@ -82,14 +83,11 @@ export class SalesReturnComponent {
     { id: 3, name: 'operator 3' },
   ];
 
+  createSaleReturns() {}
 
-
-
-  createSaleReturns(){
-
-
+  isAllSelected(): boolean {
+    return this.items.length > 0 && this.items.every((item) => item.selected);
   }
-
 
   onfilterSelected(event: any) {
     let id = event.id;
@@ -104,20 +102,7 @@ export class SalesReturnComponent {
     }
   }
 
-  filterItems() {
-    if (this.activeButton === '') {
-      this.filteredItems = [...this.items];
-    } else if (this.activeButton === 'Returned') {
-      this.filteredItems = this.items.filter(item => item.status === 'Dispatch');
-    } else if (this.activeButton === 'All') {
-      this.filteredItems = [...this.items];
-    }
-    else {
-      this.filteredItems = this.items.filter(item => item.status === this.activeButton);
-    }
-  }
-
- 
+  
 
   setActiveFile(buttonName: string) {
     this.activeFileButton = buttonName;
@@ -129,19 +114,44 @@ export class SalesReturnComponent {
 
   setActive(buttonName: string) {
     this.activeButton = buttonName;
+
     this.filterItems();
   }
 
 
+  filterItems() {
+      
 
+    if (this.activeButton === '') {
+      this.filteredItems = [...this.items];
+    } else if (this.activeButton === 'Returned') {
+      this.filteredItems = this.items.filter(
+        (item) => item.status === 'Dispatch'
+      );
+    } else if (this.activeButton === 'All') {
+      this.filteredItems = [...this.items];
+    } else {
+      this.filteredItems = this.items.filter(
+        (item) => item.status === this.activeButton
+      );
+    }
+  }
+
+
+
+  toggleAll(event: any): void {
+    const isChecked = event.target.checked;
+    this.items.forEach((item) => (item.selected = isChecked));
+  }
+
+  updateSelection(): void {}
 
   ngOnInit(): void {
+    this.filteredItems = [...this.items];
     this.salesReturnForm = new FormGroup({
       filter: new FormControl(null),
       operator: new FormControl(null),
       value: new FormControl(null),
     });
   }
-
-
 }

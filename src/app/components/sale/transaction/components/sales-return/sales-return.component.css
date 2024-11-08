@@ -151,6 +151,13 @@ thead tr th {
 
 }
 
+.status-cancel{
+    background-color: #FF3B30;  
+    color:  #FFFFFF;
+    border-radius: 5px;
+    border: 2px solid #FF3B30; 
+}
+
 .default-btn {
     padding: 4px 8px 4px 8px;
     font-size: 10px;
@@ -370,16 +377,16 @@ input[type="text"] {
 
 @media (min-width: 992px) and (max-width: 1400px) {
     .table {
-        max-width: 120% !important;
-        width: 120% !important;
+        max-width: 130% !important;
+        width: 130% !important;
     }
 }
 
 
 @media (min-width: 772px) and (max-width: 992px) {
     .table {
-        max-width: 140% !important;
-        width: 140% !important;
+        max-width: 160% !important;
+        width: 160% !important;
     }
 
 
@@ -387,8 +394,8 @@ input[type="text"] {
 
 @media (min-width: 600px) and (max-width: 772px) {
     .table {
-        max-width: 180% !important;
-        width: 180% !important;
+        max-width: 220% !important;
+        width: 220% !important;
     }
 
 
@@ -418,8 +425,8 @@ input[type="text"] {
 
 @media (min-width: 380px) and (max-width: 420px) {
     .table {
-        max-width: 360% !important;
-        width: 360% !important;
+        max-width: 380% !important;
+        width: 380% !important;
     }
 
 
