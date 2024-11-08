@@ -47,7 +47,6 @@ export class SalesReturnComponent {
 
   items: any[] = SALESRETURN;
 
-  
 
   topBarList: any = [
     {
@@ -164,7 +163,5 @@ export class SalesReturnComponent {
   }
 
   
-
-
 
 }
