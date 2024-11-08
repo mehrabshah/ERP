@@ -28,7 +28,12 @@ export class SideBarTemplateComponent {
             {
               name: 'AR Receipts',
               subLink: '/sales/transaction/arReceipt'
+            },
+            {
+              name: 'Sales Return',
+              subLink: '/sales/transaction/salesReturn'
             }
+
           ]
         }
       ]

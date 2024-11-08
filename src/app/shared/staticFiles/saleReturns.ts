@@ -1,0 +1,53 @@
+import { saleReturnDTO } from './saleReturn';
+
+export const SALESRETURN: saleReturnDTO[] = [
+  {
+    id: 1,
+    salesInvoice: "124563",
+    returnDate: "06/08/2024",
+    status: "Confirmed",
+    customers: "1770 - Al Karam Feed Mills/Local Sales",
+    saleInvoice: 5505,
+    Quantity: 5,
+    netAmmount: "Rs 197,352.00",
+    Comment: "Good",
+    preparedBy: "Atiq",
+  },
+  {
+    id: 1,
+    salesInvoice: "124563",
+    returnDate: "06/08/2024",
+    status: "Cancel",
+    customers: "1770 - Al Karam Feed Mills/Local Sales",
+    saleInvoice: 5505,
+    Quantity: 5,
+    netAmmount: "Rs 197,352.00",
+    Comment: "Good",
+    preparedBy: "Atiq",
+  },
+  {
+    id: 1,
+    salesInvoice: "124563",
+    returnDate: "06/08/2024",
+    status: "Confirmed",
+    customers: "1770 - Al Karam Feed Mills/Local Sales",
+    saleInvoice: 5505,
+    Quantity: 5,
+    netAmmount: "Rs 197,352.00",
+    Comment: "Good",
+    preparedBy: "Atiq",
+  },
+  {
+    id: 1,
+    salesInvoice: "124563",
+    returnDate: "06/08/2024",
+    status: "Cancel",
+    customers: "1770 - Al Karam Feed Mills/Local Sales",
+    saleInvoice: 5505,
+    Quantity: 5,
+    netAmmount: "Rs 197,352.00",
+    Comment: "Good",
+    preparedBy: "Atiq",
+  },
+
+];

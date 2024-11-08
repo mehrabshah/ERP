@@ -19,7 +19,7 @@ import { AccountSetupComponent } from './components/accounts/Maintenance/compone
 import { AccountSettingsComponent } from './components/accounts/Maintenance/components/account-setup/account-settings/account-settings.component';
 import { NewCustomersComponent } from './components/receivables/Maintenance/components/customers/new-customers/new-customers.component';
 import {CustomersComponent} from "./components/receivables/Maintenance/components/customers/customers.component"
-
+import {SalesReturnComponent} from "./components/sale/transaction/components/sales-return/sales-return.component"
 
 export const routes: Routes = [
     {
@@ -41,6 +41,11 @@ export const routes: Routes = [
         path: 'sales/transaction/arReceipt',
         component: ArReceiptsComponent,
     },
+    {
+        path: 'sales/transaction/salesReturn',
+        component: SalesReturnComponent,
+    },
+
     {
         path: 'inventory',
         component: InventoryComponent,
