@@ -20,6 +20,8 @@ import { AccountSettingsComponent } from './components/accounts/Maintenance/comp
 import { NewCustomersComponent } from './components/receivables/Maintenance/components/customers/new-customers/new-customers.component';
 import {CustomersComponent} from "./components/receivables/Maintenance/components/customers/customers.component"
 import {SalesReturnComponent} from "./components/sale/transaction/components/sales-return/sales-return.component"
+import {SalesReturnNewComponent} from './components/sale/transaction/components/sales-return/sales-return-new/sales-return-new.component';
+
 
 export const routes: Routes = [
     {
@@ -45,7 +47,10 @@ export const routes: Routes = [
         path: 'sales/transaction/salesReturn',
         component: SalesReturnComponent,
     },
-
+    {
+       path: "sales/transaction/salesReturnNew",
+       component:SalesReturnNewComponent
+    },
     {
         path: 'inventory',
         component: InventoryComponent,

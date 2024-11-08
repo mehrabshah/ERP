@@ -14,6 +14,8 @@ import {
 } from '@ng-select/ng-select';
 import { TopBarComponent } from '../../../../../shared/top-bar/top-bar.component';
 import { SALESRETURN } from '../../../../../shared/staticFiles/saleReturns';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-sales-return',
@@ -83,7 +85,13 @@ export class SalesReturnComponent {
     { id: 3, name: 'operator 3' },
   ];
 
-  createSaleReturns() {}
+  constructor(private router: Router) {
+  }
+
+
+  createSaleReturns() {
+     this.router.navigate(['/sales/transaction/salesReturnNew']);
+  }
 
   isAllSelected(): boolean {
     return this.items.length > 0 && this.items.every((item) => item.selected);
@@ -154,4 +162,9 @@ export class SalesReturnComponent {
       value: new FormControl(null),
     });
   }
+
+  
+
+
+
 }

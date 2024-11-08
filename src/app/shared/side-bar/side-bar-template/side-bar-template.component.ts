@@ -32,8 +32,10 @@ export class SideBarTemplateComponent {
             {
               name: 'Sales Return',
               subLink: '/sales/transaction/salesReturn'
+            },
+            {
+              subLink: '/sales/transaction/salesReturnNew'
             }
-
           ]
         }
       ]
