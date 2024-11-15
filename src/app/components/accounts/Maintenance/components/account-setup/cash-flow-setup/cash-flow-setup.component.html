@@ -8,14 +8,11 @@
             </h2>
             <div ngbAccordionCollapse class="p-4 pt-0">
                 <div>
-                    <!-- First multi-select field -->
                     <div class="mb-2">
                         <app-multi-select-field [multiList]="multiNetIncomeList"
                             (selectedItemsChange)="updateSelectedItems($event)">
                         </app-multi-select-field>
                     </div>
-
-                    <!-- Second multi-select field -->
                     <div>
                         <app-multi-select-field [multiList]="multiNetReceiveList"
                             (selectedItemsChange)="updateSelectedItems($event)">

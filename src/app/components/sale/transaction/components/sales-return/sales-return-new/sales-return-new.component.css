@@ -1,0 +1,206 @@
+.main-wrapper {
+    margin-top: 150px;
+}
+
+.sales-return-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    outline: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+
+
+.accordion-button:not(.collapsed) {
+    box-shadow: none;
+    background-color: #ffffff;
+}
+
+
+.search-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.search-container input[type="text"] {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 6px 33px;
+    width: 100%;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #20CC90;
+    font-size: 16px;
+}
+
+.ng-select-placeholder {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
+.search-bar {
+    padding-left: 45px;
+    height: auto;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    background-color: #EBEBEB;
+    margin-bottom: 0px;
+}
+
+
+.search-icon {
+    margin-right: 8px;
+    color: #20CC90;
+}
+
+
+input[type="date"],
+input[type="text"] {
+
+    border-radius: 5px;
+    border: none;
+    background-color: #F6F6F6;
+}
+
+
+.form-group[_ngcontent-ng-c3809702746] .calendar-btn[_ngcontent-ng-c3809702746] {
+    position: absolute;
+    right: 10px;
+    top: 75%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #999 !important;
+}
+
+
+.form-group .calendar-btn {
+    position: absolute;
+    right: 10px;
+    top: 75%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: #000;
+}
+
+.form-group .calendar-btn:hover {
+    background: transparent;
+    color: #000;
+}
+
+.form-group .form-control {
+    padding-right: 40px;
+}
+
+.ngb-dateInput {
+    padding: 6px 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: #F6F6F6;
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    padding: 0px 0px !important;
+}
+
+.table-row {
+    background-color: #f9fafc;
+    border: 1px solid #f9fafc;
+}
+
+.table-wrapper {
+    height: 55vh;
+    overflow-y: scroll;
+}
+
+td {
+    font-size: 14px;
+    font-weight: 500;
+    color: #363636;
+}
+
+th {
+    cursor: pointer;
+    font-size: 14px;
+    color: white;
+    font-weight: 500;
+    background-color: #20CC90;
+}
+
+.form-control {
+    background-color: #F6F6F6;
+    border: none;
+    border-radius: 0px;
+    padding: .360rem .75rem;
+}
+
+.cancel-btn {
+    border: 1px solid;
+    padding: 6px 32px;
+    border-radius: 8px;
+    color: #CFCFCF;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.cancel-btn:hover {
+    background-color: #f4f1f1;
+}
+
+.add-btn {
+    border: 1px solid;
+    padding: 6px 42px;
+    border-radius: 8px;
+    color: white;
+    background-color: #20CC90;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    background-color: #34b186;
+}
+
+.dotted-box {
+    background-image:
+        linear-gradient(to right, #B0ADAD 30%, rgba(255, 255, 255, 0) 10%),
+        linear-gradient(to bottom, #B0ADAD 30%, rgba(255, 255, 255, 0) 10%),
+        linear-gradient(to left, #B0ADAD 30%, rgba(255, 255, 255, 0) 10%),
+        linear-gradient(to top, #B0ADAD 30%, rgba(255, 255, 255, 0) 10%);
+    background-position: top, right, bottom, left;
+    background-size: 20px 2px, 2px 20px, 20px 2px, 2px 20px;
+    background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+    padding: 16px;
+}
+
+
+.box-heading {
+    color: #363636;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 500;
+}

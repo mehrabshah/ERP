@@ -8,7 +8,6 @@ import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { OrderSummaryComponent } from './order-summary/order-summary.component';
 
 
-
 @Component({
   selector: 'app-ar-receipts',
   standalone: true,
