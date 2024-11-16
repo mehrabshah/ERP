@@ -4,419 +4,587 @@
   [listNav]="topBarList"
 ></app-top-bar>
 <section class="main-wrapper">
-    <div class="container-fluid mb-3">
-        <form class="form" [formGroup]="newCustomerForm">
-            <div ngbAccordion>
-                <div ngbAccordionItem [collapsed]="isCollapsed" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed = !isCollapsed">
-                            <img
-                            src="assets/images/leftCircle.svg"
-                            class="img-fluid"
-                            style="cursor: pointer"
-                          />
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="mt-2 mb-3"> <h4 class="account-title ">General</h4>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Customer ID:</label>
-                                <input type="text" class="form-control" placeholder="1234567897"
-                                    formControlName="customerId">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="status">Status:</label>
-                                    <ng-select [items]="statusOptions" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="status" placeholder="Select status" [searchable]="true"
-                                      (change)="onStatusSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select status</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="paymentType">Payment Type:</label>
-                                    <ng-select [items]="paymentTypeList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="paymentType" placeholder="Select Payment Type" [searchable]="true"
-                                      (change)="onStatusSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Payment Type</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="region">Region:</label>
-                                    <ng-select [items]="regionList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="region" placeholder="Select Region" [searchable]="true"
-                                      (change)="onRegionSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Region</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Company Name:</label>
-                                <input type="text" class="form-control" placeholder="Enter company name"
-                                    formControlName="companyName">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="accountNo">Account No:</label>
-                                    <ng-select [items]="accountNoList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="accountNo" placeholder="Select Account No" [searchable]="true"
-                                      (change)="onAccountNoSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Account No</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="priceCategory">Price Category:</label>
-                                    <ng-select [items]="priceCatList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="priceCategory" placeholder="Select Price Category" [searchable]="true"
-                                      (change)="onPriceCategorySelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Price Category</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>CNIC #:</label>
-                                <input type="text" class="form-control" placeholder="Enter CNIC No"
-                                    formControlName="CNICNo">
-                            </div>
-                        </div>
-                    </div>
+  <div class="container-fluid mb-3">
+    <form class="form" [formGroup]="newCustomerForm">
+      <div ngbAccordion>
+        <div ngbAccordionItem [collapsed]="isCollapsed" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed = !isCollapsed">
+              <img
+                src="assets/images/leftCircle.svg"
+                class="img-fluid"
+                style="cursor: pointer"
+              />
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="mt-2 mb-3"><h4 class="account-title">General</h4></div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Customer ID:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="1234567897"
+                  formControlName="customerId"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="status">Status:</label>
+                  <ng-select
+                    [items]="statusOptions"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="status"
+                    placeholder="Select status"
+                    [searchable]="true"
+                    (change)="onStatusSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select status</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
 
-                <div ngbAccordionItem [collapsed]="isCollapsed1" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed1 = !isCollapsed1">
-                            <h4 class="account-title ">Balance Info</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Opening Balance:</label>
-                                <input type="text" class="form-control" placeholder="Enter opening balance"
-                                    formControlName="openingBalance">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="asOfDate">Select Date:</label>
-                                    <ng-select [items]="asOfDateList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="asOfDate" placeholder="Select Date" [searchable]="true"
-                                      (change)="onAsOfDateSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Date</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Current Balance:</label>
-                                <input type="text" class="form-control" placeholder="Enter current balance"
-                                    formControlName="currentBalance">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Credit Limit:</label>
-                                <input type="text" class="form-control" placeholder="Enter credit limit"
-                                    formControlName="creditLimit">
-                            </div>
-                        </div>
-                    </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="paymentType">Payment Type:</label>
+                  <ng-select
+                    [items]="paymentTypeList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="paymentType"
+                    placeholder="Select Payment Type"
+                    [searchable]="true"
+                    (change)="onStatusSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text"
+                          >Select Payment Type</span
+                        >
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
 
-                <div ngbAccordionItem [collapsed]="isCollapsed2" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed2 = !isCollapsed2">
-                            <h4 class="account-title ">Address Info</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="accountNo">Address1:</label>
-                                    <ng-select [items]="address1List" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="address1" placeholder="Select Address1" [searchable]="true"
-                                      (change)="onAddress1Selected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Address1</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="address2">Address2:</label>
-                                    <ng-select [items]="address2List" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="address2" placeholder="Select Address2" [searchable]="true"
-                                      (change)="onAddress2Selected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Address2</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="city">City:</label>
-                                    <ng-select [items]="cityList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="city" placeholder="Select City" [searchable]="true"
-                                      (change)="onCitySelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select City</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="city">Country:</label>
-                                    <ng-select [items]="countryList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="city" placeholder="Select Country" [searchable]="true"
-                                      (change)="onCountrySelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Country</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="region">Region:</label>
+                  <ng-select
+                    [items]="regionList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="region"
+                    placeholder="Select Region"
+                    [searchable]="true"
+                    (change)="onRegionSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Region</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
-
-                <div ngbAccordionItem [collapsed]="isCollapsed3" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed3 = !isCollapsed3">
-                            <h4 class="account-title ">Contact Info</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <label>Contact Name:</label>
-                                <input type="text" class="form-control" placeholder="Enter contact Name"
-                                    formControlName="contactName">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Phone1:</label>
-                                <input type="text" class="form-control" placeholder="Enter phone1"
-                                    formControlName="phone1">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Phone2:</label>
-                                <input type="text" class="form-control" placeholder="Enter phone2"
-                                    formControlName="phone2">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Fax:</label>
-                                <input type="text" class="form-control" placeholder="Enter fax" formControlName="fax">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Email:</label>
-                                <input type="text" class="form-control" placeholder="Enter Email"
-                                    formControlName="email">
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Company Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter company name"
+                  formControlName="companyName"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="accountNo">Account No:</label>
+                  <ng-select
+                    [items]="accountNoList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="accountNo"
+                    placeholder="Select Account No"
+                    [searchable]="true"
+                    (change)="onAccountNoSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Account No</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
-
-                <div ngbAccordionItem [collapsed]="isCollapsed4" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed4 = !isCollapsed4">
-                            <h4 class="account-title ">Tax Info</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-3 mb-2">
-                                <div class="form-group">
-                                    <label  for="taxAmount">Tax Amount:</label>
-                                    <ng-select [items]="taxAmountList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="taxAmount" placeholder="Select Tax Amount" [searchable]="true"
-                                      (change)="onTaxAmountSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Tax Amount</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>NTN No:</label>
-                                <input type="text" class="form-control" placeholder="Enter NTN No"
-                                    formControlName="NTNNo">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Exemption No:</label>
-                                <input type="text" class="form-control" placeholder="Enter exemption No"
-                                    formControlName="exemptionNo">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Sales Tax Reg No:</label>
-                                <input type="text" class="form-control" placeholder="Enter sales tax reg No"
-                                    formControlName="salesTaxRegNo">
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="taxStatus">Tax Status:</label>
-                                    <ng-select [items]="taxStatusList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="taxStatus" placeholder="Select Tax Status" [searchable]="true"
-                                      (change)="onTaxStatusSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Tax Status</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                        </div>
-                    </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="priceCategory">Price Category:</label>
+                  <ng-select
+                    [items]="priceCatList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="priceCategory"
+                    placeholder="Select Price Category"
+                    [searchable]="true"
+                    (change)="onPriceCategorySelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text"
+                          >Select Price Category</span
+                        >
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>CNIC #:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter CNIC No"
+                  formControlName="CNICNo"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div ngbAccordionItem [collapsed]="isCollapsed5" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed5 = !isCollapsed5">
-                            <h4 class="account-title ">Payment Info</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="taxStatus">Payment Method:</label>
-                                    <ng-select [items]="paymentMethodList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="taxStatus" placeholder="Select Payment Method" [searchable]="true"
-                                      (change)="onPaymentMethodSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Payment Method</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <div class="form-group">
-                                    <label  for="creditTerm">Credit Term:</label>
-                                    <ng-select [items]="creditTermList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="creditTerm" placeholder="Select Credit Term" [searchable]="true"
-                                      (change)="onPaymentMethodSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Credit Term</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <!-- <label class="form-label mb-0">Bank Account:</label>
-                                <select formControlName="bankAccount" class="form-select">
-                                    <option value="">Select Bank Account</option>
-                                    <option *ngFor="let option of bankAccountList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select> -->
-
-                                <div class="form-group">
-                                    <label  for="bankAccount">Bank Account:</label>
-                                    <ng-select [items]="bankAccountList" bindLabel="name" bindValue="id" class="custom"
-                                      formControlName="bankAccount" placeholder="Select Bank Account" [searchable]="true"
-                                      (change)="onPaymentMethodSelected($event)">
-                                      <ng-template ng-placeholder-tmp>
-                                        <div class="ng-select-placeholder">
-                                          <span class="placeholder-text">Select Bank Account</span>
-                                        </div>
-                                      </ng-template>
-                                    </ng-select>
-                                  </div>
-                               
-
-
-                            </div>
-                            <div class="col-md-3 mb-3">
-                                <label>Term Days:</label>
-                                <input type="text" class="form-control" placeholder="Enter term days"
-                                    formControlName="termDays">
-                            </div>
-                        </div>
-                    </div>
+        <div ngbAccordionItem [collapsed]="isCollapsed1" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed1 = !isCollapsed1">
+              <h4 class="account-title">Balance Info</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Opening Balance:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter opening balance"
+                  formControlName="openingBalance"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="asOfDate">Select Date:</label>
+                  <ng-select
+                    [items]="asOfDateList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="asOfDate"
+                    placeholder="Select Date"
+                    [searchable]="true"
+                    (change)="onAsOfDateSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Date</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Current Balance:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter current balance"
+                  formControlName="currentBalance"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Credit Limit:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter credit limit"
+                  formControlName="creditLimit"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div ngbAccordionItem [collapsed]="isCollapsed6" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed6 = !isCollapsed6">
-                            <h4 class="account-title ">Sales Reps</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Sales Reps:</label>
-                                <input type="text" class="form-control" placeholder="Enter sales reps"
-                                    formControlName="salesReps">
-                            </div>
-                        </div>
-                    </div>
+        <div ngbAccordionItem [collapsed]="isCollapsed2" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed2 = !isCollapsed2">
+              <h4 class="account-title">Address Info</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="accountNo">Address1:</label>
+                  <ng-select
+                    [items]="address1List"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="address1"
+                    placeholder="Select Address1"
+                    [searchable]="true"
+                    (change)="onAddress1Selected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Address1</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="address2">Address2:</label>
+                  <ng-select
+                    [items]="address2List"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="address2"
+                    placeholder="Select Address2"
+                    [searchable]="true"
+                    (change)="onAddress2Selected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Address2</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="city">City:</label>
+                  <ng-select
+                    [items]="cityList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="city"
+                    placeholder="Select City"
+                    [searchable]="true"
+                    (change)="onCitySelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select City</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="city">Country:</label>
+                  <ng-select
+                    [items]="countryList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="city"
+                    placeholder="Select Country"
+                    [searchable]="true"
+                    (change)="onCountrySelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Country</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div ngbAccordionItem [collapsed]="isCollapsed7" class="mb-3">
-                    <h2 ngbAccordionHeader>
-                        <button ngbAccordionButton (click)="isCollapsed7 = !isCollapsed7">
-                            <h4 class="account-title ">Notifications</h4>
-                        </button>
-                    </h2>
-                    <div ngbAccordionCollapse class="p-4 pt-0">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label>Notifications:</label>
-                                <input type="text" class="form-control" placeholder="Enter notifications"
-                                    formControlName="notifications">
-                            </div>
-                        </div>
-                    </div>
+        <div ngbAccordionItem [collapsed]="isCollapsed3" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed3 = !isCollapsed3">
+              <h4 class="account-title">Contact Info</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label>Contact Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter contact Name"
+                  formControlName="contactName"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Phone1:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter phone1"
+                  formControlName="phone1"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Phone2:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter phone2"
+                  formControlName="phone2"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Fax:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter fax"
+                  formControlName="fax"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Email:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter Email"
+                  formControlName="email"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed4" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed4 = !isCollapsed4">
+              <h4 class="account-title">Tax Info</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-3 mb-2">
+                <div class="form-group">
+                  <label for="taxAmount">Tax Amount:</label>
+                  <ng-select
+                    [items]="taxAmountList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="taxAmount"
+                    placeholder="Select Tax Amount"
+                    [searchable]="true"
+                    (change)="onTaxAmountSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Tax Amount</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
                 </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>NTN No:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter NTN No"
+                  formControlName="NTNNo"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Exemption No:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter exemption No"
+                  formControlName="exemptionNo"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Sales Tax Reg No:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter sales tax reg No"
+                  formControlName="salesTaxRegNo"
+                />
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="taxStatus">Tax Status:</label>
+                  <ng-select
+                    [items]="taxStatusList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="taxStatus"
+                    placeholder="Select Tax Status"
+                    [searchable]="true"
+                    (change)="onTaxStatusSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Tax Status</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed5" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed5 = !isCollapsed5">
+              <h4 class="account-title">Payment Info</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="taxStatus">Payment Method:</label>
+                  <ng-select
+                    [items]="paymentMethodList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="taxStatus"
+                    placeholder="Select Payment Method"
+                    [searchable]="true"
+                    (change)="onPaymentMethodSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text"
+                          >Select Payment Method</span
+                        >
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="creditTerm">Credit Term:</label>
+                  <ng-select
+                    [items]="creditTermList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="creditTerm"
+                    placeholder="Select Credit Term"
+                    [searchable]="true"
+                    (change)="onPaymentMethodSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text">Select Credit Term</span>
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <div class="form-group">
+                  <label for="bankAccount">Bank Account:</label>
+                  <ng-select
+                    [items]="bankAccountList"
+                    bindLabel="name"
+                    bindValue="id"
+                    class="custom"
+                    formControlName="bankAccount"
+                    placeholder="Select Bank Account"
+                    [searchable]="true"
+                    (change)="onPaymentMethodSelected($event)"
+                  >
+                    <ng-template ng-placeholder-tmp>
+                      <div class="ng-select-placeholder">
+                        <span class="placeholder-text"
+                          >Select Bank Account</span
+                        >
+                      </div>
+                    </ng-template>
+                  </ng-select>
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label>Term Days:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter term days"
+                  formControlName="termDays"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed6" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed6 = !isCollapsed6">
+              <h4 class="account-title">Sales Reps</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Sales Reps:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter sales reps"
+                  formControlName="salesReps"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div ngbAccordionItem [collapsed]="isCollapsed7" class="mb-3">
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton (click)="isCollapsed7 = !isCollapsed7">
+              <h4 class="account-title">Notifications</h4>
+            </button>
+          </h2>
+          <div ngbAccordionCollapse class="p-4 pt-0">
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label>Notifications:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Enter notifications"
+                  formControlName="notifications"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
 
         <div ngbAccordionItem [collapsed]="isCollapsed8" class="mb-3">
           <h2 ngbAccordionHeader>
