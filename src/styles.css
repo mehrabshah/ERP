@@ -169,6 +169,13 @@ body {
 
 
 
+input[type="checkbox"] {
+    accent-color:#2C9A77;
+}
+
+
+
+
 /* ----------------------------------------------------   */
   
 @media (min-width: 1200px) {

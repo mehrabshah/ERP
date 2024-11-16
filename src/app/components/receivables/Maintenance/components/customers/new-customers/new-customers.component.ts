@@ -1,20 +1,42 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, JsonPipe } from '@angular/common';
 import { Component } from '@angular/core';
+import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { TopBarComponent } from '../../../../../../shared/top-bar/top-bar.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { MultiSelectFieldComponent } from '../../../../../../shared/multi-select-field/multi-select-field.component';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @Component({
   selector: 'app-new-customers',
   standalone: true,
-  imports: [CommonModule, TopBarComponent, NgbAccordionModule ,MultiSelectFieldComponent, ReactiveFormsModule],
+  imports: [CommonModule, TopBarComponent, NgbAccordionModule ,MultiSelectFieldComponent, ReactiveFormsModule,
+    FormsModule,NgSelectComponent, NgOptionTemplateDirective, NgLabelTemplateDirective,NgSelectModule,JsonPipe
+  ],
   templateUrl: './new-customers.component.html',
   styleUrl: './new-customers.component.css'
 })
 export class NewCustomersComponent {
   toBarTitle: string = 'Customers';
   showtopNav: boolean = true;
+  statusId: number = 0;
+  paymentTypeId : number = 0;
+  regionId : number = 0;
+  accountNoId : number = 0;
+  priceCategoryId: number = 0;
+  asOfDateId : number = 0;
+  address1Id : number = 0;
+  address2Id : number = 0;
+  countryId : number = 0;
+  taxAmountId : number = 0;
+  taxStatusId : number = 0;
+  paymentMethodId : number = 0;
+  creditTermId: number = 0;
+  cityId : number = 0;
+
+
+
+
 
   selectedData: any = {};
   isCollapsed = false;
@@ -55,78 +77,94 @@ export class NewCustomersComponent {
   ];
 
   statusOptions = [
-    { label: 'Active', value: 'active' },
-    { label: 'InActive', value: 'inActive' },
+    { id: 1, name: 'Active' },
+    { id: 2, name: 'InActive' },
   ];
 
   paymentTypeList =  [
-    { label: 'Payment Type', value: 'paymentType' },
-    { label: 'Payment Type 1', value: 'paymenyType1' },
+    { id: 1, name: 'Payment Type' },
+    { id: 2, name: 'Payment Type 1'},
+
   ];
 
   regionList = [
-    { label: 'Region', value: 'region' },
-    { label: 'Region 1', value: 'region1' },
+    { id: 1, name: 'Region' },
+    { id: 2, name: 'Region 1'},
+
   ];
 
   accountNoList = [
-    { label: '0993939333', value: '0993939333' },
-    { label: '0993939322', value: '0993939322' },
+    { id: 1, name: '0993939333'},
+    { id: 2, name: '0993939322'},
   ];
+
+
 
   priceCatList = [
-    { label: 'Category', value: 'Category' },
-    { label: 'Category 1', value: 'Category1' },
+    { id: 1, name: 'Category'},
+    { id: 2, name: 'Category 1'},
   ];
+
 
   asOfDateList = [
-    { label: '02/03/2024', value: '02/03/2024' },
-    { label: '12/03/2024', value: '12/03/2024' },
+    { id: 1, name: '02/03/2024'},
+    { id: 2, name: '12/03/2024'},
   ];
+
+
 
   address1List = [
-    { label: 'adress1 street 25', value: 'adress1 street 25' },
-    { label: 'adress1 street 29', value: 'adress1 street 25' },
+    { id: 1, name: 'adress1 street 25'},
+    { id: 2, name: 'adress1 street 29'},
   ];
+
+
+
 
   address2List = [
-    { label: 'adress2 street 43', value: 'adress2 street 43' },
-    { label: 'adress2 street 44', value: 'adress2 street 44' },
+    { id: 1, name: 'adress2 street 43'},
+    { id: 2, name: 'adress2 street 44'},
   ];
+
 
   cityList = [
-    { label: 'City 1', value: 'City 1' },
-    { label: 'City 2', value: 'City 2' },
+    { id: 1, name: 'City 1'},
+    { id: 2, name: 'City 2'},
   ];
+
 
   countryList = [
-    { label: 'Country 1', value: 'Country 1' },
-    { label: 'Country 2', value: 'Country 2' },
+    { id: 1, name: 'Country 1'},
+    { id: 2, name: 'Country 2'},
   ];
+
 
   taxAmountList = [
-    { label: 'Tax Amount 1', value: 'Tax Amount 1' },
-    { label: 'Tax Amount 2', value: 'Tax Amount 2' },
+    { id: 1, name: 'Tax Amount 1'},
+    { id: 2, name: 'Tax Amount 2'},
   ];
+
+
 
   taxStatusList = [
-    { label: 'Exempt', value: 'Exempt' },
-    { label: 'Non Exempt', value: 'Non Exempt' },
+    { id: 1, name: 'Exempt'},
+    { id: 2, name: 'Non Exempt'},
   ];
 
+
   paymentMethodList = [
-    { label: 'payment Method', value: 'payment Method' },
-    { label: 'payment Method  1', value: 'payment Method 1' },
+    { id: 1, name: 'payment Method'},
+    { id: 2, name: 'payment Method  1'},
   ];
 
   creditTermList = [
-    { label: 'credit Term', value: 'credit Term' },
-    { label: 'credit Term  1', value: 'credit Term 1' },
+    { id: 1, name: 'credit Term'},
+    { id: 2, name: 'credit Term  1'},
   ];
 
   bankAccountList = [
-    { label: 'bank Account', value: 'bank Account' },
-    { label: 'bank Account  1', value: 'bank Account 1' },
+    { id: 1, name: 'bank Account'},
+    { id: 2, name: 'bank Account  1'},
   ];
   
   tableData= [
@@ -141,35 +179,35 @@ export class NewCustomersComponent {
   constructor() { }
   ngOnInit() {
     this.newCustomerForm = new FormGroup({
-      status: new FormControl(''),
+      status: new FormControl(null),
       customerId: new FormControl(''),
       companyName: new FormControl(''),
       CNICNo: new FormControl(''),
-      paymentType: new FormControl(''),
-      accountNo: new FormControl(''),
-      region: new FormControl(''),
-      priceCategory: new FormControl(''),
+      paymentType: new FormControl(null),
+      accountNo: new FormControl(null),
+      region: new FormControl(null),
+      priceCategory: new FormControl(null),
       openingBalance: new FormControl(''),
-      asOfDate: new FormControl(''),
+      asOfDate: new FormControl(null),
       currentBalance: new FormControl(''),
       creditLimit: new FormControl(''),
-      address1: new FormControl(''),
-      address2: new FormControl(''),
-      city: new FormControl(''),
-      country:  new FormControl(''),
+      address1: new FormControl(null),
+      address2: new FormControl(null),
+      city: new FormControl(null),
+      country:  new FormControl(null),
       contactName:  new FormControl(''),
       phone1:  new FormControl(''),
       phone2:  new FormControl(''),
       fax:  new FormControl(''),
       email:  new FormControl(''),
-      taxAmount:  new FormControl(''),
+      taxAmount:  new FormControl(null),
       NTNNo:  new FormControl(''),
       exemptionNo:  new FormControl(''),
       salesTaxRegNo:  new FormControl(''),
-      taxStatus:  new FormControl(''),
-      paymentMethod:  new FormControl(''),
-      creditTerm:  new FormControl(''),
-      bankAccount:  new FormControl(''),
+      taxStatus:  new FormControl(null),
+      paymentMethod:  new FormControl(null),
+      creditTerm:  new FormControl(null),
+      bankAccount:  new FormControl(null),
       termDays:  new FormControl(''),
       salesReps:  new FormControl(''),
       notifications:  new FormControl(''),
@@ -202,8 +240,134 @@ export class NewCustomersComponent {
     });
   }
 
+  onStatusSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.statusId = id;
+    }
+  }
+
+
+  onPaymentTypeSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.paymentTypeId = id;
+    }
+  }
+
+  onRegionSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.regionId = id;
+    }
+  }
+
+  onAccountNoSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.accountNoId = id;
+    }
+  }
+
+
+  onPriceCategorySelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.priceCategoryId = id;
+    }
+  }
+
+  
+  onAsOfDateSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.asOfDateId = id;
+    }
+  }
+
+
+  onAddress1Selected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.address1Id = id;
+    }
+  }
+
+
+  onAddress2Selected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.address2Id = id;
+    }
+  }
+
+
+  onCitySelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.cityId = id;
+    }
+  }
+
+
+
+  onCountrySelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.countryId = id;
+    }
+  }
+
+  onTaxAmountSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.taxAmountId = id;
+    }
+  }
+
+  onTaxStatusSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.taxStatusId = id;
+    }
+  }
+  
+  onPaymentMethodSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.paymentMethodId = id;
+    }
+
+  }
+
+  onCreditTermSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.creditTermId = id;
+    }
+
+  }
+
+
+  onBankAccountSelected(event: any) {
+    let id = event.id;
+    if (id) {
+      this.creditTermId = id;
+    }
+
+  }
+
+
+
+
+
+
   customerSave(){
     this.selectedItems();
     console.log('Customer selected data:', this.selectedData);
   }
+
+  
+
+
 }

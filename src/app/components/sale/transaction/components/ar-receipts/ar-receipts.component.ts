@@ -147,9 +147,6 @@ export class ArReceiptsComponent {
       taxAmount: "19.32",
       price: '3000'
     },
- 
-
-
   ]
 
   topBarList: any = [

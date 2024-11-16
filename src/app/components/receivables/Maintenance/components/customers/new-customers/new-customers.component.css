@@ -96,6 +96,21 @@ th {
     background-color: #20CC90;
 }
 
+.ng-select .ng-select-container {
+    background-color: #F6F6F6 !important ;
+    border: none;
+  }
+
+  .placeholder-text {
+    font-size: 14px;
+}
+
+.ng-select-placeholder {
+    display: flex;
+    align-items: center;
+    color: #aaa;
+}
+
 
 @media (min-width: 1468px) {
     .main-wrapper {
