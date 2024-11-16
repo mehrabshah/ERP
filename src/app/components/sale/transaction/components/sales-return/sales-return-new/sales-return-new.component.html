@@ -192,3 +192,17 @@
     </div>
   </div>
 </section>
+<ng-template #content let-offcanvas>
+  <div class="offcanvas-header">
+    <h5 class="general-title">Order Summary</h5>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="offcanvas.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <app-order-summary-sales-return [summaryData]="summaryData"></app-order-summary-sales-return>
+  </div>
+</ng-template>

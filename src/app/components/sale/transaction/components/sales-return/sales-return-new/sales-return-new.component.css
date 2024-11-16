@@ -1,5 +1,5 @@
 .main-wrapper {
-    margin-top: 150px;
+    margin-top: 75px !important;
 }
 
 .sales-return-title {
@@ -216,3 +216,124 @@ th {
     font-size: 16px;
     font-weight: 500;
 }
+
+
+@media (min-width: 1200px) {
+    .main-wrapper {
+        margin-top: 150px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1468px) {
+    .main-wrapper {
+        margin-top: 120px !important;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+
+    .main-wrapper {
+        margin-top: 90px !important;
+    }
+
+}
+
+
+
+
+
+
+/* This is just for table responsiveness */
+
+@media (min-width: 1440px) {
+    .table {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width: 992px) and (max-width: 1400px) {
+    .table {
+        max-width: 130% !important;
+        width: 130% !important;
+    }
+}
+
+
+@media (min-width: 772px) and (max-width: 992px) {
+    .table {
+        max-width: 160% !important;
+        width: 160% !important;
+    }
+
+
+}
+
+@media (min-width: 600px) and (max-width: 772px) {
+    .table {
+        max-width: 220% !important;
+        width: 220% !important;
+    }
+
+
+
+
+}
+
+@media (min-width: 500px) and (max-width: 600px) {
+    .table {
+        max-width: 250% !important;
+        width: 250% !important;
+    }
+
+
+
+}
+
+@media (min-width: 420px) and (max-width: 500px) {
+    .table {
+        max-width: 320% !important;
+        width: 320% !important;
+    }
+
+
+
+}
+
+@media (min-width: 380px) and (max-width: 420px) {
+    .table {
+        max-width: 380% !important;
+        width: 380% !important;
+    }
+
+
+}
+
+
+
+
+@media (min-width: 1468px) {
+    .main-wrapper {
+        margin-top: 150px !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1468px) {
+    .main-wrapper {
+        margin-top: 180px !important;
+    }
+
+}
+
+@media (min-width: 576px) and (max-width: 1200px) {
+
+    .main-wrapper {
+        margin-top: 90px !important;
+    }
+
+}
+
+
+
