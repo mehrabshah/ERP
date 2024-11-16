@@ -5,7 +5,7 @@
 }
 
 .order-summary-scroll {
-    height: 18vh;
+    height: 120px;
     overflow-y: scroll;
 }
 
