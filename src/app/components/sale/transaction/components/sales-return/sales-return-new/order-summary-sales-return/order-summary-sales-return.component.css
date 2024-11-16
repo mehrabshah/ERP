@@ -1,0 +1,115 @@
+.main-order {
+    background-color: #fbfbfb;
+    padding: 4px;
+    margin-top: 4px;
+}
+
+.order-summary-scroll {
+    height: 18vh;
+    overflow-y: scroll;
+}
+
+
+.sub-order {
+    color: #363636;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+.order-title {
+    color: #363636;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.order-price {
+    color: #20CC90;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.delete-icon {
+    color: #ffffff;
+    background-color: #20CC90;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.edit-icon {
+    color: #ffffff;
+    background-color: #20CC90;
+    border-radius: 20px;
+    padding: 5px;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+
+
+.total-order {
+    color: #20CC90;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.add-btn {
+    border: 1px solid;
+    padding: 6px 42px;
+    border-radius: 8px;
+    color: white;
+    background-color: #20CC90;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.add-btn:hover {
+    background-color: #34b186;
+}
+
+.small-grey-icon {
+    color: grey;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+
+.quantity-input {
+    width: 58px;
+    border: none;
+    background: none;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    text-align: end;
+}
+
+.edit-quantity-input{
+    width: 60px;
+    border: none;
+    text-align: start;
+    background-color:#20CC90;
+    color: #ffffff;
+    padding-top: 5px;
+    padding-left: 4px;
+    margin: 0px;
+   
+}
+
+
+input[type="text"] {
+   
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none; 
+    box-shadow: none;
+    -webkit-transition: border linear .2s, box-shadow linear .2s;
+    -moz-transition: border linear .2s, box-shadow linear .2s;
+    -o-transition: border linear .2s, box-shadow linear .2s;
+    transition: border linear .2s, box-shadow linear .2s;
+}
+
+
+

@@ -6,14 +6,14 @@ import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent, NgSelectModule } from '@ng-select/ng-select';
 import { NgbAlertModule, NgbDatepickerModule, NgbDateStruct, NgbNavModule, NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
-
+import {OrderSummarySalesReturnComponent} from "../sales-return-new/order-summary-sales-return/order-summary-sales-return.component"
 
 
 @Component({
   selector: 'app-sales-return-new',
   standalone: true,
   imports: [TopBarComponent,CommonModule,FormsModule, ReactiveFormsModule,NgbAccordionModule,NgSelectComponent, NgSelectModule, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    NgbNavModule, BsDatepickerModule,NgbDatepickerModule, 
+    NgbNavModule, BsDatepickerModule,NgbDatepickerModule,OrderSummarySalesReturnComponent
   ],
   templateUrl: './sales-return-new.component.html',
   styleUrl: './sales-return-new.component.css'
@@ -56,6 +56,98 @@ export class SalesReturnNewComponent {
       icon: 'fa fa-xmark',
     },
   ];  
+
+
+  summaryData = [
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+ 
+
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+  ]
+
 
 
   statusData : any =  [
