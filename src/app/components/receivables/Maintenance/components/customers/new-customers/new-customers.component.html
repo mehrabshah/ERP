@@ -23,33 +23,48 @@
                                     formControlName="customerId">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Status:</label>
-                                <select formControlName="status" class="form-select">
-                                    <option value="">Select Status</option>
-                                    <option *ngFor="let option of statusOptions" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="status">Status:</label>
+                                    <ng-select [items]="statusOptions" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="status" placeholder="Select status" [searchable]="true"
+                                      (change)="onStatusSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select status</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
 
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Payment Type:</label>
-                                <select formControlName="paymentType" class="form-select">
-                                    <option value="">Select Payment Type</option>
-                                    <option class="show-select" *ngFor="let option of paymentTypeList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="paymentType">Payment Type:</label>
+                                    <ng-select [items]="paymentTypeList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="paymentType" placeholder="Select Payment Type" [searchable]="true"
+                                      (change)="onStatusSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Payment Type</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
 
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Region:</label>
-                                <select formControlName="region" class="form-select">
-                                    <option value="">Select Region</option>
-                                    <option *ngFor="let option of regionList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="region">Region:</label>
+                                    <ng-select [items]="regionList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="region" placeholder="Select Region" [searchable]="true"
+                                      (change)="onRegionSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Region</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Company Name:</label>
@@ -57,22 +72,33 @@
                                     formControlName="companyName">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Account No:</label>
-                                <select formControlName="accountNo" class="form-select">
-                                    <option value="">Select Account No</option>
-                                    <option *ngFor="let option of accountNoList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="accountNo">Account No:</label>
+                                    <ng-select [items]="accountNoList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="accountNo" placeholder="Select Account No" [searchable]="true"
+                                      (change)="onAccountNoSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Account No</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Price Category:</label>
-                                <select formControlName="priceCategory" class="form-select">
-                                    <option value="">Select Price Category</option>
-                                    <option *ngFor="let option of priceCatList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="priceCategory">Price Category:</label>
+                                    <ng-select [items]="priceCatList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="priceCategory" placeholder="Select Price Category" [searchable]="true"
+                                      (change)="onPriceCategorySelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Price Category</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
+
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>CNIC #:</label>
@@ -97,13 +123,19 @@
                                     formControlName="openingBalance">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">As of Date:</label>
-                                <select formControlName="asOfDate" class="form-select">
-                                    <option value="">Select Date</option>
-                                    <option *ngFor="let option of asOfDateList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="asOfDate">Select Date:</label>
+                                    <ng-select [items]="asOfDateList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="asOfDate" placeholder="Select Date" [searchable]="true"
+                                      (change)="onAsOfDateSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Date</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
+
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Current Balance:</label>
@@ -128,40 +160,60 @@
                     <div ngbAccordionCollapse class="p-4 pt-0">
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Address1:</label>
-                                <select formControlName="address1" class="form-select">
-                                    <option value="">Select Address1</option>
-                                    <option *ngFor="let option of address1List" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="accountNo">Address1:</label>
+                                    <ng-select [items]="address1List" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="address1" placeholder="Select Address1" [searchable]="true"
+                                      (change)="onAddress1Selected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Address1</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Address2:</label>
-                                <select formControlName="address2" class="form-select">
-                                    <option value="">Select Address2</option>
-                                    <option *ngFor="let option of address2List" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="address2">Address2:</label>
+                                    <ng-select [items]="address2List" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="address2" placeholder="Select Address2" [searchable]="true"
+                                      (change)="onAddress2Selected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Address2</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">City:</label>
-                                <select formControlName="city" class="form-select">
-                                    <option value="">Select City</option>
-                                    <option *ngFor="let option of cityList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="city">City:</label>
+                                    <ng-select [items]="cityList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="city" placeholder="Select City" [searchable]="true"
+                                      (change)="onCitySelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select City</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Country:</label>
-                                <select formControlName="country" class="form-select">
-                                    <option value="">Select Country</option>
-                                    <option *ngFor="let option of countryList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="city">Country:</label>
+                                    <ng-select [items]="countryList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="city" placeholder="Select Country" [searchable]="true"
+                                      (change)="onCountrySelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Country</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                         </div>
                     </div>
@@ -212,13 +264,18 @@
                     <div ngbAccordionCollapse class="p-4 pt-0">
                         <div class="row">
                             <div class="col-md-3 mb-2">
-                                <label class="form-label mb-0">Tax Amount:</label>
-                                <select formControlName="taxAmount" class="form-select mb-3">
-                                    <option value="">Select Tax Amount</option>
-                                    <option *ngFor="let option of taxAmountList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="taxAmount">Tax Amount:</label>
+                                    <ng-select [items]="taxAmountList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="taxAmount" placeholder="Select Tax Amount" [searchable]="true"
+                                      (change)="onTaxAmountSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Tax Amount</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>NTN No:</label>
@@ -236,13 +293,18 @@
                                     formControlName="salesTaxRegNo">
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Tax Status:</label>
-                                <select formControlName="taxStatus" class="form-select">
-                                    <option value="">Select Tax Status</option>
-                                    <option *ngFor="let option of taxStatusList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="taxStatus">Tax Status:</label>
+                                    <ng-select [items]="taxStatusList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="taxStatus" placeholder="Select Tax Status" [searchable]="true"
+                                      (change)="onTaxStatusSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Tax Status</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                         </div>
                     </div>
@@ -257,31 +319,57 @@
                     <div ngbAccordionCollapse class="p-4 pt-0">
                         <div class="row">
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Payment Method:</label>
-                                <select formControlName="paymentMethod" class="form-select">
-                                    <option value="">Select Payment Method</option>
-                                    <option *ngFor="let option of paymentMethodList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="taxStatus">Payment Method:</label>
+                                    <ng-select [items]="paymentMethodList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="taxStatus" placeholder="Select Payment Method" [searchable]="true"
+                                      (change)="onPaymentMethodSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Payment Method</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Credit Term:</label>
-                                <select formControlName="creditTerm" class="form-select">
-                                    <option value="">Select Credit Term</option>
-                                    <option *ngFor="let option of creditTermList" [value]="option.value">
-                                        {{ option.label }}
-                                    </option>
-                                </select>
+                                <div class="form-group">
+                                    <label  for="creditTerm">Credit Term:</label>
+                                    <ng-select [items]="creditTermList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="creditTerm" placeholder="Select Credit Term" [searchable]="true"
+                                      (change)="onPaymentMethodSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Credit Term</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
                             </div>
                             <div class="col-md-3 mb-3">
-                                <label class="form-label mb-0">Bank Account:</label>
+                                <!-- <label class="form-label mb-0">Bank Account:</label>
                                 <select formControlName="bankAccount" class="form-select">
                                     <option value="">Select Bank Account</option>
                                     <option *ngFor="let option of bankAccountList" [value]="option.value">
                                         {{ option.label }}
                                     </option>
-                                </select>
+                                </select> -->
+
+                                <div class="form-group">
+                                    <label  for="bankAccount">Bank Account:</label>
+                                    <ng-select [items]="bankAccountList" bindLabel="name" bindValue="id" class="custom"
+                                      formControlName="bankAccount" placeholder="Select Bank Account" [searchable]="true"
+                                      (change)="onPaymentMethodSelected($event)">
+                                      <ng-template ng-placeholder-tmp>
+                                        <div class="ng-select-placeholder">
+                                          <span class="placeholder-text">Select Bank Account</span>
+                                        </div>
+                                      </ng-template>
+                                    </ng-select>
+                                  </div>
+                               
+
+
                             </div>
                             <div class="col-md-3 mb-3">
                                 <label>Term Days:</label>
