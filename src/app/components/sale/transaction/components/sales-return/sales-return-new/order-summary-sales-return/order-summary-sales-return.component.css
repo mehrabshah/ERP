@@ -113,9 +113,5 @@ input[type="text"] {
 
 
 
-@media (max-width: 768px) {
-    .order-summary-scroll {
-        height: 900px;
-        overflow-y: scroll;
-    }
-}
+
+
