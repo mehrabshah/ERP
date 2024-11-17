@@ -205,6 +205,7 @@ export class ArReceiptsComponent {
   onWindowResize(event: any) {
     this.updateScreenWidthVal();
   }
+  
 
   private updateScreenWidthVal(): void {
     this.screenWidth = window.innerWidth;

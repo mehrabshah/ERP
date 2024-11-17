@@ -1,5 +1,5 @@
-import { Component,inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Component, HostListener, inject, TemplateRef } from '@angular/core';
+import { CommonModule, JsonPipe  } from '@angular/common';
 import { TopBarComponent } from '../../../../../../shared/top-bar/top-bar.component';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +13,7 @@ import {OrderSummarySalesReturnComponent} from "../sales-return-new/order-summar
   selector: 'app-sales-return-new',
   standalone: true,
   imports: [TopBarComponent,CommonModule,FormsModule, ReactiveFormsModule,NgbAccordionModule,NgSelectComponent, NgSelectModule, NgOptionTemplateDirective, NgLabelTemplateDirective,
-    NgbNavModule, BsDatepickerModule,NgbDatepickerModule,OrderSummarySalesReturnComponent
+    NgbNavModule, BsDatepickerModule,NgbDatepickerModule,OrderSummarySalesReturnComponent,JsonPipe,NgbAlertModule
   ],
   templateUrl: './sales-return-new.component.html',
   styleUrl: './sales-return-new.component.css'
@@ -29,6 +29,8 @@ export class SalesReturnNewComponent {
   isCollapsed3 = false;
   statusId: number = 0;
   salesInvoiceId: number = 0
+  screenWidth!: number;
+
 
 
 
@@ -146,19 +148,129 @@ export class SalesReturnNewComponent {
       taxAmount: "19.32",
       price: '3000'
     },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
+    {
+      title: 'Broiler Breeder Grower Crumbs',
+      netPrice: '3864',
+      quantity: '200',
+      taxAmount: "19.32",
+      price: '3000'
+    },
   ]
 
 
 
-  statusData : any =  [
+  statusData  =  [
     { id: 1, name: 'Abbas Ali Traders Chak # 117 DB,Yazman' },
     { id: 2, name: 'Ahmed Ali Traders Chak # 119 BD,Yazmad' },
     { id: 3, name: 'Asgar Traders Chak # 111 DB,Yazman' },
     { id: 4, name: 'Mubeen Ali Traders Chak # 117 DB,Yazman' },
   ];
 
+
+  saleInvoicesData =  [
+    { id: 1, name: 'Abbas Ali Traders Chak # 117 DB,Yazman' },
+    { id: 2, name: 'Ahmed Ali Traders Chak # 119 BD,Yazmad' },
+    { id: 3, name: 'Asgar Traders Chak # 111 DB,Yazman' },
+    { id: 4, name: 'Mubeen Ali Traders Chak # 117 DB,Yazman' },
+  ];
+
+
+
+
   tableData= [
     {
+      id:1,
       licenseNo: '124589',
       salesInvoiceNo : "124589",
       InvoiceLineNo : "124589",
@@ -172,6 +284,7 @@ export class SalesReturnNewComponent {
       Tax:"900"
     },
     {
+      id:2,
       licenseNo: '124589',
       salesInvoiceNo : "124589",
       InvoiceLineNo : "124589",
@@ -216,5 +329,20 @@ export class SalesReturnNewComponent {
     });
   }
 
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: any) {
+    this.updateScreenWidthVal();
+  }
+  
+
+  private updateScreenWidthVal(): void {
+    this.screenWidth = window.innerWidth;
+  }
+
+
+  showSummartList(content: TemplateRef<any>) {
+		this.offcanvasService.open(content, { position: 'end' });
+	}
 
 }

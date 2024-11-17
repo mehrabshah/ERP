@@ -1,46 +1,26 @@
-<app-top-bar
-  [toBarTitle]="toBarTitle"
-  [showtopNav]="showtopNav"
-  [listNav]="topBarList"
-></app-top-bar>
+<app-top-bar [toBarTitle]="toBarTitle" [showtopNav]="showtopNav" [listNav]="topBarList"></app-top-bar>
 <section class="main-wrapper">
   <div class="container-fluid">
     <form class="form" [formGroup]="generalForm">
       <div class="row ar-receipts">
         <div class="col-12 pe-0">
           <div class="card">
-            <div class="card-body">
-              <div
-                class="d-flex align-items-center justify-content-between mb-0"
-              >
-                <img
-                  src="assets/images/leftCircle.svg"
-                  class="img-fluid"
-                  style="cursor: pointer"
-                />
-                <ng-container *ngIf="screenWidth < 768">
-                  <i
-                    class="fa-solid fa-list list-icon me-4"
-                    style="cursor: pointer"
-                    (click)="showSummartList(content)"
-                  ></i>
+            <div class="card-body ">
+              <div class="d-flex align-items-center justify-content-between mb-0">
+                <img src="assets/images/leftCircle.svg" class="img-fluid" style="cursor: pointer" />
+                <ng-container *ngIf=" screenWidth < 768">
+                  <i class="fa-solid fa-list list-icon me-4" style="cursor: pointer"
+                    (click)="showSummartList(content)"></i>
                 </ng-container>
               </div>
               <h5 class="mb-0 mt-4 general-title">General</h5>
               <div class="row align-items-center">
-                <div class="col-xxl-8 col-xl-6 col-lg-8 col-md-12 col-sm-8">
+                <div class="col-xxl-8 col-xl-6  col-lg-8 col-md-12 col-sm-8 ">
                   <div class="form-group">
                     <label class="mt-3" for="customer">Customers:</label>
-                    <ng-select
-                      [items]="customersData"
-                      bindLabel="name"
-                      bindValue="id"
-                      class="custom"
-                      formControlName="customer"
-                      placeholder="Select customer"
-                      [searchable]="true"
-                      (change)="onCustomerSelected($event)"
-                    >
+                    <ng-select [items]="customersData" bindLabel="name" bindValue="id" class="custom"
+                      formControlName="customer" placeholder="Select customer" [searchable]="true"
+                      (change)="onCustomerSelected($event)">
                       <ng-template ng-placeholder-tmp>
                         <div class="ng-select-placeholder">
                           <i class="fa fa-search search-icon"></i>
@@ -50,51 +30,29 @@
                     </ng-select>
                   </div>
                 </div>
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
+                <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="status">Status:</label>
-                    <ng-select
-                      [items]="statusData"
-                      bindLabel="name"
-                      bindValue="id"
-                      formControlName="status"
-                      placeholder="Select status"
-                      [editableSearchTerm]="true"
-                      [searchable]="true"
-                      (change)="onStatusSelected($event)"
-                    >
+                    <ng-select [items]="statusData" bindLabel="name" bindValue="id" formControlName="status"
+                      placeholder="Select status" [editableSearchTerm]="true" [searchable]="true"
+                      (change)="onStatusSelected($event)">
                     </ng-select>
                   </div>
                 </div>
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
+                <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="refNo">Ref No:</label>
-                    <input
-                      formControlName="refNo"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter Ref No."
-                    />
+                    <input formControlName="refNo" class="form-control" type="text" placeholder="Enter Ref No." />
                   </div>
                 </div>
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
+                <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group position-relative">
                     <label class="mt-3" for="soDate">So Date:</label>
-                    <input
-                      class="form-control pr-5 ngb-dateInput"
-                      formControlName="soDate"
-                      placeholder="yyyy-mm-dd"
-                      name="dp"
-                      [(ngModel)]="soDateModel"
-                      ngbDatepicker
-                      #soDatePicker="ngbDatepicker"
-                    />
-
-                    <button
-                      class="calendar-btn"
-                      (click)="soDatePicker.toggle()"
-                      type="button"
-                    >
+                    <input class="form-control pr-5 ngb-dateInput" formControlName="soDate" 
+                           placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="soDateModel" 
+                           ngbDatepicker #soDatePicker="ngbDatepicker" />
+                           
+                    <button class="calendar-btn" (click)="soDatePicker.toggle()" type="button">
                       <i class="fa-solid fa-calendar"></i>
                     </button>
                   </div>
@@ -102,20 +60,10 @@
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group position-relative cancel-date">
                     <label class="mt-3" for="cancelDate">Cancel Date:</label>
-                    <input
-                      class="form-control pr-5 ngb-dateInput"
-                      formControlName="cancelDate"
-                      placeholder="yyyy-mm-dd"
-                      name="dp1"
-                      [(ngModel)]="cancelDateModel"
-                      ngbDatepicker
-                      #cancelDatePicker="ngbDatepicker"
-                    />
-                    <button
-                      class="calendar-btn"
-                      (click)="cancelDatePicker.toggle()"
-                      type="button"
-                    >
+                    <input class="form-control pr-5 ngb-dateInput" formControlName="cancelDate" 
+                           placeholder="yyyy-mm-dd" name="dp1" [(ngModel)]="cancelDateModel" 
+                           ngbDatepicker #cancelDatePicker="ngbDatepicker" />
+                    <button class="calendar-btn" (click)="cancelDatePicker.toggle()" type="button">
                       <i class="fa-solid fa-calendar"></i>
                     </button>
                   </div>
@@ -124,63 +72,37 @@
             </div>
           </div>
           <div class="card mt-2">
-            <div class="card-body">
-              <div
-                class="d-flex align-items-center justify-content-between mb-0"
-              >
+            <div class="card-body ">
+              <div class="d-flex align-items-center justify-content-between mb-0">
                 <h5 class="mb-0 general-title">Address Info</h5>
               </div>
               <div class="row align-items-center">
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
+                <div class="col-xxl-4 col-xl-6   col-lg-4 col-md-12  col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="shipTo">Ship to Address:</label>
-                    <ng-select
-                      [items]="shipAddressData"
-                      bindLabel="name"
-                      bindValue="id"
-                      formControlName="shipToAddress"
-                      placeholder="Select Ship Address"
-                      [searchable]="true"
-                      (change)="onShipAddressSelected($event)"
-                    >
+                    <ng-select [items]="shipAddressData" bindLabel="name" bindValue="id" formControlName="shipToAddress"
+                      placeholder="Select Ship Address" [searchable]="true" (change)="onShipAddressSelected($event)">
                     </ng-select>
                   </div>
                 </div>
-                <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
+                <div class="col-xxl-4 col-xl-6  col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="billTo">Bill to Address:</label>
-                    <ng-select
-                      [items]="billAddressData"
-                      bindLabel="name"
-                      bindValue="id"
-                      formControlName="billToAddress"
-                      placeholder="Select Bill Address"
-                      [searchable]="true"
-                      (change)="onBillAddressSelected($event)"
-                    >
+                    <ng-select [items]="billAddressData" bindLabel="name" bindValue="id" formControlName="billToAddress"
+                      placeholder="Select Bill Address" [searchable]="true" (change)="onBillAddressSelected($event)">
                     </ng-select>
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="phNo">Ph No:</label>
-                    <input
-                      formControlName="phNo"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter phone no."
-                    />
+                    <input formControlName="phNo" class="form-control " type="text" placeholder="Enter phone no." />
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="saleRe">Sales Rep:</label>
-                    <input
-                      formControlName="saleRep"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter sale rep"
-                    />
+                    <input formControlName="saleRep" class="form-control" type="text" placeholder="Enter sale rep" />
                   </div>
                 </div>
               </div>
@@ -188,87 +110,52 @@
           </div>
           <div class="card mt-2">
             <div class="card-body">
-              <div
-                class="d-flex align-items-center justify-content-between mb-0"
-              >
+              <div class="d-flex align-items-center justify-content-between mb-0">
                 <h5 class="mb-0 general-title">Details</h5>
               </div>
               <div class="row align-items-center">
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="itemId">Item ID:</label>
-                    <input
-                      formControlName="itemID"
-                      class="form-control mt-2"
-                      type="text"
-                      placeholder="Enter item id"
-                    />
+                    <input formControlName="itemID" class="form-control mt-2" type="text" placeholder="Enter item id" />
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="descr">Description:</label>
-                    <ng-select
-                      [items]="descriptionData"
-                      bindLabel="name"
-                      bindValue="id"
-                      formControlName="description"
-                      placeholder="Select description"
-                      [searchable]="true"
-                      (change)="onDescriptionSelected($event)"
-                    >
+                    <ng-select [items]="descriptionData" bindLabel="name" bindValue="id" formControlName="description"
+                      placeholder="Select description" [searchable]="true" (change)="onDescriptionSelected($event)">
                     </ng-select>
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="orderQt">Order Qty:</label>
-                    <input
-                      formControlName="orderQty"
-                      class="form-control mt-2"
-                      type="text"
-                      placeholder="Enter order quantity"
-                    />
+                    <input formControlName="orderQty" class="form-control mt-2" type="text"
+                      placeholder="Enter order quantity" />
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="price">Price:</label>
-                    <input
-                      formControlName="price"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter price"
-                    />
+                    <input formControlName="price" class="form-control" type="text" placeholder="Enter price" />
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="extPri">Ext Price:</label>
-                    <input
-                      formControlName="extPrice"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter ext price"
-                    />
+                    <input formControlName="extPrice" class="form-control" type="text" placeholder="Enter ext price" />
                   </div>
                 </div>
                 <div class="col-xxl-4 col-xl-6 col-lg-4 col-md-12 col-sm-4">
                   <div class="form-group">
                     <label class="mt-3" for="com">Commnet:</label>
-                    <input
-                      formControlName="comment"
-                      class="form-control"
-                      type="text"
-                      placeholder="Enter comment"
-                    />
+                    <input formControlName="comment" class="form-control" type="text" placeholder="Enter comment" />
                   </div>
                 </div>
               </div>
 
-              <div
-                class="footer-btn d-flex align-items-center justify-content-center mt-3"
-              >
+              <div class="footer-btn d-flex align-items-center justify-content-center mt-3">
                 <button class="cancel-btn me-4">Cancel</button>
                 <button class="add-btn">Add</button>
               </div>
@@ -292,44 +179,23 @@
                 <div class="mt-3">
                   <label for="customerInst">Customer Instructions:</label>
                 </div>
-                <textarea
-                  id="customerInst"
-                  formControlName="customerInstruction"
-                  name="customerInstruction"
-                  rows="4"
-                  cols="100"
-                  class="w-auto textarea-field"
-                  readonly
-                ></textarea>
+                <textarea id="customerInst" formControlName="customerInstruction" name="customerInstruction" rows="4"
+                  cols="100" class="w-auto textarea-field" readonly></textarea>
               </div>
 
               <div *ngIf="active === 2">
                 <div class="mt-3">
                   <label for="item">Item:</label>
                 </div>
-                <textarea
-                  id="item"
-                  formControlName="item"
-                  name="item"
-                  rows="4"
-                  cols="100"
-                  class="w-auto textarea-field"
-                  readonly
-                ></textarea>
+                <textarea id="item" formControlName="item" name="item" rows="4" cols="100" class="w-auto textarea-field"
+                  readonly></textarea>
               </div>
               <div *ngIf="active === 3">
                 <div class="mt-3">
                   <label for="officeInst">Office Instructions:</label>
                 </div>
-                <textarea
-                  id="officeInst"
-                  formControlName="officeInstruction"
-                  name="officeInstruction"
-                  rows="4"
-                  cols="100"
-                  class="w-auto textarea-field"
-                  readonly
-                ></textarea>
+                <textarea id="officeInst" formControlName="officeInstruction" name="officeInstruction" rows="4"
+                  cols="100" class="w-auto textarea-field" readonly></textarea>
               </div>
             </div>
           </div>
@@ -347,12 +213,7 @@
 <ng-template #content let-offcanvas>
   <div class="offcanvas-header">
     <h5 class="general-title">Order Summary</h5>
-    <button
-      type="button"
-      class="btn-close"
-      aria-label="Close"
-      (click)="offcanvas.dismiss('Cross click')"
-    ></button>
+    <button type="button" class="btn-close" aria-label="Close" (click)="offcanvas.dismiss('Cross click')"></button>
   </div>
   <div class="offcanvas-body">
     <app-order-summary [summaryData]="summaryData"></app-order-summary>
