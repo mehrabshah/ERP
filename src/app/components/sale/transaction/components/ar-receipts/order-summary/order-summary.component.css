@@ -122,8 +122,6 @@ input[type="text"] {
 
 
 
-
-
 @media only screen and (min-height: 980px)  and (max-height: 1100px) {
     .order-summary-scroll {
         height: 55vh;

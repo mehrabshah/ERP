@@ -30,6 +30,7 @@ export class SalesReturnNewComponent {
   statusId: number = 0;
   salesInvoiceId: number = 0
   screenWidth!: number;
+  customerId : number = 0;
 
 
 
@@ -266,6 +267,13 @@ export class SalesReturnNewComponent {
   ];
 
 
+  customersData= [
+    { id: 1, name: 'Customer 1' },
+    { id: 2, name: 'Customer 2' },
+    { id: 3, name: 'Customer 3' },
+  ];
+
+
 
 
   tableData= [
@@ -312,6 +320,17 @@ export class SalesReturnNewComponent {
       this.salesInvoiceId = id;
     }
   }
+
+
+  onCustomerSelected(event: any){
+    let id = event.id;
+    if (id) {
+      this.customerId = id;
+    }
+  }
+
+
+
 
 
   private offcanvasService = inject(NgbOffcanvas);
