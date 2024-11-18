@@ -4,7 +4,7 @@ import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent,
 import { TopBarComponent } from '../../../../../../shared/top-bar/top-bar.component';
 import { NgbAccordionModule } from '@ng-bootstrap/ng-bootstrap';
 import { MultiSelectFieldComponent } from '../../../../../../shared/multi-select-field/multi-select-field.component';
-import { FormControl, FormGroup,FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup,FormsModule, ReactiveFormsModule , Validators } from '@angular/forms';
 
 
 @Component({
@@ -33,9 +33,6 @@ export class NewCustomersComponent {
   paymentMethodId : number = 0;
   creditTermId: number = 0;
   cityId : number = 0;
-
-
-
 
 
   selectedData: any = {};
@@ -199,7 +196,9 @@ export class NewCustomersComponent {
       phone1:  new FormControl(''),
       phone2:  new FormControl(''),
       fax:  new FormControl(''),
-      email:  new FormControl(''),
+      email:  new FormControl('', [
+        Validators.required, Validators.email
+      ]),
       taxAmount:  new FormControl(null),
       NTNNo:  new FormControl(''),
       exemptionNo:  new FormControl(''),
@@ -358,7 +357,15 @@ export class NewCustomersComponent {
   }
 
 
+  onSubmit() {
 
+      if (this.newCustomerForm.valid) {
+        console.log('Form Submitted:', this.newCustomerForm.value);
+      } else {
+        console.log('Form is invalid!');
+      }
+    
+  }
 
 
 

@@ -173,6 +173,9 @@ input[type="checkbox"] {
     accent-color:#2C9A77;
 }
 
+.text-danger {
+    color: red; 
+}
 
 
 
